@@ -2,6 +2,9 @@
 
 Utiliza esta estructura para documentar los casos de prueba generados. Cada caso debe ser auto-contenido, ejecutable y directamente trazable a la Historia de Usuario y sus adjuntos.
 
+> [!IMPORTANT]
+> El entregable final debe generarse como archivo HTML autocontenido en la carpeta `results/` bajo el nombre `caso de prueba <ID_HU>.html`, utilizando la [Plantilla HTML](./plantilla-caso-prueba.html).
+
 ---
 
 ## Formato Detallado por Caso de Prueba
