@@ -1,0 +1,56 @@
+- generic [ref=e3]:
+  - complementary [ref=e4]:
+    - heading "UniwebPro" [level=1] [ref=e12]
+    - navigation [ref=e13]:
+      - link "Tablero" [ref=e14] [cursor=pointer]:
+        - /url: /
+      - link "Carreras" [ref=e21] [cursor=pointer]:
+        - /url: /carreras
+      - link "Materias" [ref=e26] [cursor=pointer]:
+        - /url: /materias
+      - link "Estudiantes" [ref=e30] [cursor=pointer]:
+        - /url: /estudiantes
+    - generic [ref=e37]:
+      - link "Configuración" [ref=e38] [cursor=pointer]:
+        - /url: /config
+      - generic [ref=e43]:
+        - generic [ref=e44]: AD
+        - generic [ref=e45]:
+          - paragraph [ref=e46]: Admin User
+          - paragraph [ref=e47]: Administrador
+  - generic [ref=e48]:
+    - banner [ref=e49]:
+      - textbox "Buscar en el sistema..." [ref=e52]
+      - generic [ref=e58]:
+        - button [ref=e59]
+        - button [ref=e64]
+    - main [ref=e68]:
+      - generic [ref=e69]:
+        - generic [ref=e70]:
+          - generic [ref=e71]:
+            - heading "Registro de Estudiantes" [level=2] [ref=e72]
+            - paragraph [ref=e73]: Gestione las admisiones y datos personales.
+          - button "Registrar Estudiante" [ref=e74]
+        - generic [ref=e79]:
+          - textbox "Buscar por nombre o documento..." [active] [ref=e85]: Mendoza Castro
+          - table [ref=e87]:
+            - rowgroup [ref=e88]:
+              - row [ref=e89]:
+                - columnheader "Estudiante" [ref=e90]
+                - columnheader "Documento" [ref=e91]
+                - columnheader "Carrera" [ref=e92]
+                - columnheader "Contacto" [ref=e93]
+                - columnheader "Acciones" [ref=e94]
+            - rowgroup [ref=e95]:
+              - row [ref=e965]:
+                - cell "Carlos Andrés Mendoza Castro carlos.mendoza.qa@universidad.edu" [ref=e966]:
+                  - generic [ref=e973]:
+                    - generic [ref=e974]: Carlos Andrés Mendoza Castro
+                    - generic [ref=e975]: carlos.mendoza.qa@universidad.edu
+                - 'cell "DNI: 8877665544" [ref=e976]'
+                - cell "Ingeniería de Sistemas" [ref=e977]
+                - cell "3001234567" [ref=e979]
+                - cell [ref=e980]:
+                  - generic [ref=e981]:
+                    - button [ref=e982]
+                    - button [ref=e985]

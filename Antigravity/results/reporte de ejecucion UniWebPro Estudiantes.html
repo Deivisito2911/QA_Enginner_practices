@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reporte de Ejecución - UniWebPro Estudiantes</title>
+  <style>
+    :root {
+      --bg-color: #0b1120;
+      --card-bg: #1e293b;
+      --card-border: #334155;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --primary: #3b82f6;
+      --primary-light: rgba(59, 130, 246, 0.15);
+      --success: #10b981;
+      --success-bg: rgba(16, 185, 129, 0.15);
+      --danger: #ef4444;
+      --danger-bg: rgba(239, 68, 68, 0.15);
+      --warning: #f59e0b;
+      --warning-bg: rgba(245, 158, 11, 0.15);
+      --radius: 10px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 2.5rem 1rem;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    header {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .badge-report {
+      display: inline-block;
+      background: var(--primary-light);
+      color: #60a5fa;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 0.3rem 0.75rem;
+      border-radius: 9999px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+    }
+
+    h1 {
+      font-size: 1.85rem;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+
+    .suite-info {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Dashboard Métricas */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .metric-card {
+      background: #0f172a;
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      text-align: center;
+    }
+
+    .metric-value {
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 0.25rem;
+    }
+
+    .metric-label {
+      font-size: 0.825rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .val-total { color: #60a5fa; }
+    .val-passed { color: var(--success); }
+    .val-failed { color: var(--danger); }
+    .val-rate { color: #a78bfa; }
+
+    .progress-bar-container {
+      width: 100%;
+      height: 12px;
+      background: #334155;
+      border-radius: 9999px;
+      overflow: hidden;
+      display: flex;
+    }
+
+    .progress-passed {
+      background-color: var(--success);
+      height: 100%;
+      width: 100%;
+    }
+
+    /* Alerta de Hallazgo */
+    .finding-box {
+      background: rgba(245, 158, 11, 0.1);
+      border: 1px solid var(--warning);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      margin-top: 1.5rem;
+      color: #fde68a;
+      font-size: 0.9rem;
+    }
+
+    .finding-title {
+      font-weight: 700;
+      color: #fbbf24;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+
+    .section-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem 0;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    /* Tabla Resumen */
+    .table-container {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      overflow-x: auto;
+      margin-bottom: 2.5rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.9rem;
+    }
+
+    th {
+      background-color: #172033;
+      color: #cbd5e1;
+      font-weight: 600;
+      padding: 0.9rem 1rem;
+      border-bottom: 1px solid var(--card-border);
+      white-space: nowrap;
+    }
+
+    td {
+      padding: 0.9rem 1rem;
+      border-bottom: 1px solid var(--card-border);
+      vertical-align: middle;
+      color: #e2e8f0;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background-color: #243048;
+    }
+
+    .status-pill {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.25rem 0.65rem;
+      border-radius: 9999px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .status-passed { background: var(--success-bg); color: var(--success); border: 1px solid var(--success); }
+    .status-failed { background: var(--danger-bg); color: var(--danger); border: 1px solid var(--danger); }
+
+    /* Tarjetas de Detalle */
+    .execution-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      margin-bottom: 2rem;
+      overflow: hidden;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-header {
+      padding: 1.1rem 1.5rem;
+      background: #172033;
+      border-bottom: 1px solid var(--card-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .card-id-title {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .cp-code {
+      background: #0b1120;
+      border: 1px solid var(--card-border);
+      color: #60a5fa;
+      font-family: monospace;
+      font-size: 0.9rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+      font-weight: 700;
+    }
+
+    .cp-heading {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    .card-body {
+      padding: 1.5rem;
+    }
+
+    .field-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .field-title {
+      font-weight: 600;
+      color: #94a3b8;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .steps-box, .result-comparison {
+      background: #0f172a;
+      border: 1px solid var(--card-border);
+      border-radius: 6px;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .steps-list {
+      margin-left: 1.25rem;
+      color: #cbd5e1;
+    }
+
+    .steps-list li {
+      margin-bottom: 0.45rem;
+    }
+
+    .result-comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .result-comparison {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .res-box {
+      padding: 0.85rem 1rem;
+      border-radius: 6px;
+      font-size: 0.875rem;
+    }
+
+    .res-expected {
+      background: rgba(59, 130, 246, 0.1);
+      border-left: 3px solid var(--primary);
+      color: #bfdbfe;
+    }
+
+    .res-actual {
+      background: rgba(16, 185, 129, 0.1);
+      border-left: 3px solid var(--success);
+      color: #a7f3d0;
+    }
+
+    /* Screenshots */
+    .screenshot-section {
+      margin-top: 1.25rem;
+    }
+
+    .screenshot-frame {
+      background: #0f172a;
+      border: 1px solid var(--card-border);
+      border-radius: 6px;
+      padding: 0.5rem;
+      text-align: center;
+      margin-top: 0.5rem;
+    }
+
+    .screenshot-img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+      display: block;
+      margin: 0 auto;
+      border: 1px solid #334155;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--card-border);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <span class="badge-report">Ejecución Automatizada • Playwright MCP</span>
+      <h1>Reporte de Ejecución: UniWebPro Estudiantes</h1>
+      <div class="suite-info">
+        <strong>Fuente de Casos:</strong> <code>results/caso de prueba UniWebPro Estudiantes.html</code> &nbsp;|&nbsp;
+        <strong>Fecha / Hora:</strong> 2026-09-23 19:40 &nbsp;|&nbsp;
+        <strong>URL Objetivo:</strong> <a href="https://uniwebpro.geekqa.net/estudiantes" target="_blank" style="color: #60a5fa;">https://uniwebpro.geekqa.net/estudiantes</a>
+      </div>
+
+      <!-- Dashboard de Métricas -->
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-value val-total">8</div>
+          <div class="metric-label">Total Casos</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value val-passed">8</div>
+          <div class="metric-label">Exitosos (Pass)</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value val-failed">0</div>
+          <div class="metric-label">Fallidos (Fail)</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value val-rate">100%</div>
+          <div class="metric-label">Tasa de Éxito</div>
+        </div>
+      </div>
+
+      <div class="progress-bar-container">
+        <div class="progress-passed"></div>
+      </div>
+
+      <!-- Hallazgo Relevante durante la Ejecución -->
+      <div class="finding-box">
+        <div class="finding-title">🔍 Hallazgo Crítico / Comportamiento Backend Identificado</div>
+        Al intentar registrar un estudiante con un número de documento preexistente, el backend en Express responde con error <strong>HTTP 500</strong> (<code>{"error":"Duplicate entry '...' for key 'numero_documento'"}</code>) en lugar de retornar una validación amigable (HTTP 409 o 422) con mensaje visible para el usuario en la interfaz. Al utilizar un documento unívoco, el registro procede con éxito.
+      </div>
+    </header>
+
+    <h2 class="section-title">📋 Matriz Resumen de Ejecución</h2>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>ID Caso</th>
+            <th>Criterio</th>
+            <th>Título del Caso</th>
+            <th>Estado</th>
+            <th>Evidencia</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>CP-EST-001</code></td>
+            <td>CA-01</td>
+            <td>Visualización inicial de la sección Registro de Estudiantes y sus componentes</td>
+            <td><span class="status-pill status-passed">Exitoso</span></td>
+            <td><a href="#screenshot-CP-EST-001" style="color: #60a5fa;">Ver Screenshot</a></td>
+          </tr>
+          <tr>
+            <td><code>CP-EST-002</code></td>
+            <td>CA-02</td>
+            <td>Apertura del formulario de registro y verificación de campos obligatorios mínimos</td>
+            <td><span class="status-pill status-passed">Exitoso</span></td>
+            <td><a href="#screenshot-CP-EST-002" style="color: #60a5fa;">Ver Screenshot</a></td>
+          </tr>
+          <tr>
+            <td><code>CP-EST-003</code></td>
+            <td>CA-02, CA-03</td>
+            <td>Registro exitoso de estudiante y visualización inmediata en la lista</td>
+            <td><span class="status-pill status-passed">Exitoso</span></td>
+            <td><a href="#screenshot-CP-EST-003" style="color: #60a5fa;">Ver Screenshot</a></td>
+          </tr>
+          <tr>
+            <td><code>CP-EST-004</code></td>
+            <td>CA-03</td>
+            <td>Búsqueda del estudiante registrado por Nombre ("Mendoza Castro")</td>
+            <td><span class="status-pill status-passed">Exitoso</span></td>
+            <td><a href="#screenshot-CP-EST-004" style="color: #60a5fa;">Ver Screenshot</a></td>
+          </tr>
+          <tr>
+            <td><code>CP-EST-005</code></td>
+            <td>CA-03</td>
+            <td>Búsqueda del estudiante registrado por Documento ("8877665544")</td>
+            <td><span class="status-pill status-passed">Exitoso</span></td>
+            <td><a href="#screenshot-CP-EST-005" style="color: #60a5fa;">Ver Screenshot</a></td>
+          </tr>
+          <tr>
+            <td><code>CP-EST-006</code></td>
+            <td>CA-02, CA-03</td>
+            <td>Intento de guardar registro con campos en blanco</td>
+            <td><span class="status-pill status-passed">Exitoso</span></td>
+            <td><a href="#screenshot-CP-EST-006" style="color: #60a5fa;">Ver Screenshot</a></td>
+          </tr>
+          <tr>
+            <td><code>CP-EST-007</code></td>
+            <td>CA-02</td>
+            <td>Ingreso de Email con formato no estándar en el formulario</td>
+            <td><span class="status-pill status-passed">Exitoso</span></td>
+            <td><a href="#screenshot-CP-EST-007" style="color: #60a5fa;">Ver Screenshot</a></td>
+          </tr>
+          <tr>
+            <td><code>CP-EST-008</code></td>
+            <td>CA-03</td>
+            <td>Búsqueda con término no coincidente (sin resultados)</td>
+            <td><span class="status-pill status-passed">Exitoso</span></td>
+            <td><a href="#screenshot-CP-EST-008" style="color: #60a5fa;">Ver Screenshot</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="section-title">📸 Detalle de Ejecución y Evidencias Visuales</h2>
+
+    <!-- CP-EST-001 -->
+    <div class="execution-card" id="detail-CP-EST-001">
+      <div class="card-header">
+        <div class="card-id-title">
+          <span class="cp-code">CP-EST-001</span>
+          <span class="cp-heading">Visualización inicial de la sección Registro de Estudiantes y sus componentes</span>
+        </div>
+        <span class="status-pill status-passed">Exitoso</span>
+      </div>
+      <div class="card-body">
+        <div class="field-group">
+          <div class="field-title">Pasos Ejecutados</div>
+          <div class="steps-box">
+            <ol class="steps-list">
+              <li>Navegar a <code>https://uniwebpro.geekqa.net/estudiantes</code>.</li>
+              <li>Validar visibilidad del encabezado "Registro de Estudiantes".</li>
+              <li>Validar presencia del botón "Registrar Estudiante".</li>
+              <li>Validar campo de búsqueda "Buscar por nombre o documento...".</li>
+              <li>Validar presencia de la tabla de resultados con columnas requeridas.</li>
+            </ol>
+          </div>
+        </div>
+        <div class="field-group">
+          <div class="field-title">Comparación de Resultados</div>
+          <div class="result-comparison">
+            <div class="res-box res-expected">
+              <strong>Resultado Esperado:</strong><br>
+              La interfaz muestra la sección "Registro de Estudiantes", botón "Registrar Estudiante", buscador y tabla de resultados.
+            </div>
+            <div class="res-box res-actual">
+              <strong>Resultado Obtenido:</strong><br>
+              Todos los elementos cargaron y se verificaron visual y estructuralmente en el DOM de la aplicación.
+            </div>
+          </div>
+        </div>
+        <div class="screenshot-section" id="screenshot-CP-EST-001">
+          <div class="field-title">Evidencia Visual (Screenshot)</div>
+          <div class="screenshot-frame">
+            <img class="screenshot-img" src="./screenshots/CP-EST-001.png" alt="Captura CP-EST-001">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CP-EST-002 -->
+    <div class="execution-card" id="detail-CP-EST-002">
+      <div class="card-header">
+        <div class="card-id-title">
+          <span class="cp-code">CP-EST-002</span>
+          <span class="cp-heading">Apertura del formulario de registro y verificación de campos obligatorios mínimos</span>
+        </div>
+        <span class="status-pill status-passed">Exitoso</span>
+      </div>
+      <div class="card-body">
+        <div class="field-group">
+          <div class="field-title">Pasos Ejecutados</div>
+          <div class="steps-box">
+            <ol class="steps-list">
+              <li>Hacer clic en el botón "Registrar Estudiante".</li>
+              <li>Verificar la apertura del modal con título "Registro de Estudiante".</li>
+              <li>Comprobar los campos: Nombres, Apellidos, Tipo/Número de Documento, Carrera, Teléfono y Correo Electrónico.</li>
+            </ol>
+          </div>
+        </div>
+        <div class="field-group">
+          <div class="field-title">Comparación de Resultados</div>
+          <div class="result-comparison">
+            <div class="res-box res-expected">
+              <strong>Resultado Esperado:</strong><br>
+              Formulario desplegado permitiendo ingresar al menos: Nombre, Documento, Carrera, Contacto y Email.
+            </div>
+            <div class="res-box res-actual">
+              <strong>Resultado Obtenido:</strong><br>
+              El formulario modal se abrió correctamente mostrando los 5 campos requeridos más campos complementarios.
+            </div>
+          </div>
+        </div>
+        <div class="screenshot-section" id="screenshot-CP-EST-002">
+          <div class="field-title">Evidencia Visual (Screenshot)</div>
+          <div class="screenshot-frame">
+            <img class="screenshot-img" src="./screenshots/CP-EST-002.png" alt="Captura CP-EST-002">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CP-EST-003 -->
+    <div class="execution-card" id="detail-CP-EST-003">
+      <div class="card-header">
+        <div class="card-id-title">
+          <span class="cp-code">CP-EST-003</span>
+          <span class="cp-heading">Registro exitoso de estudiante y visualización inmediata en la lista</span>
+        </div>
+        <span class="status-pill status-passed">Exitoso</span>
+      </div>
+      <div class="card-body">
+        <div class="field-group">
+          <div class="field-title">Pasos Ejecutados</div>
+          <div class="steps-box">
+            <ol class="steps-list">
+              <li>Ingresar "Carlos Andrés" en Nombres y "Mendoza Castro" en Apellidos.</li>
+              <li>Ingresar documento unívoco "8877665544".</li>
+              <li>Ingresar correo "carlos.mendoza.qa@universidad.edu" y teléfono "3001234567".</li>
+              <li>Seleccionar carrera "Ingeniería de Sistemas".</li>
+              <li>Hacer clic en "Registrar Estudiante".</li>
+              <li>Verificar la inserción de la fila en la tabla de estudiantes.</li>
+            </ol>
+          </div>
+        </div>
+        <div class="field-group">
+          <div class="field-title">Comparación de Resultados</div>
+          <div class="result-comparison">
+            <div class="res-box res-expected">
+              <strong>Resultado Esperado:</strong><br>
+              El estudiante registrado aparece en la lista de resultados con sus datos personales.
+            </div>
+            <div class="res-box res-actual">
+              <strong>Resultado Obtenido:</strong><br>
+              El estudiante "Carlos Andrés Mendoza Castro" con DNI 8877665544 se renderizó exitosamente en la tabla.
+            </div>
+          </div>
+        </div>
+        <div class="screenshot-section" id="screenshot-CP-EST-003">
+          <div class="field-title">Evidencia Visual (Screenshot)</div>
+          <div class="screenshot-frame">
+            <img class="screenshot-img" src="./screenshots/CP-EST-003.png" alt="Captura CP-EST-003">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CP-EST-004 -->
+    <div class="execution-card" id="detail-CP-EST-004">
+      <div class="card-header">
+        <div class="card-id-title">
+          <span class="cp-code">CP-EST-004</span>
+          <span class="cp-heading">Búsqueda del estudiante registrado por Nombre ("Mendoza Castro")</span>
+        </div>
+        <span class="status-pill status-passed">Exitoso</span>
+      </div>
+      <div class="card-body">
+        <div class="field-group">
+          <div class="field-title">Pasos Ejecutados</div>
+          <div class="steps-box">
+            <ol class="steps-list">
+              <li>Focalizar el campo de búsqueda "Buscar por nombre o documento...".</li>
+              <li>Ingresar el texto "Mendoza Castro".</li>
+              <li>Verificar el filtrado de la tabla en tiempo real.</li>
+            </ol>
+          </div>
+        </div>
+        <div class="field-group">
+          <div class="field-title">Comparación de Resultados</div>
+          <div class="result-comparison">
+            <div class="res-box res-expected">
+              <strong>Resultado Esperado:</strong><br>
+              El estudiante registrado puede encontrarse usando el buscador por nombre.
+            </div>
+            <div class="res-box res-actual">
+              <strong>Resultado Obtenido:</strong><br>
+              La tabla filtró en tiempo real y exhibió únicamente al estudiante coincidente.
+            </div>
+          </div>
+        </div>
+        <div class="screenshot-section" id="screenshot-CP-EST-004">
+          <div class="field-title">Evidencia Visual (Screenshot)</div>
+          <div class="screenshot-frame">
+            <img class="screenshot-img" src="./screenshots/CP-EST-004.png" alt="Captura CP-EST-004">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CP-EST-005 -->
+    <div class="execution-card" id="detail-CP-EST-005">
+      <div class="card-header">
+        <div class="card-id-title">
+          <span class="cp-code">CP-EST-005</span>
+          <span class="cp-heading">Búsqueda del estudiante registrado por Documento ("8877665544")</span>
+        </div>
+        <span class="status-pill status-passed">Exitoso</span>
+      </div>
+      <div class="card-body">
+        <div class="field-group">
+          <div class="field-title">Pasos Ejecutados</div>
+          <div class="steps-box">
+            <ol class="steps-list">
+              <li>Ingresar el número de documento "8877665544" en el campo de búsqueda.</li>
+              <li>Observar los resultados filtrados en la tabla.</li>
+            </ol>
+          </div>
+        </div>
+        <div class="field-group">
+          <div class="field-title">Comparación de Resultados</div>
+          <div class="result-comparison">
+            <div class="res-box res-expected">
+              <strong>Resultado Esperado:</strong><br>
+              El estudiante registrado puede encontrarse usando el buscador por documento.
+            </div>
+            <div class="res-box res-actual">
+              <strong>Resultado Obtenido:</strong><br>
+              Filtro exacto por documento, manteniendo la fila del estudiante registrado.
+            </div>
+          </div>
+        </div>
+        <div class="screenshot-section" id="screenshot-CP-EST-005">
+          <div class="field-title">Evidencia Visual (Screenshot)</div>
+          <div class="screenshot-frame">
+            <img class="screenshot-img" src="./screenshots/CP-EST-005.png" alt="Captura CP-EST-005">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CP-EST-006 -->
+    <div class="execution-card" id="detail-CP-EST-006">
+      <div class="card-header">
+        <div class="card-id-title">
+          <span class="cp-code">CP-EST-006</span>
+          <span class="cp-heading">Intento de guardar registro con campos en blanco</span>
+        </div>
+        <span class="status-pill status-passed">Exitoso</span>
+      </div>
+      <div class="card-body">
+        <div class="field-group">
+          <div class="field-title">Pasos Ejecutados</div>
+          <div class="steps-box">
+            <ol class="steps-list">
+              <li>Abrir el formulario de registro en estado limpio.</li>
+              <li>Pulsar directamente en "Registrar Estudiante" sin ingresar información.</li>
+              <li>Verificar que no se agregue una fila vacía y el modal permanezca abierto.</li>
+            </ol>
+          </div>
+        </div>
+        <div class="field-group">
+          <div class="field-title">Comparación de Resultados</div>
+          <div class="result-comparison">
+            <div class="res-box res-expected">
+              <strong>Resultado Esperado:</strong><br>
+              El sistema impide el guardado y no agrega registros vacíos.
+            </div>
+            <div class="res-box res-actual">
+              <strong>Resultado Obtenido:</strong><br>
+              Las validaciones de formulario bloquearon la sumisión con campos vacíos.
+            </div>
+          </div>
+        </div>
+        <div class="screenshot-section" id="screenshot-CP-EST-006">
+          <div class="field-title">Evidencia Visual (Screenshot)</div>
+          <div class="screenshot-frame">
+            <img class="screenshot-img" src="./screenshots/CP-EST-006.png" alt="Captura CP-EST-006">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CP-EST-007 -->
+    <div class="execution-card" id="detail-CP-EST-007">
+      <div class="card-header">
+        <div class="card-id-title">
+          <span class="cp-code">CP-EST-007</span>
+          <span class="cp-heading">Ingreso de Email con formato no estándar en el formulario</span>
+        </div>
+        <span class="status-pill status-passed">Exitoso</span>
+      </div>
+      <div class="card-body">
+        <div class="field-group">
+          <div class="field-title">Pasos Ejecutados</div>
+          <div class="steps-box">
+            <ol class="steps-list">
+              <li>Llenar campos obligatorios y en Email ingresar "correo_sin_formato_valido".</li>
+              <li>Hacer clic en "Registrar Estudiante".</li>
+              <li>Verificar la activación de la validación del navegador para correo electrónico.</li>
+            </ol>
+          </div>
+        </div>
+        <div class="field-group">
+          <div class="field-title">Comparación de Resultados</div>
+          <div class="result-comparison">
+            <div class="res-box res-expected">
+              <strong>Resultado Esperado:</strong><br>
+              El sistema impide registrar el estudiante ante formato de correo inválido.
+            </div>
+            <div class="res-box res-actual">
+              <strong>Resultado Obtenido:</strong><br>
+              La validación HTML5 de tipo email bloqueó el guardado hasta corregir el formato.
+            </div>
+          </div>
+        </div>
+        <div class="screenshot-section" id="screenshot-CP-EST-007">
+          <div class="field-title">Evidencia Visual (Screenshot)</div>
+          <div class="screenshot-frame">
+            <img class="screenshot-img" src="./screenshots/CP-EST-007.png" alt="Captura CP-EST-007">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CP-EST-008 -->
+    <div class="execution-card" id="detail-CP-EST-008">
+      <div class="card-header">
+        <div class="card-id-title">
+          <span class="cp-code">CP-EST-008</span>
+          <span class="cp-heading">Búsqueda con término no coincidente (sin resultados)</span>
+        </div>
+        <span class="status-pill status-passed">Exitoso</span>
+      </div>
+      <div class="card-body">
+        <div class="field-group">
+          <div class="field-title">Pasos Ejecutados</div>
+          <div class="steps-box">
+            <ol class="steps-list">
+              <li>Ingresar el texto inexistente "XYZ999Inexistente#" en el buscador.</li>
+              <li>Observar el estado resultante de la tabla.</li>
+            </ol>
+          </div>
+        </div>
+        <div class="field-group">
+          <div class="field-title">Comparación de Resultados</div>
+          <div class="result-comparison">
+            <div class="res-box res-expected">
+              <strong>Resultado Esperado:</strong><br>
+              La tabla no lista registros erróneos y muestra mensaje informativo de no encontrado.
+            </div>
+            <div class="res-box res-actual">
+              <strong>Resultado Obtenido:</strong><br>
+              Se desplegó el mensaje "No se encontraron estudiantes para la búsqueda especificada."
+            </div>
+          </div>
+        </div>
+        <div class="screenshot-section" id="screenshot-CP-EST-008">
+          <div class="field-title">Evidencia Visual (Screenshot)</div>
+          <div class="screenshot-frame">
+            <img class="screenshot-img" src="./screenshots/CP-EST-008.png" alt="Captura CP-EST-008">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      Reporte generado automáticamente por la skill <strong>ejecutor-casos-prueba</strong> con Playwright MCP • Antigravity
+    </footer>
+  </div>
+
+</body>
+</html>
