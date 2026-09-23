@@ -1,0 +1,274 @@
+- generic [ref=e1]:
+  - generic [ref=e3932]:
+    - banner [ref=e3933]:
+      - generic [ref=e3935]:
+        - heading "EliteFootball" [level=1] [ref=e3936]
+        - paragraph [ref=e3937]: Champions & Libertadores World Explorer
+        - generic [ref=e3938]: 60 Gigantes • 304 Votos Totales
+    - generic [ref=e3940]:
+      - generic [ref=e3941]: "Actividad Global:"
+      - generic [ref=e3945]:
+        - generic [ref=e3946]:
+          - generic [ref=e3947]: Agente Antigravity
+          - generic [ref=e3948]: desde
+          - generic [ref=e3949]: España
+          - generic [ref=e3950]: apoyó a
+          - generic [ref=e3951]: FC Barcelona
+        - generic [ref=e3953]:
+          - generic [ref=e3954]: QA Validacion 1789934168703
+          - generic [ref=e3955]: desde
+          - generic [ref=e3956]: España
+          - generic [ref=e3957]: apoyó a
+          - generic [ref=e3958]: Real Madrid CF
+        - generic [ref=e3960]:
+          - generic [ref=e3961]: QA Boundary Unicode 1789934160736
+          - generic [ref=e3962]: desde
+          - generic [ref=e3963]: España 🇪🇸
+          - generic [ref=e3964]: apoyó a
+          - generic [ref=e3965]: Real Madrid CF
+        - generic [ref=e3967]:
+          - generic [ref=e3968]: QA Boundary Unicode 1789934117549
+          - generic [ref=e3969]: desde
+          - generic [ref=e3970]: España 🇪🇸
+          - generic [ref=e3971]: apoyó a
+          - generic [ref=e3972]: Real Madrid CF
+        - generic [ref=e3974]:
+          - generic [ref=e3975]: QA Validacion 1789934108073
+          - generic [ref=e3976]: desde
+          - generic [ref=e3977]: España
+          - generic [ref=e3978]: apoyó a
+          - generic [ref=e3979]: Real Madrid CF
+        - generic [ref=e3981]:
+          - generic [ref=e3982]: QA Boundary Unicode 1789933818091
+          - generic [ref=e3983]: desde
+          - generic [ref=e3984]: España 🇪🇸
+          - generic [ref=e3985]: apoyó a
+          - generic [ref=e3986]: Real Madrid CF
+        - generic [ref=e3988]:
+          - generic [ref=e3989]: QA Boundary Unicode 1789933802383
+          - generic [ref=e3990]: desde
+          - generic [ref=e3991]: España 🇪🇸
+          - generic [ref=e3992]: apoyó a
+          - generic [ref=e3993]: Real Madrid CF
+        - generic [ref=e3995]:
+          - generic [ref=e3996]: QA Boundary Unicode 1789933772329
+          - generic [ref=e3997]: desde
+          - generic [ref=e3998]: España 🇪🇸
+          - generic [ref=e3999]: apoyó a
+          - generic [ref=e4000]: Real Madrid CF
+        - generic [ref=e4002]:
+          - generic [ref=e4003]: QA Boundary Unicode 1789933749657
+          - generic [ref=e4004]: desde
+          - generic [ref=e4005]: España 🇪🇸
+          - generic [ref=e4006]: apoyó a
+          - generic [ref=e4007]: Real Madrid CF
+        - generic [ref=e4009]:
+          - generic [ref=e4010]: QA Validacion 1789933308284
+          - generic [ref=e4011]: desde
+          - generic [ref=e4012]: España
+          - generic [ref=e4013]: apoyó a
+          - generic [ref=e4014]: Real Madrid CF
+    - main [ref=e4016]:
+      - generic [ref=e4017]:
+        - generic [ref=e4018]: 
+        - heading " Favoritos de la Comunidad (Top Votos)" [level=2] [ref=e4020]:
+          - generic [ref=e4021]: 
+          - text: Favoritos de la Comunidad (Top Votos)
+        - application [ref=e4026]:
+          - generic [ref=e4051]:
+            - generic [ref=e4052]:
+              - generic [ref=e4053]: Real Madrid CF
+              - generic [ref=e4055]: FC Barcelona
+              - generic [ref=e4057]: Boca Juniors
+              - generic [ref=e4059]: Liverpool FC
+              - generic [ref=e4061]: AC Milan
+              - generic [ref=e4063]: Independiente
+              - generic [ref=e4065]: Palmeiras
+              - generic [ref=e4067]: Atlético Nacional
+              - generic [ref=e4069]: Bayern Munich
+              - generic [ref=e4071]: River Plate
+            - generic [ref=e4073]:
+              - generic [ref=e4074]: "0"
+              - generic [ref=e4076]: "55"
+              - generic [ref=e4078]: "110"
+              - generic [ref=e4080]: "165"
+              - generic [ref=e4082]: "220"
+      - generic [ref=e4084]:
+        - generic [ref=e4085]:
+          - generic [ref=e4086]: 
+          - textbox "Busca un club, jugador o país..." [active] [ref=e4087]
+        - generic [ref=e4088]:
+          - combobox [ref=e4089] [cursor=pointer]:
+            - option "🏆 Todas Ligas" [selected]
+            - option "UCL Europa"
+            - option "Lib. América"
+          - combobox [ref=e4090] [cursor=pointer]:
+            - option "🌍 Todos Países"
+            - option "Argentina" [selected]
+            - option "Brazil"
+            - option "Chile"
+            - option "Colombia"
+            - option "Ecuador"
+            - option "England"
+            - option "France"
+            - option "Germany"
+            - option "Italy"
+            - option "Netherlands"
+            - option "Paraguay"
+            - option "Peru"
+            - option "Portugal"
+            - option "Scotland"
+            - option "Spain"
+            - option "Uruguay"
+      - generic [ref=e4091]:
+        - generic [ref=e4794] [cursor=pointer]:
+          - generic [ref=e4795]:
+            - generic [ref=e4796]:
+              - img "Independiente" [ref=e4797]
+              - generic [ref=e4798]: LIB
+            - generic [ref=e4799]:
+              - generic [ref=e4800]:
+                - generic [ref=e4801]: 
+                - text: "7"
+              - paragraph [ref=e4802]: Títulos
+          - heading "Independiente" [level=3] [ref=e4803]
+          - generic [ref=e4804]:
+            - img "Argentina" [ref=e4805]
+            - generic [ref=e4806]: Argentina
+          - generic [ref=e4807]:
+            - generic [ref=e4808]:
+              - paragraph [ref=e4809]: Ediciones
+              - paragraph [ref=e4810]: "20"
+            - generic [ref=e4811]:
+              - paragraph [ref=e4812]: Votos
+              - paragraph [ref=e4813]: "4"
+        - generic [ref=e4842] [cursor=pointer]:
+          - generic [ref=e4843]:
+            - generic [ref=e4844]:
+              - img "Boca Juniors" [ref=e4845]
+              - generic [ref=e4846]: LIB
+            - generic [ref=e4847]:
+              - generic [ref=e4848]:
+                - generic [ref=e4849]: 
+                - text: "6"
+              - paragraph [ref=e4850]: Títulos
+          - heading "Boca Juniors" [level=3] [ref=e4851]
+          - generic [ref=e4852]:
+            - img "Argentina" [ref=e4853]
+            - generic [ref=e4854]: Argentina
+          - generic [ref=e4855]:
+            - generic [ref=e4856]:
+              - paragraph [ref=e4857]: Ediciones
+              - paragraph [ref=e4858]: "32"
+            - generic [ref=e4859]:
+              - paragraph [ref=e4860]: Votos
+              - paragraph [ref=e4861]: "23"
+        - generic [ref=e4914] [cursor=pointer]:
+          - generic [ref=e4915]:
+            - generic [ref=e4916]:
+              - img "River Plate" [ref=e4917]
+              - generic [ref=e4918]: LIB
+            - generic [ref=e4919]:
+              - generic [ref=e4920]:
+                - generic [ref=e4921]: 
+                - text: "4"
+              - paragraph [ref=e4922]: Títulos
+          - heading "River Plate" [level=3] [ref=e4923]
+          - generic [ref=e4924]:
+            - img "Argentina" [ref=e4925]
+            - generic [ref=e4926]: Argentina
+          - generic [ref=e4927]:
+            - generic [ref=e4928]:
+              - paragraph [ref=e4929]: Ediciones
+              - paragraph [ref=e4930]: "40"
+            - generic [ref=e4931]:
+              - paragraph [ref=e4932]: Votos
+              - paragraph [ref=e4933]: "3"
+        - generic [ref=e4962] [cursor=pointer]:
+          - generic [ref=e4963]:
+            - generic [ref=e4964]:
+              - img "Estudiantes LP" [ref=e4965]
+              - generic [ref=e4966]: LIB
+            - generic [ref=e4967]:
+              - generic [ref=e4968]:
+                - generic [ref=e4969]: 
+                - text: "4"
+              - paragraph [ref=e4970]: Títulos
+          - heading "Estudiantes LP" [level=3] [ref=e4971]
+          - generic [ref=e4972]:
+            - img "Argentina" [ref=e4973]
+            - generic [ref=e4974]: Argentina
+          - generic [ref=e4975]:
+            - generic [ref=e4976]:
+              - paragraph [ref=e4977]: Ediciones
+              - paragraph [ref=e4978]: "17"
+            - generic [ref=e4979]:
+              - paragraph [ref=e4980]: Votos
+              - paragraph [ref=e4981]: "0"
+        - generic [ref=e5328] [cursor=pointer]:
+          - generic [ref=e5329]:
+            - generic [ref=e5330]:
+              - img "San Lorenzo" [ref=e5331]
+              - generic [ref=e5332]: LIB
+            - generic [ref=e5333]:
+              - generic [ref=e5334]:
+                - generic [ref=e5335]: 
+                - text: "1"
+              - paragraph [ref=e5336]: Títulos
+          - heading "San Lorenzo" [level=3] [ref=e5337]
+          - generic [ref=e5338]:
+            - img "Argentina" [ref=e5339]
+            - generic [ref=e5340]: Argentina
+          - generic [ref=e5341]:
+            - generic [ref=e5342]:
+              - paragraph [ref=e5343]: Ediciones
+              - paragraph [ref=e5344]: "18"
+            - generic [ref=e5345]:
+              - paragraph [ref=e5346]: Votos
+              - paragraph [ref=e5347]: "1"
+        - generic [ref=e5352] [cursor=pointer]:
+          - generic [ref=e5353]:
+            - generic [ref=e5354]:
+              - img "Vélez Sarsfield" [ref=e5355]
+              - generic [ref=e5356]: LIB
+            - generic [ref=e5357]:
+              - generic [ref=e5358]:
+                - generic [ref=e5359]: 
+                - text: "1"
+              - paragraph [ref=e5360]: Títulos
+          - heading "Vélez Sarsfield" [level=3] [ref=e5361]
+          - generic [ref=e5362]:
+            - img "Argentina" [ref=e5363]
+            - generic [ref=e5364]: Argentina
+          - generic [ref=e5365]:
+            - generic [ref=e5366]:
+              - paragraph [ref=e5367]: Ediciones
+              - paragraph [ref=e5368]: "16"
+            - generic [ref=e5369]:
+              - paragraph [ref=e5370]: Votos
+              - paragraph [ref=e5371]: "0"
+        - generic [ref=e5376] [cursor=pointer]:
+          - generic [ref=e5377]:
+            - generic [ref=e5378]:
+              - img "Racing Club" [ref=e5379]
+              - generic [ref=e5380]: LIB
+            - generic [ref=e5381]:
+              - generic [ref=e5382]:
+                - generic [ref=e5383]: 
+                - text: "1"
+              - paragraph [ref=e5384]: Títulos
+          - heading "Racing Club" [level=3] [ref=e5385]
+          - generic [ref=e5386]:
+            - img "Argentina" [ref=e5387]
+            - generic [ref=e5388]: Argentina
+          - generic [ref=e5389]:
+            - generic [ref=e5390]:
+              - paragraph [ref=e5391]: Ediciones
+              - paragraph [ref=e5392]: "12"
+            - generic [ref=e5393]:
+              - paragraph [ref=e5394]: Votos
+              - paragraph [ref=e5395]: "0"
+    - contentinfo [ref=e4677]:
+      - generic [ref=e4678]: Champions & Libertadores World Experience
+      - paragraph [ref=e4679]: Elite Football Explorer • Comunidad Mundial • 2024
+  - generic [aria-hidden] [ref=e751]: "0"

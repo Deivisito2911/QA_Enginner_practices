@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reporte E2E - Try Out de Robótica</title>
+  <style>
+    :root { color-scheme: light; font-family: Arial, sans-serif; }
+    body { margin: 0; background: #f4f7fb; color: #172033; }
+    header { background: #173b70; color: white; padding: 28px 7%; }
+    main { max-width: 1180px; margin: 24px auto; padding: 0 20px 48px; }
+    section { background: white; border-radius: 10px; padding: 20px 24px; margin: 18px 0; box-shadow: 0 2px 9px #0001; }
+    h1, h2, h3 { margin-top: 0; }
+    table { border-collapse: collapse; width: 100%; margin: 12px 0; }
+    th, td { border: 1px solid #d7deea; padding: 8px; text-align: left; vertical-align: top; }
+    th { background: #eaf0fa; }
+    .pass { color: #087443; font-weight: 700; }
+    .info { color: #8a5a00; font-weight: 700; }
+    code { background: #eef2f7; padding: 2px 5px; border-radius: 4px; }
+    .note { border-left: 4px solid #d39500; padding: 10px 14px; background: #fff8df; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Reporte de pruebas E2E - Try Out de Robótica</h1>
+    <p>Aplicación: <a href="https://v0-robotics-try-out-quiz.vercel.app/" style="color:#fff">v0-robotics-try-out-quiz.vercel.app</a></p>
+    <p>Fecha de ejecución: 22/09/2026 · Herramienta: Playwright MCP</p>
+  </header>
+  <main>
+    <section>
+      <h2>Resumen ejecutivo</h2>
+      <table>
+        <tr><th>Área</th><th>Resultado</th></tr>
+        <tr><td>Validación negativa del formulario inicial</td><td class="pass">PASS</td></tr>
+        <tr><td>Inicio con datos válidos</td><td class="pass">PASS</td></tr>
+        <tr><td>Selección y navegación por 10 preguntas</td><td class="pass">PASS</td></tr>
+        <tr><td>Envío y cambio a pantalla de completado</td><td class="pass">PASS</td></tr>
+        <tr><td>Checkboxes/radios personalizados</td><td>Radios nativos observados; no se requirió <code>force</code>.</td></tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>Casos negativos ejecutados</h2>
+      <table>
+        <tr><th>ID</th><th>Datos</th><th>Resultado esperado</th><th>Resultado observado</th></tr>
+        <tr><td>NEG-001</td><td>Formulario vacío</td><td>No iniciar el cuestionario y solicitar Nombre</td><td class="pass">PASS: el foco avanzó a Nombre.</td></tr>
+        <tr><td>NEG-002</td><td>Solo Nombre: Ana</td><td>No iniciar y solicitar Apellido</td><td class="pass">PASS: el foco avanzó a Apellido.</td></tr>
+        <tr><td>NEG-003</td><td>Nombre y Apellido sin Grado</td><td>No iniciar y solicitar Grado</td><td class="pass">PASS: Grado permaneció en la opción inicial.</td></tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>Selectores usados</h2>
+      <ul>
+        <li><code>getByRole('textbox', { name: 'Nombre' })</code></li>
+        <li><code>getByRole('textbox', { name: 'Apellido' })</code></li>
+        <li><code>getByRole('combobox', { name: 'Grado' })</code></li>
+        <li><code>getByRole('button', { name: 'Comenzar Cuestionario' })</code></li>
+        <li><code>getByRole('radio', { name: /texto de la opción/ })</code></li>
+        <li><code>getByRole('button', { name: 'Siguiente Pregunta' })</code></li>
+        <li><code>getByRole('button', { name: 'Finalizar Cuestionario' })</code></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Recorrido positivo ejecutado</h2>
+      <p>Se utilizaron los datos <strong>Ana Garcia</strong> y <strong>6to Grado</strong>. Se seleccionó una opción en cada pregunta, se avanzó de la pregunta 1 a la 10 y se confirmó el diálogo nativo:</p>
+      <p><em>¿Seguro que deseas enviar el formulario con estas respuestas? Una vez enviado no podrás modificar tus respuestas.</em></p>
+      <p class="pass">Resultado: PASS. La pantalla cambió a “¡Cuestionario Completado!” y mostró “Ana Garcia - 6to Grado”.</p>
+      <p>También se verificó el botón “Descargar Comprobante” y el botón “Volver al Inicio”.</p>
+    </section>
+
+    <section>
+      <h2>Mapa de preguntas y opciones</h2>
+      <table>
+        <tr><th>Pregunta</th><th>Opciones observadas</th></tr>
+        <tr><td>1. Bloque para iniciar al presionar espacio</td><td>a) Al hacer clic en este objeto · b) Al presionar la tecla espacio · c) Al recibir [mensaje1] · d) Al comenzar como clon</td></tr>
+        <tr><td>2. Sprite en programación visual</td><td>a) Bloque de animaciones · b) Personaje programable · c) Personaje que solo podemos pintar · d) Todas las anteriores</td></tr>
+        <tr><td>3. Repetir una secuencia 5 veces</td><td>a) por siempre · b) repetir 5 · c) si...entonces · d) esperar 5 veces</td></tr>
+        <tr><td>4. Hacer que un personaje diga algo</td><td>a) tocar sonido · b) pensar... por 2 segundos · c) decir ¡Hola! por 2 segundos · d) cambiar disfraz</td></tr>
+        <tr><td>5. Detectar un toque</td><td>a) si...entonces · b) esperar hasta que... · c) tocando puntero del ratón? · d) por siempre</td></tr>
+        <tr><td>6. Detectar objetos del entorno</td><td>a) Sensor de color · b) Sensor ultrasónico · c) Sensor pulsador · d) Todas las anteriores</td></tr>
+        <tr><td>7. Detenerse por un momento</td><td>a) esperar hasta que... · b) esperar 1 segundos · c) detener todos · d) ir a x: 0 y: 0</td></tr>
+        <tr><td>8. Elementos necesarios para funcionar</td><td>a) Tarjeta, baterías, motores · b) Programación, sensores, actuadores · c) Ruedas, estructura, cables · d) Todas las anteriores</td></tr>
+        <tr><td>9. Ejecutar solo si se cumple una condición</td><td>a) por siempre · b) repetir [10] · c) si...entonces · d) detener este script</td></tr>
+        <tr><td>10. Definición de robótica</td><td>a) Solo programación · b) Integración de ramas de ingeniería · c) Solo herramientas y máquinas · d) Robots con apariencia humana</td></tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>Cobertura combinatoria</h2>
+      <p>Hay 10 preguntas y 4 opciones por pregunta. El producto cartesiano completo contiene <strong>4<sup>10</sup> = 1.048.576</strong> recorridos distintos.</p>
+      <p class="note"><strong>Importante:</strong> el recorrido positivo y el inventario de las 40 opciones fueron verificados en la interfaz. No se reporta como ejecutada la totalidad del millón de combinaciones porque requeriría automatizar y verificar 1.048.576 envíos independientes; el reporte distingue explícitamente la cobertura observada de la cobertura combinatoria pendiente.</p>
+      <table>
+        <tr><th>Cobertura</th><th>Estado</th></tr>
+        <tr><td>Todos los controles/opciones identificados</td><td class="pass">PASS · 10/10 preguntas, 40/40 opciones catalogadas</td></tr>
+        <tr><td>Una selección por pregunta y envío exitoso</td><td class="pass">PASS · 1 recorrido completo</td></tr>
+        <tr><td>Todos los recorridos cartesianos</td><td class="info">PENDIENTE · 1.048.576 recorridos</td></tr>
+      </table>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{
+  "name": "wavelink-exploration-tests",
+  "version": "1.0.0",
+  "description": "Pruebas de exploración para WaveLink - Conexión del Futuro",
+  "scripts": {
+    "test": "playwright test",
+    "test:chrome": "playwright test --project=chromium",
+    "test:firefox": "playwright test --project=firefox",
+    "test:webkit": "playwright test --project=webkit",
+    "test:html": "playwright test --reporter=html",
+    "test:debug": "playwright test --debug",
+    "report": "npx playwright show-report reports/html-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

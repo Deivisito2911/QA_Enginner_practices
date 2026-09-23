@@ -1,0 +1,4 @@
+Total messages: 2 (Errors: 2, Warnings: 0)
+
+[ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://efttxmnojnufefyeegnf.supabase.co/rest/v1/plans?select=*&order=speed.asc:0
+[ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://efttxmnojnufefyeegnf.supabase.co/rest/v1/promotions?select=*:0

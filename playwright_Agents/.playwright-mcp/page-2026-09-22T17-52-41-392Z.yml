@@ -1,0 +1,637 @@
+- generic [ref=e1]:
+  - generic [ref=e3932]:
+    - banner [ref=e3933]:
+      - generic [ref=e3935]:
+        - heading "EliteFootball" [level=1] [ref=e3936]
+        - paragraph [ref=e3937]: Champions & Libertadores World Explorer
+        - generic [ref=e3938]: 60 Gigantes • 304 Votos Totales
+    - generic [ref=e3940]:
+      - generic [ref=e3941]: "Actividad Global:"
+      - generic [ref=e3945]:
+        - generic [ref=e3946]:
+          - generic [ref=e3947]: Agente Antigravity
+          - generic [ref=e3948]: desde
+          - generic [ref=e3949]: España
+          - generic [ref=e3950]: apoyó a
+          - generic [ref=e3951]: FC Barcelona
+        - generic [ref=e3953]:
+          - generic [ref=e3954]: QA Validacion 1789934168703
+          - generic [ref=e3955]: desde
+          - generic [ref=e3956]: España
+          - generic [ref=e3957]: apoyó a
+          - generic [ref=e3958]: Real Madrid CF
+        - generic [ref=e3960]:
+          - generic [ref=e3961]: QA Boundary Unicode 1789934160736
+          - generic [ref=e3962]: desde
+          - generic [ref=e3963]: España 🇪🇸
+          - generic [ref=e3964]: apoyó a
+          - generic [ref=e3965]: Real Madrid CF
+        - generic [ref=e3967]:
+          - generic [ref=e3968]: QA Boundary Unicode 1789934117549
+          - generic [ref=e3969]: desde
+          - generic [ref=e3970]: España 🇪🇸
+          - generic [ref=e3971]: apoyó a
+          - generic [ref=e3972]: Real Madrid CF
+        - generic [ref=e3974]:
+          - generic [ref=e3975]: QA Validacion 1789934108073
+          - generic [ref=e3976]: desde
+          - generic [ref=e3977]: España
+          - generic [ref=e3978]: apoyó a
+          - generic [ref=e3979]: Real Madrid CF
+        - generic [ref=e3981]:
+          - generic [ref=e3982]: QA Boundary Unicode 1789933818091
+          - generic [ref=e3983]: desde
+          - generic [ref=e3984]: España 🇪🇸
+          - generic [ref=e3985]: apoyó a
+          - generic [ref=e3986]: Real Madrid CF
+        - generic [ref=e3988]:
+          - generic [ref=e3989]: QA Boundary Unicode 1789933802383
+          - generic [ref=e3990]: desde
+          - generic [ref=e3991]: España 🇪🇸
+          - generic [ref=e3992]: apoyó a
+          - generic [ref=e3993]: Real Madrid CF
+        - generic [ref=e3995]:
+          - generic [ref=e3996]: QA Boundary Unicode 1789933772329
+          - generic [ref=e3997]: desde
+          - generic [ref=e3998]: España 🇪🇸
+          - generic [ref=e3999]: apoyó a
+          - generic [ref=e4000]: Real Madrid CF
+        - generic [ref=e4002]:
+          - generic [ref=e4003]: QA Boundary Unicode 1789933749657
+          - generic [ref=e4004]: desde
+          - generic [ref=e4005]: España 🇪🇸
+          - generic [ref=e4006]: apoyó a
+          - generic [ref=e4007]: Real Madrid CF
+        - generic [ref=e4009]:
+          - generic [ref=e4010]: QA Validacion 1789933308284
+          - generic [ref=e4011]: desde
+          - generic [ref=e4012]: España
+          - generic [ref=e4013]: apoyó a
+          - generic [ref=e4014]: Real Madrid CF
+    - main [ref=e4016]:
+      - generic [ref=e4017]:
+        - generic [ref=e4018]: 
+        - heading " Favoritos de la Comunidad (Top Votos)" [level=2] [ref=e4020]:
+          - generic [ref=e4021]: 
+          - text: Favoritos de la Comunidad (Top Votos)
+        - application [ref=e4026]:
+          - generic [ref=e4051]:
+            - generic [ref=e4052]:
+              - generic [ref=e4053]: Real Madrid CF
+              - generic [ref=e4055]: FC Barcelona
+              - generic [ref=e4057]: Boca Juniors
+              - generic [ref=e4059]: Liverpool FC
+              - generic [ref=e4061]: AC Milan
+              - generic [ref=e4063]: Independiente
+              - generic [ref=e4065]: Palmeiras
+              - generic [ref=e4067]: Atlético Nacional
+              - generic [ref=e4069]: Bayern Munich
+              - generic [ref=e4071]: River Plate
+            - generic [ref=e4073]:
+              - generic [ref=e4074]: "0"
+              - generic [ref=e4076]: "55"
+              - generic [ref=e4078]: "110"
+              - generic [ref=e4080]: "165"
+              - generic [ref=e4082]: "220"
+      - generic [ref=e4084]:
+        - generic [ref=e4085]:
+          - generic [ref=e4086]: 
+          - textbox "Busca un club, jugador o país..." [active] [ref=e4087]
+        - generic [ref=e4088]:
+          - combobox [ref=e4089] [cursor=pointer]:
+            - option "🏆 Todas Ligas" [selected]
+            - option "UCL Europa"
+            - option "Lib. América"
+          - combobox [ref=e4090] [cursor=pointer]:
+            - option "🌍 Todos Países" [selected]
+            - option "Argentina"
+            - option "Brazil"
+            - option "Chile"
+            - option "Colombia"
+            - option "Ecuador"
+            - option "England"
+            - option "France"
+            - option "Germany"
+            - option "Italy"
+            - option "Netherlands"
+            - option "Paraguay"
+            - option "Peru"
+            - option "Portugal"
+            - option "Scotland"
+            - option "Spain"
+            - option "Uruguay"
+      - generic [ref=e4091]:
+        - generic [ref=e5441] [cursor=pointer]:
+          - generic [ref=e5442]:
+            - generic [ref=e5443]:
+              - img "Real Madrid CF" [ref=e5444]
+              - generic [ref=e5445]: UCL
+            - generic [ref=e5446]:
+              - generic [ref=e5447]:
+                - generic [ref=e5448]: 
+                - text: "15"
+              - paragraph [ref=e5449]: Títulos
+          - heading "Real Madrid CF" [level=3] [ref=e5450]
+          - generic [ref=e5451]:
+            - img "Spain" [ref=e5452]
+            - generic [ref=e5453]: Spain
+          - generic [ref=e5454]:
+            - generic [ref=e5455]:
+              - paragraph [ref=e5456]: Ediciones
+              - paragraph [ref=e5457]: "54"
+            - generic [ref=e5458]:
+              - paragraph [ref=e5459]: Votos
+              - paragraph [ref=e5460]: "203"
+        - generic [ref=e5465] [cursor=pointer]:
+          - generic [ref=e5466]:
+            - generic [ref=e5467]:
+              - img "AC Milan" [ref=e5468]
+              - generic [ref=e5469]: UCL
+            - generic [ref=e5470]:
+              - generic [ref=e5471]:
+                - generic [ref=e5472]: 
+                - text: "7"
+              - paragraph [ref=e5473]: Títulos
+          - heading "AC Milan" [level=3] [ref=e5474]
+          - generic [ref=e5475]:
+            - img "Italy" [ref=e5476]
+            - generic [ref=e5477]: Italy
+          - generic [ref=e5478]:
+            - generic [ref=e5479]:
+              - paragraph [ref=e5480]: Ediciones
+              - paragraph [ref=e5481]: "31"
+            - generic [ref=e5482]:
+              - paragraph [ref=e5483]: Votos
+              - paragraph [ref=e5484]: "7"
+        - generic [ref=e4794] [cursor=pointer]:
+          - generic [ref=e4795]:
+            - generic [ref=e4796]:
+              - img "Independiente" [ref=e4797]
+              - generic [ref=e4798]: LIB
+            - generic [ref=e4799]:
+              - generic [ref=e4800]:
+                - generic [ref=e4801]: 
+                - text: "7"
+              - paragraph [ref=e4802]: Títulos
+          - heading "Independiente" [level=3] [ref=e4803]
+          - generic [ref=e4804]:
+            - img "Argentina" [ref=e4805]
+            - generic [ref=e4806]: Argentina
+          - generic [ref=e4807]:
+            - generic [ref=e4808]:
+              - paragraph [ref=e4809]: Ediciones
+              - paragraph [ref=e4810]: "20"
+            - generic [ref=e4811]:
+              - paragraph [ref=e4812]: Votos
+              - paragraph [ref=e4813]: "4"
+        - generic [ref=e5489] [cursor=pointer]:
+          - generic [ref=e5490]:
+            - generic [ref=e5491]:
+              - img "Bayern Munich" [ref=e5492]
+              - generic [ref=e5493]: UCL
+            - generic [ref=e5494]:
+              - generic [ref=e5495]:
+                - generic [ref=e5496]: 
+                - text: "6"
+              - paragraph [ref=e5497]: Títulos
+          - heading "Bayern Munich" [level=3] [ref=e5498]
+          - generic [ref=e5499]:
+            - img "Germany" [ref=e5500]
+            - generic [ref=e5501]: Germany
+          - generic [ref=e5502]:
+            - generic [ref=e5503]:
+              - paragraph [ref=e5504]: Ediciones
+              - paragraph [ref=e5505]: "40"
+            - generic [ref=e5506]:
+              - paragraph [ref=e5507]: Votos
+              - paragraph [ref=e5508]: "3"
+        - generic [ref=e4842] [cursor=pointer]:
+          - generic [ref=e4843]:
+            - generic [ref=e4844]:
+              - img "Boca Juniors" [ref=e4845]
+              - generic [ref=e4846]: LIB
+            - generic [ref=e4847]:
+              - generic [ref=e4848]:
+                - generic [ref=e4849]: 
+                - text: "6"
+              - paragraph [ref=e4850]: Títulos
+          - heading "Boca Juniors" [level=3] [ref=e4851]
+          - generic [ref=e4852]:
+            - img "Argentina" [ref=e4853]
+            - generic [ref=e4854]: Argentina
+          - generic [ref=e4855]:
+            - generic [ref=e4856]:
+              - paragraph [ref=e4857]: Ediciones
+              - paragraph [ref=e4858]: "32"
+            - generic [ref=e4859]:
+              - paragraph [ref=e4860]: Votos
+              - paragraph [ref=e4861]: "23"
+        - generic [ref=e5513] [cursor=pointer]:
+          - generic [ref=e5514]:
+            - generic [ref=e5515]:
+              - img "Liverpool FC" [ref=e5516]
+              - generic [ref=e5517]: UCL
+            - generic [ref=e5518]:
+              - generic [ref=e5519]:
+                - generic [ref=e5520]: 
+                - text: "6"
+              - paragraph [ref=e5521]: Títulos
+          - heading "Liverpool FC" [level=3] [ref=e5522]
+          - generic [ref=e5523]:
+            - img "England" [ref=e5524]
+            - generic [ref=e5525]: England
+          - generic [ref=e5526]:
+            - generic [ref=e5527]:
+              - paragraph [ref=e5528]: Ediciones
+              - paragraph [ref=e5529]: "25"
+            - generic [ref=e5530]:
+              - paragraph [ref=e5531]: Votos
+              - paragraph [ref=e5532]: "8"
+        - generic [ref=e5537] [cursor=pointer]:
+          - generic [ref=e5538]:
+            - generic [ref=e5539]:
+              - img "Peñarol" [ref=e5540]
+              - generic [ref=e5541]: LIB
+            - generic [ref=e5542]:
+              - generic [ref=e5543]:
+                - generic [ref=e5544]: 
+                - text: "5"
+              - paragraph [ref=e5545]: Títulos
+          - heading "Peñarol" [level=3] [ref=e5546]
+          - generic [ref=e5547]:
+            - img "Uruguay" [ref=e5548]
+            - generic [ref=e5549]: Uruguay
+          - generic [ref=e5550]:
+            - generic [ref=e5551]:
+              - paragraph [ref=e5552]: Ediciones
+              - paragraph [ref=e5553]: "49"
+            - generic [ref=e5554]:
+              - paragraph [ref=e5555]: Votos
+              - paragraph [ref=e5556]: "1"
+        - generic [ref=e5561] [cursor=pointer]:
+          - generic [ref=e5562]:
+            - generic [ref=e5563]:
+              - img "FC Barcelona" [ref=e5564]
+              - generic [ref=e5565]: UCL
+            - generic [ref=e5566]:
+              - generic [ref=e5567]:
+                - generic [ref=e5568]: 
+                - text: "5"
+              - paragraph [ref=e5569]: Títulos
+          - heading "FC Barcelona" [level=3] [ref=e5570]
+          - generic [ref=e5571]:
+            - img "Spain" [ref=e5572]
+            - generic [ref=e5573]: Spain
+          - generic [ref=e5574]:
+            - generic [ref=e5575]:
+              - paragraph [ref=e5576]: Ediciones
+              - paragraph [ref=e5577]: "34"
+            - generic [ref=e5578]:
+              - paragraph [ref=e5579]: Votos
+              - paragraph [ref=e5580]: "28"
+        - generic [ref=e4914] [cursor=pointer]:
+          - generic [ref=e4915]:
+            - generic [ref=e4916]:
+              - img "River Plate" [ref=e4917]
+              - generic [ref=e4918]: LIB
+            - generic [ref=e4919]:
+              - generic [ref=e4920]:
+                - generic [ref=e4921]: 
+                - text: "4"
+              - paragraph [ref=e4922]: Títulos
+          - heading "River Plate" [level=3] [ref=e4923]
+          - generic [ref=e4924]:
+            - img "Argentina" [ref=e4925]
+            - generic [ref=e4926]: Argentina
+          - generic [ref=e4927]:
+            - generic [ref=e4928]:
+              - paragraph [ref=e4929]: Ediciones
+              - paragraph [ref=e4930]: "40"
+            - generic [ref=e4931]:
+              - paragraph [ref=e4932]: Votos
+              - paragraph [ref=e4933]: "3"
+        - generic [ref=e5585] [cursor=pointer]:
+          - generic [ref=e5586]:
+            - generic [ref=e5587]:
+              - img "Ajax Amsterdam" [ref=e5588]
+              - generic [ref=e5589]: UCL
+            - generic [ref=e5590]:
+              - generic [ref=e5591]:
+                - generic [ref=e5592]: 
+                - text: "4"
+              - paragraph [ref=e5593]: Títulos
+          - heading "Ajax Amsterdam" [level=3] [ref=e5594]
+          - generic [ref=e5595]:
+            - img "Netherlands" [ref=e5596]
+            - generic [ref=e5597]: Netherlands
+          - generic [ref=e5598]:
+            - generic [ref=e5599]:
+              - paragraph [ref=e5600]: Ediciones
+              - paragraph [ref=e5601]: "38"
+            - generic [ref=e5602]:
+              - paragraph [ref=e5603]: Votos
+              - paragraph [ref=e5604]: "1"
+        - generic [ref=e4962] [cursor=pointer]:
+          - generic [ref=e4963]:
+            - generic [ref=e4964]:
+              - img "Estudiantes LP" [ref=e4965]
+              - generic [ref=e4966]: LIB
+            - generic [ref=e4967]:
+              - generic [ref=e4968]:
+                - generic [ref=e4969]: 
+                - text: "4"
+              - paragraph [ref=e4970]: Títulos
+          - heading "Estudiantes LP" [level=3] [ref=e4971]
+          - generic [ref=e4972]:
+            - img "Argentina" [ref=e4973]
+            - generic [ref=e4974]: Argentina
+          - generic [ref=e4975]:
+            - generic [ref=e4976]:
+              - paragraph [ref=e4977]: Ediciones
+              - paragraph [ref=e4978]: "17"
+            - generic [ref=e4979]:
+              - paragraph [ref=e4980]: Votos
+              - paragraph [ref=e4981]: "0"
+        - generic [ref=e5609] [cursor=pointer]:
+          - generic [ref=e5610]:
+            - generic [ref=e5611]:
+              - img "Nacional" [ref=e5612]
+              - generic [ref=e5613]: LIB
+            - generic [ref=e5614]:
+              - generic [ref=e5615]:
+                - generic [ref=e5616]: 
+                - text: "3"
+              - paragraph [ref=e5617]: Títulos
+          - heading "Nacional" [level=3] [ref=e5618]
+          - generic [ref=e5619]:
+            - img "Uruguay" [ref=e5620]
+            - generic [ref=e5621]: Uruguay
+          - generic [ref=e5622]:
+            - generic [ref=e5623]:
+              - paragraph [ref=e5624]: Ediciones
+              - paragraph [ref=e5625]: "51"
+            - generic [ref=e5626]:
+              - paragraph [ref=e5627]: Votos
+              - paragraph [ref=e5628]: "0"
+        - generic [ref=e5633] [cursor=pointer]:
+          - generic [ref=e5634]:
+            - generic [ref=e5635]:
+              - img "Olimpia" [ref=e5636]
+              - generic [ref=e5637]: LIB
+            - generic [ref=e5638]:
+              - generic [ref=e5639]:
+                - generic [ref=e5640]: 
+                - text: "3"
+              - paragraph [ref=e5641]: Títulos
+          - heading "Olimpia" [level=3] [ref=e5642]
+          - generic [ref=e5643]:
+            - img "Paraguay" [ref=e5644]
+            - generic [ref=e5645]: Paraguay
+          - generic [ref=e5646]:
+            - generic [ref=e5647]:
+              - paragraph [ref=e5648]: Ediciones
+              - paragraph [ref=e5649]: "45"
+            - generic [ref=e5650]:
+              - paragraph [ref=e5651]: Votos
+              - paragraph [ref=e5652]: "0"
+        - generic [ref=e5657] [cursor=pointer]:
+          - generic [ref=e5658]:
+            - generic [ref=e5659]:
+              - img "Manchester United" [ref=e5660]
+              - generic [ref=e5661]: UCL
+            - generic [ref=e5662]:
+              - generic [ref=e5663]:
+                - generic [ref=e5664]: 
+                - text: "3"
+              - paragraph [ref=e5665]: Títulos
+          - heading "Manchester United" [level=3] [ref=e5666]
+          - generic [ref=e5667]:
+            - img "England" [ref=e5668]
+            - generic [ref=e5669]: England
+          - generic [ref=e5670]:
+            - generic [ref=e5671]:
+              - paragraph [ref=e5672]: Ediciones
+              - paragraph [ref=e5673]: "30"
+            - generic [ref=e5674]:
+              - paragraph [ref=e5675]: Votos
+              - paragraph [ref=e5676]: "0"
+        - generic [ref=e5681] [cursor=pointer]:
+          - generic [ref=e5682]:
+            - generic [ref=e5683]:
+              - img "Inter Milan" [ref=e5684]
+              - generic [ref=e5685]: UCL
+            - generic [ref=e5686]:
+              - generic [ref=e5687]:
+                - generic [ref=e5688]: 
+                - text: "3"
+              - paragraph [ref=e5689]: Títulos
+          - heading "Inter Milan" [level=3] [ref=e5690]
+          - generic [ref=e5691]:
+            - img "Italy" [ref=e5692]
+            - generic [ref=e5693]: Italy
+          - generic [ref=e5694]:
+            - generic [ref=e5695]:
+              - paragraph [ref=e5696]: Ediciones
+              - paragraph [ref=e5697]: "25"
+            - generic [ref=e5698]:
+              - paragraph [ref=e5699]: Votos
+              - paragraph [ref=e5700]: "3"
+        - generic [ref=e5705] [cursor=pointer]:
+          - generic [ref=e5706]:
+            - generic [ref=e5707]:
+              - img "Palmeiras" [ref=e5708]
+              - generic [ref=e5709]: LIB
+            - generic [ref=e5710]:
+              - generic [ref=e5711]:
+                - generic [ref=e5712]: 
+                - text: "3"
+              - paragraph [ref=e5713]: Títulos
+          - heading "Palmeiras" [level=3] [ref=e5714]
+          - generic [ref=e5715]:
+            - img "Brazil" [ref=e5716]
+            - generic [ref=e5717]: Brazil
+          - generic [ref=e5718]:
+            - generic [ref=e5719]:
+              - paragraph [ref=e5720]: Ediciones
+              - paragraph [ref=e5721]: "24"
+            - generic [ref=e5722]:
+              - paragraph [ref=e5723]: Votos
+              - paragraph [ref=e5724]: "4"
+        - generic [ref=e5729] [cursor=pointer]:
+          - generic [ref=e5730]:
+            - generic [ref=e5731]:
+              - img "São Paulo FC" [ref=e5732]
+              - generic [ref=e5733]: LIB
+            - generic [ref=e5734]:
+              - generic [ref=e5735]:
+                - generic [ref=e5736]: 
+                - text: "3"
+              - paragraph [ref=e5737]: Títulos
+          - heading "São Paulo FC" [level=3] [ref=e5738]
+          - generic [ref=e5739]:
+            - img "Brazil" [ref=e5740]
+            - generic [ref=e5741]: Brazil
+          - generic [ref=e5742]:
+            - generic [ref=e5743]:
+              - paragraph [ref=e5744]: Ediciones
+              - paragraph [ref=e5745]: "22"
+            - generic [ref=e5746]:
+              - paragraph [ref=e5747]: Votos
+              - paragraph [ref=e5748]: "0"
+        - generic [ref=e5753] [cursor=pointer]:
+          - generic [ref=e5754]:
+            - generic [ref=e5755]:
+              - img "Grêmio" [ref=e5756]
+              - generic [ref=e5757]: LIB
+            - generic [ref=e5758]:
+              - generic [ref=e5759]:
+                - generic [ref=e5760]: 
+                - text: "3"
+              - paragraph [ref=e5761]: Títulos
+          - heading "Grêmio" [level=3] [ref=e5762]
+          - generic [ref=e5763]:
+            - img "Brazil" [ref=e5764]
+            - generic [ref=e5765]: Brazil
+          - generic [ref=e5766]:
+            - generic [ref=e5767]:
+              - paragraph [ref=e5768]: Ediciones
+              - paragraph [ref=e5769]: "22"
+            - generic [ref=e5770]:
+              - paragraph [ref=e5771]: Votos
+              - paragraph [ref=e5772]: "0"
+        - generic [ref=e5777] [cursor=pointer]:
+          - generic [ref=e5778]:
+            - generic [ref=e5779]:
+              - img "Flamengo" [ref=e5780]
+              - generic [ref=e5781]: LIB
+            - generic [ref=e5782]:
+              - generic [ref=e5783]:
+                - generic [ref=e5784]: 
+                - text: "3"
+              - paragraph [ref=e5785]: Títulos
+          - heading "Flamengo" [level=3] [ref=e5786]
+          - generic [ref=e5787]:
+            - img "Brazil" [ref=e5788]
+            - generic [ref=e5789]: Brazil
+          - generic [ref=e5790]:
+            - generic [ref=e5791]:
+              - paragraph [ref=e5792]: Ediciones
+              - paragraph [ref=e5793]: "20"
+            - generic [ref=e5794]:
+              - paragraph [ref=e5795]: Votos
+              - paragraph [ref=e5796]: "0"
+        - generic [ref=e5801] [cursor=pointer]:
+          - generic [ref=e5802]:
+            - generic [ref=e5803]:
+              - img "Santos FC" [ref=e5804]
+              - generic [ref=e5805]: LIB
+            - generic [ref=e5806]:
+              - generic [ref=e5807]:
+                - generic [ref=e5808]: 
+                - text: "3"
+              - paragraph [ref=e5809]: Títulos
+          - heading "Santos FC" [level=3] [ref=e5810]
+          - generic [ref=e5811]:
+            - img "Brazil" [ref=e5812]
+            - generic [ref=e5813]: Brazil
+          - generic [ref=e5814]:
+            - generic [ref=e5815]:
+              - paragraph [ref=e5816]: Ediciones
+              - paragraph [ref=e5817]: "16"
+            - generic [ref=e5818]:
+              - paragraph [ref=e5819]: Votos
+              - paragraph [ref=e5820]: "0"
+        - generic [ref=e5825] [cursor=pointer]:
+          - generic [ref=e5826]:
+            - generic [ref=e5827]:
+              - img "Benfica" [ref=e5828]
+              - generic [ref=e5829]: UCL
+            - generic [ref=e5830]:
+              - generic [ref=e5831]:
+                - generic [ref=e5832]: 
+                - text: "2"
+              - paragraph [ref=e5833]: Títulos
+          - heading "Benfica" [level=3] [ref=e5834]
+          - generic [ref=e5835]:
+            - img "Portugal" [ref=e5836]
+            - generic [ref=e5837]: Portugal
+          - generic [ref=e5838]:
+            - generic [ref=e5839]:
+              - paragraph [ref=e5840]: Ediciones
+              - paragraph [ref=e5841]: "43"
+            - generic [ref=e5842]:
+              - paragraph [ref=e5843]: Votos
+              - paragraph [ref=e5844]: "0"
+        - generic [ref=e5849] [cursor=pointer]:
+          - generic [ref=e5850]:
+            - generic [ref=e5851]:
+              - img "Juventus FC" [ref=e5852]
+              - generic [ref=e5853]: UCL
+            - generic [ref=e5854]:
+              - generic [ref=e5855]:
+                - generic [ref=e5856]: 
+                - text: "2"
+              - paragraph [ref=e5857]: Títulos
+          - heading "Juventus FC" [level=3] [ref=e5858]
+          - generic [ref=e5859]:
+            - img "Italy" [ref=e5860]
+            - generic [ref=e5861]: Italy
+          - generic [ref=e5862]:
+            - generic [ref=e5863]:
+              - paragraph [ref=e5864]: Ediciones
+              - paragraph [ref=e5865]: "37"
+            - generic [ref=e5866]:
+              - paragraph [ref=e5867]: Votos
+              - paragraph [ref=e5868]: "2"
+        - generic [ref=e5873] [cursor=pointer]:
+          - generic [ref=e5874]:
+            - generic [ref=e5875]:
+              - img "FC Porto" [ref=e5876]
+              - generic [ref=e5877]: UCL
+            - generic [ref=e5878]:
+              - generic [ref=e5879]:
+                - generic [ref=e5880]: 
+                - text: "2"
+              - paragraph [ref=e5881]: Títulos
+          - heading "FC Porto" [level=3] [ref=e5882]
+          - generic [ref=e5883]:
+            - img "Portugal" [ref=e5884]
+            - generic [ref=e5885]: Portugal
+          - generic [ref=e5886]:
+            - generic [ref=e5887]:
+              - paragraph [ref=e5888]: Ediciones
+              - paragraph [ref=e5889]: "37"
+            - generic [ref=e5890]:
+              - paragraph [ref=e5891]: Votos
+              - paragraph [ref=e5892]: "0"
+        - generic [ref=e5897] [cursor=pointer]:
+          - generic [ref=e5898]:
+            - generic [ref=e5899]:
+              - img "Atlético Nacional" [ref=e5900]
+              - generic [ref=e5901]: LIB
+            - generic [ref=e5902]:
+              - generic [ref=e5903]:
+                - generic [ref=e5904]: 
+                - text: "2"
+              - paragraph [ref=e5905]: Títulos
+          - heading "Atlético Nacional" [level=3] [ref=e5906]
+          - generic [ref=e5907]:
+            - img "Colombia" [ref=e5908]
+            - generic [ref=e5909]: Colombia
+          - generic [ref=e5910]:
+            - generic [ref=e5911]:
+              - paragraph [ref=e5912]: Ediciones
+              - paragraph [ref=e5913]: "25"
+            - generic [ref=e5914]:
+              - paragraph [ref=e5915]: Votos
+              - paragraph [ref=e5916]: "4"
+      - generic [ref=e5918]:
+        - button "" [disabled] [ref=e5919]
+        - button "1" [ref=e5921] [cursor=pointer]
+        - button "2" [ref=e5922] [cursor=pointer]
+        - button "3" [ref=e5923] [cursor=pointer]
+        - button "" [ref=e5924] [cursor=pointer]
+    - contentinfo [ref=e4677]:
+      - generic [ref=e4678]: Champions & Libertadores World Experience
+      - paragraph [ref=e4679]: Elite Football Explorer • Comunidad Mundial • 2024
+  - generic [aria-hidden] [ref=e751]: "0"

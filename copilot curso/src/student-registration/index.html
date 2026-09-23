@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Registro de estudiantes de la Universidad">
+  <title>Registro de estudiantes | Universidad</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page-shell">
+    <header class="hero">
+      <div class="brand-mark" aria-hidden="true">U</div>
+      <div>
+        <p class="eyebrow">Admisiones · Registro académico</p>
+        <h1>Registro de estudiantes</h1>
+        <p class="hero-copy">Ingresa la información básica para crear un registro académico consistente.</p>
+      </div>
+    </header>
+
+    <section class="card" aria-labelledby="form-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Nuevo registro</p>
+          <h2 id="form-title">Datos del estudiante</h2>
+        </div>
+        <span class="required-note"><span aria-hidden="true">*</span> Campos obligatorios</span>
+      </div>
+
+      <div id="form-message" class="form-message" role="status" aria-live="polite" hidden></div>
+
+      <form id="student-form" novalidate>
+        <div class="form-grid">
+          <div class="field">
+            <label for="identification"><span class="field-icon" aria-hidden="true">#</span> Identificación <span aria-hidden="true">*</span></label>
+            <input id="identification" name="identification" type="text" minlength="5" autocomplete="off" aria-describedby="identification-error">
+            <p id="identification-error" class="field-error" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="firstName"><span class="field-icon" aria-hidden="true">A</span> Nombre <span aria-hidden="true">*</span></label>
+            <input id="firstName" name="firstName" type="text" autocomplete="given-name" aria-describedby="firstName-error">
+            <p id="firstName-error" class="field-error" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="lastName"><span class="field-icon" aria-hidden="true">A</span> Apellido <span aria-hidden="true">*</span></label>
+            <input id="lastName" name="lastName" type="text" autocomplete="family-name" aria-describedby="lastName-error">
+            <p id="lastName-error" class="field-error" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="email"><span class="field-icon" aria-hidden="true">@</span> Correo electrónico <span aria-hidden="true">*</span></label>
+            <input id="email" name="email" type="email" autocomplete="email" aria-describedby="email-error">
+            <p id="email-error" class="field-error" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="country"><span class="field-icon" aria-hidden="true">◎</span> País <span aria-hidden="true">*</span></label>
+            <input id="country" name="country" type="text" autocomplete="country-name" aria-describedby="country-error">
+            <p id="country-error" class="field-error" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="career"><span class="field-icon" aria-hidden="true">◇</span> Carrera <span aria-hidden="true">*</span></label>
+            <select id="career" name="career" aria-describedby="career-error">
+              <option value="">Selecciona una carrera</option>
+              <option>Ing. Informática</option>
+              <option>Ing. Electrónica</option>
+              <option>Ing. Telecomunicaciones</option>
+              <option>Ing. Robótica</option>
+              <option>Otra</option>
+            </select>
+            <p id="career-error" class="field-error" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="birthDate"><span class="field-icon" aria-hidden="true">□</span> Fecha de nacimiento <span aria-hidden="true">*</span></label>
+            <input id="birthDate" name="birthDate" type="date" aria-describedby="birthDate-error">
+            <p id="birthDate-error" class="field-error" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="age"><span class="field-icon" aria-hidden="true">◷</span> Edad</label>
+            <input id="age" name="age" type="text" value="—" readonly aria-describedby="age-help">
+            <p id="age-help" class="field-help">Se calcula automáticamente.</p>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button class="button button-secondary" type="reset">Limpiar</button>
+          <button class="button button-primary" type="submit">Registrar estudiante <span aria-hidden="true">→</span></button>
+        </div>
+      </form>
+    </section>
+
+    <section class="card records-card" aria-labelledby="records-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Historial</p>
+          <h2 id="records-title">Estudiantes registrados</h2>
+        </div>
+        <span id="record-count" class="record-count">0 registros</span>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <caption class="sr-only">Lista de estudiantes registrados</caption>
+          <thead>
+            <tr>
+              <th scope="col">Identificación</th><th scope="col">Nombre</th><th scope="col">Apellido</th>
+              <th scope="col">Correo</th><th scope="col">País</th><th scope="col">Carrera</th>
+              <th scope="col">Fecha de nacimiento</th><th scope="col">Edad</th>
+            </tr>
+          </thead>
+          <tbody id="student-rows">
+            <tr id="empty-row"><td colspan="8" class="empty-state">Aún no hay estudiantes registrados.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <footer>Universidad · Registro académico</footer>
+  <script src="app.js"></script>
+</body>
+</html>

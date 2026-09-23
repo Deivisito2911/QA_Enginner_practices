@@ -1,0 +1,32 @@
+- generic [ref=e1] [box=0,0,1265,863]:
+  - generic [ref=e2] [box=0,0,1265,863]:
+    - banner [ref=e3] [box=0,0,1265,149]:
+      - generic [ref=e4] [box=0,0,1265,148]:
+        - img "WaveLink - Conexión del Futuro" [ref=e6] [box=32,16,78,64]
+        - generic [ref=e7] [box=32,80,1201,52]:
+          - generic [ref=e8] [box=32,80,524,52]:
+            - button "Planes y Calidad" [active] [ref=e9] [box=32,80,232,52]
+            - button "Reporte / Instalación" [ref=e12] [box=280,80,275,52]
+          - generic [ref=e15] [box=1025,85,207,42]:
+            - generic [ref=e16] [box=1025,96,54,20]: Invitado
+            - button "Iniciar Sesión" [ref=e17] [box=1095,85,138,42]
+    - main [ref=e18] [box=0,149,1265,714]:
+      - generic [ref=e98] [box=32,189,1201,634]:
+        - generic [ref=e99] [box=32,189,1201,199]:
+          - heading "Planes de Servicio WaveLink" [level=2] [ref=e103] [box=89,214,379,28]
+          - paragraph [ref=e104] [box=57,258,1151,24]: Conéctate a la velocidad del futuro con nuestros planes de fibra óptica.
+        - generic [ref=e107] [box=32,428,1201,395]:
+          - heading "Gestión de Calidad y Opiniones" [level=2] [ref=e112] [box=89,453,414,28]
+          - paragraph [ref=e113] [box=57,497,1151,24]: Ayúdenos a mejorar su servicio. Su opinión es registrada para optimizar WaveLink.
+          - generic [ref=e114] [box=57,537,1151,262]:
+            - generic [ref=e115] [box=57,537,1151,48]:
+              - generic [ref=e116] [box=57,537,1151,20]: "Calidad de la Fibra: 5/5"
+              - slider [ref=e117] [cursor=pointer] [box=57,570,1151,8]: "5"
+            - generic [ref=e118] [box=57,601,1151,104]:
+              - generic [ref=e119] [box=57,601,1151,20]: Comentarios (Opcional)
+              - textbox [ref=e120] [box=57,625,1151,74]
+            - generic [ref=e121] [box=57,721,1151,20]:
+              - checkbox "Realizar opinión de forma anónima." [ref=e122] [box=57,723,16,16]
+              - generic [ref=e123] [box=81,721,221,20]: Realizar opinión de forma anónima.
+            - button "Enviar Feedback" [ref=e124] [box=57,757,161,42]
+  - alert [ref=e46] [box=-1,862,1,1]

@@ -1,0 +1,7 @@
+[    2255ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://efttxmnojnufefyeegnf.supabase.co/rest/v1/plans?select=*&order=speed.asc:0
+[    2258ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://efttxmnojnufefyeegnf.supabase.co/rest/v1/promotions?select=*:0
+[   53620ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ https://wavelinkconexiondelfuturo.vercel.app/:0
+[  138044ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://efttxmnojnufefyeegnf.supabase.co/rest/v1/orders?select=*&client=eq.Carlos+P%C3%A9rez&order=id.desc:0
+[  181388ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://efttxmnojnufefyeegnf.supabase.co/rest/v1/orders:0
+[  252525ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://efttxmnojnufefyeegnf.supabase.co/rest/v1/plans?select=*&order=speed.asc:0
+[  252525ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://efttxmnojnufefyeegnf.supabase.co/rest/v1/promotions?select=*:0

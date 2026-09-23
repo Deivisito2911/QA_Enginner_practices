@@ -1,0 +1,32 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - img "WaveLink - Conexión del Futuro" [ref=e6]
+        - generic [ref=e7]:
+          - generic [ref=e8]:
+            - button "Planes y Calidad" [ref=e9]
+            - button "Reporte / Instalación" [ref=e12]
+          - generic [ref=e15]:
+            - generic [ref=e16]: Invitado
+            - button "Iniciar Sesión" [ref=e17]
+    - main [ref=e18]:
+      - generic [ref=e19]:
+        - generic [ref=e20]:
+          - heading "Planes de Servicio WaveLink" [level=2] [ref=e24]
+          - paragraph [ref=e25]: Conéctate a la velocidad del futuro con nuestros planes de fibra óptica.
+        - generic [ref=e28]:
+          - heading "Gestión de Calidad y Opiniones" [level=2] [ref=e33]
+          - paragraph [ref=e34]: Ayúdenos a mejorar su servicio. Su opinión es registrada para optimizar WaveLink.
+          - generic [ref=e35]:
+            - generic [ref=e36]:
+              - generic [ref=e37]: "Calidad de la Fibra: 5/5"
+              - slider [ref=e38] [cursor=pointer]: "5"
+            - generic [ref=e39]:
+              - generic [ref=e40]: Comentarios (Opcional)
+              - textbox [ref=e41]
+            - generic [ref=e42]:
+              - checkbox "Realizar opinión de forma anónima." [ref=e43]
+              - generic [ref=e44]: Realizar opinión de forma anónima.
+            - button "Enviar Feedback" [ref=e45]
+  - alert [ref=e46]

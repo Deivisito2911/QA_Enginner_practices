@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "distribution": "kiro-ide",
+  "productName": "Kiro IDE",
+  "configNextStep": "open this project in Kiro IDE, then run `/aidlc --doctor`",
+  "name": "kiro-ide",
+  "harnessDir": ".kiro",
+  "rulesSubdir": "steering",
+  "runtime": {
+    "schemaVersion": 1,
+    "baselinePath": "C:\\Python312\\Scripts\\;C:\\Python312\\;C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\dotnet\\;C:\\TDM-GCC-64\\bin;C:\\Program Files\\Java\\jdk-26.0.2.1;C:\\maven\\apache-maven-3.10.0-rc-1\\bin;C:\\Program Files\\cursor\\resources\\app\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Docker\\Docker\\resources\\bin;C:\\Users\\Deivisito\\AppData\\Local\\aidlc\\bin;;C:\\Users\\Deivisito\\AppData\\Local\\agy\\bin;C:\\Program Files\\MySQL\\MySQL Shell 8.0\\bin\\;C:\\Users\\Deivisito\\AppData\\Local\\Programs\\Python\\Python311\\Scripts\\;C:\\Users\\Deivisito\\AppData\\Local\\Programs\\Python\\Python311\\;C:\\Users\\Deivisito\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Deivisito\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\Deivisito\\AppData\\Local\\GitHubDesktop\\bin;C:\\Users\\Deivisito\\.dotnet\\tools;C:\\MinGW\\bin;C:\\Users\\Deivisito\\AppData\\Local\\Android\\Sdk\\platform-tools;C:\\Users\\Deivisito\\AppData\\Local\\Android\\Sdk\\emulator;C:\\Users\\Deivisito\\AppData\\Roaming\\npm;C:\\Users\\Deivisito\\AppData\\Local\\Programs\\Kiro\\bin;C:\\Users\\Deivisito\\AppData\\Local\\aidlc\\bin;",
+    "aidlcPath": "C:\\Users\\Deivisito\\AppData\\Local\\aidlc\\bin\\aidlc.cmd"
+  }
+}

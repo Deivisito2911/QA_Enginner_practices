@@ -1,0 +1,127 @@
+[   30190ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ https://shop.geekqa.net/litecart/public_html/:0
+[   30757ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ https://shop.geekqa.net/litecart/public_html/search?query=police+dog:0
+[   41671ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ https://shop.geekqa.net/litecart/public_html/search?query=police+dog:0
+[   42302ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ https://shop.geekqa.net/litecart/public_html/dogs-c-6/police-dog-p-10:0
+[  165983ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ https://shop.geekqa.net/litecart/public_html/:0
+[  166359ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ https://shop.geekqa.net/litecart/public_html/search?query=yellow+duck:0
+[  177456ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ https://shop.geekqa.net/litecart/public_html/search?query=yellow+duck:0
+[  177957ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ https://shop.geekqa.net/litecart/public_html/rubber-ducks-c-1/yellow-duck-p-1:0
+[  188642ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ https://shop.geekqa.net/litecart/public_html/rubber-ducks-c-1/yellow-duck-p-1:0
+[  189356ms] [LOG] Processing cart @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  189589ms] [LOG] Processing customer @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  189876ms] [LOG] Processing shipping @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  189945ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "username"): (More info: https://goo.gl/9p2vKq) %o @ https://shop.geekqa.net/litecart/public_html/checkout:0
+[  190097ms] [LOG] Processing payment @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  190318ms] [LOG] Processing summary @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  207762ms] [LOG] Processing cart @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  208004ms] [LOG] Processing customer @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  208274ms] [LOG] Processing shipping @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  208351ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "username"): (More info: https://goo.gl/9p2vKq) %o @ https://shop.geekqa.net/litecart/public_html/checkout:0
+[  208488ms] [LOG] Processing payment @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  208713ms] [LOG] Processing summary @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  214536ms] [LOG] Processing cart @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  214784ms] [LOG] Processing customer @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  215077ms] [LOG] Processing shipping @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  215151ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "username"): (More info: https://goo.gl/9p2vKq) %o @ https://shop.geekqa.net/litecart/public_html/checkout:0
+[  215321ms] [LOG] Processing payment @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  215547ms] [LOG] Processing summary @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  225966ms] [LOG] Processing cart @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  226235ms] [LOG] Processing customer @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  226484ms] [LOG] Processing shipping @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  226572ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "username"): (More info: https://goo.gl/9p2vKq) %o @ https://shop.geekqa.net/litecart/public_html/checkout:0
+[  226709ms] [LOG] Processing payment @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  226926ms] [LOG] Processing summary @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  233411ms] [LOG] Processing cart @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  238367ms] [LOG] Processing customer @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  238615ms] [LOG] Processing shipping @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  238710ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "username"): (More info: https://goo.gl/9p2vKq) %o @ https://shop.geekqa.net/litecart/public_html/checkout:0
+[  238830ms] [LOG] Processing payment @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  239042ms] [LOG] Processing summary @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  247793ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ https://shop.geekqa.net/litecart/public_html/ajax/checkout_cart:0
+[  248292ms] [VERBOSE] [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o @ https://shop.geekqa.net/litecart/public_html/ajax/checkout_customer:0
+[  248292ms] [VERBOSE] [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o @ https://shop.geekqa.net/litecart/public_html/ajax/checkout_customer:0
+[  248292ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ https://shop.geekqa.net/litecart/public_html/ajax/checkout_customer:0
+[  248615ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ https://shop.geekqa.net/litecart/public_html/ajax/checkout_shipping:0
+[  248925ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ https://shop.geekqa.net/litecart/public_html/ajax/checkout_payment:0
+[  249270ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ https://shop.geekqa.net/litecart/public_html/ajax/checkout_summary:0
+[  259930ms] [LOG] Processing cart @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  260222ms] [LOG] Processing customer @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  260488ms] [LOG] Processing shipping @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  260568ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "username"): (More info: https://goo.gl/9p2vKq) %o @ https://shop.geekqa.net/litecart/public_html/checkout:0
+[  260721ms] [LOG] Processing payment @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  260938ms] [LOG] Processing summary @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  272636ms] [LOG] Processing cart @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  272947ms] [LOG] Processing customer @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  273198ms] [LOG] Processing shipping @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  273290ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "username"): (More info: https://goo.gl/9p2vKq) %o @ https://shop.geekqa.net/litecart/public_html/checkout:0
+[  273411ms] [LOG] Processing payment @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  273631ms] [LOG] Processing summary @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  294757ms] [LOG] Processing cart @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  295022ms] [LOG] Processing customer @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  295387ms] [LOG] Processing shipping @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  295484ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "username"): (More info: https://goo.gl/9p2vKq) %o @ https://shop.geekqa.net/litecart/public_html/checkout:0
+[  295606ms] [LOG] Processing payment @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  295822ms] [LOG] Processing summary @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  309158ms] [LOG] Processing cart @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  309418ms] [LOG] Processing customer @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  309727ms] [LOG] Processing shipping @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  309774ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "username"): (More info: https://goo.gl/9p2vKq) %o @ https://shop.geekqa.net/litecart/public_html/checkout:0
+[  309961ms] [LOG] Processing payment @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  310191ms] [LOG] Processing summary @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  314325ms] [LOG] Retrieving address (Trigger: firstname) @ https://shop.geekqa.net/litecart/public_html/checkout:241
+[  314346ms] [LOG] Retrieving address (Trigger: lastname) @ https://shop.geekqa.net/litecart/public_html/checkout:241
+[  314367ms] [LOG] Retrieving address (Trigger: address1) @ https://shop.geekqa.net/litecart/public_html/checkout:241
+[  314387ms] [LOG] Retrieving address (Trigger: postcode) @ https://shop.geekqa.net/litecart/public_html/checkout:241
+[  314417ms] [LOG] Retrieving address (Trigger: country_code) @ https://shop.geekqa.net/litecart/public_html/checkout:241
+[  522870ms] [LOG] Processing cart @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  523090ms] [LOG] Processing customer @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  523349ms] [LOG] Processing shipping @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  523446ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "username"): (More info: https://goo.gl/9p2vKq) %o @ https://shop.geekqa.net/litecart/public_html/checkout:0
+[  523567ms] [LOG] Processing payment @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  523783ms] [LOG] Processing summary @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  527954ms] [LOG] Retrieving address (Trigger: firstname) @ https://shop.geekqa.net/litecart/public_html/checkout:241
+[  527974ms] [LOG] Retrieving address (Trigger: lastname) @ https://shop.geekqa.net/litecart/public_html/checkout:241
+[  527992ms] [LOG] Retrieving address (Trigger: address1) @ https://shop.geekqa.net/litecart/public_html/checkout:241
+[  528012ms] [LOG] Retrieving address (Trigger: postcode) @ https://shop.geekqa.net/litecart/public_html/checkout:241
+[  528041ms] [LOG] Retrieving address (Trigger: country_code) @ https://shop.geekqa.net/litecart/public_html/checkout:241
+[  542267ms] [LOG] Processing cart @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  542623ms] [LOG] Processing customer @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  542865ms] [LOG] Processing shipping @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  542948ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "username"): (More info: https://goo.gl/9p2vKq) %o @ https://shop.geekqa.net/litecart/public_html/checkout:0
+[  543076ms] [LOG] Processing payment @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  543294ms] [LOG] Processing summary @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  547378ms] [LOG] Retrieving address (Trigger: firstname) @ https://shop.geekqa.net/litecart/public_html/checkout:241
+[  547400ms] [LOG] Retrieving address (Trigger: lastname) @ https://shop.geekqa.net/litecart/public_html/checkout:241
+[  547415ms] [LOG] Retrieving address (Trigger: address1) @ https://shop.geekqa.net/litecart/public_html/checkout:241
+[  547433ms] [LOG] Retrieving address (Trigger: postcode) @ https://shop.geekqa.net/litecart/public_html/checkout:241
+[  547455ms] [LOG] Retrieving address (Trigger: country_code) @ https://shop.geekqa.net/litecart/public_html/checkout:241
+[  568747ms] [LOG] Processing cart @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  568984ms] [LOG] Processing customer @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  569243ms] [LOG] Processing shipping @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  569325ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "username"): (More info: https://goo.gl/9p2vKq) %o @ https://shop.geekqa.net/litecart/public_html/checkout:0
+[  569459ms] [LOG] Processing payment @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  569682ms] [LOG] Processing summary @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  577681ms] [LOG] Processing cart @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  577951ms] [LOG] Processing customer @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  578210ms] [LOG] Processing shipping @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  578296ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "username"): (More info: https://goo.gl/9p2vKq) %o @ https://shop.geekqa.net/litecart/public_html/checkout:0
+[  578422ms] [LOG] Processing payment @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  578632ms] [LOG] Processing summary @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  591293ms] [LOG] Processing cart @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  591542ms] [LOG] Processing customer @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  591777ms] [LOG] Processing shipping @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  591869ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "username"): (More info: https://goo.gl/9p2vKq) %o @ https://shop.geekqa.net/litecart/public_html/checkout:0
+[  591990ms] [LOG] Processing payment @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  592206ms] [LOG] Processing summary @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  613936ms] [LOG] Processing cart @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  614187ms] [LOG] Processing customer @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  614434ms] [LOG] Processing shipping @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  614520ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "username"): (More info: https://goo.gl/9p2vKq) %o @ https://shop.geekqa.net/litecart/public_html/checkout:0
+[  614642ms] [LOG] Processing payment @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  614863ms] [LOG] Processing summary @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  628994ms] [LOG] Processing cart @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  629281ms] [LOG] Processing customer @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  629525ms] [LOG] Processing shipping @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  629618ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "username"): (More info: https://goo.gl/9p2vKq) %o @ https://shop.geekqa.net/litecart/public_html/checkout:0
+[  629735ms] [LOG] Processing payment @ https://shop.geekqa.net/litecart/public_html/checkout:106
+[  629947ms] [LOG] Processing summary @ https://shop.geekqa.net/litecart/public_html/checkout:106

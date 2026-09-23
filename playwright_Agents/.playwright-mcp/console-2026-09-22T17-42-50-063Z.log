@@ -1,0 +1,14 @@
+[    1388ms] [WARNING] cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation @ https://cdn.tailwindcss.com/:63
+[    2059ms] [WARNING] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width. @ https://futbol1.geekqa.net/assets/index-BnIfAksM.js:76
+[  211817ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://futbol1.geekqa.net/api/comments/recent:0
+[  267612ms] [WARNING] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width. @ https://futbol1.geekqa.net/assets/index-BnIfAksM.js:76
+[  697892ms] [WARNING] The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width. @ https://futbol1.geekqa.net/assets/index-BnIfAksM.js:76

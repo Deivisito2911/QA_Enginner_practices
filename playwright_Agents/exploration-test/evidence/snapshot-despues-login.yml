@@ -1,0 +1,44 @@
+- generic [ref=e1] [box=0,0,1265,863]:
+  - generic [ref=e2] [box=0,0,1265,863]:
+    - generic [ref=e48] [box=408,158,448,404]:
+      - button [ref=e49] [box=815,176,24,24]
+      - heading "Iniciar Sesión" [level=2] [ref=e53] [box=442,192,381,36]
+      - generic [ref=e54] [box=442,252,381,229]:
+        - generic [ref=e55] [box=442,252,381,78]:
+          - generic [ref=e56] [box=442,252,381,20]: Email
+          - textbox [ref=e57] [box=442,280,381,50]
+        - generic [ref=e58] [box=442,345,381,78]:
+          - generic [ref=e59] [box=442,345,381,20]: Contraseña
+          - textbox [ref=e60] [box=442,373,381,50]
+        - button "Iniciar Sesión" [ref=e61] [box=442,439,138,42]
+      - button "¿No tienes cuenta? Regístrate aquí" [ref=e63] [box=522,508,221,20]
+    - banner [ref=e3] [box=0,0,1265,149]:
+      - generic [ref=e4] [box=0,0,1265,148]:
+        - img "WaveLink - Conexión del Futuro" [ref=e6] [box=32,16,78,64]
+        - generic [ref=e7] [box=32,80,1201,52]:
+          - generic [ref=e8] [box=32,80,524,52]:
+            - button "Planes y Calidad" [ref=e9] [box=32,80,232,52]
+            - button "Reporte / Instalación" [ref=e12] [box=280,80,275,52]
+          - generic [ref=e15] [box=1025,85,207,42]:
+            - generic [ref=e16] [box=1025,96,54,20]: Invitado
+            - button "Iniciar Sesión" [active] [ref=e17] [box=1095,85,138,42]
+    - main [ref=e18] [box=0,149,1265,714]:
+      - generic [ref=e19] [box=32,189,1201,634]:
+        - generic [ref=e20] [box=32,189,1201,199]:
+          - heading "Planes de Servicio WaveLink" [level=2] [ref=e24] [box=89,214,379,28]
+          - paragraph [ref=e25] [box=57,258,1151,24]: Conéctate a la velocidad del futuro con nuestros planes de fibra óptica.
+        - generic [ref=e28] [box=32,428,1201,395]:
+          - heading "Gestión de Calidad y Opiniones" [level=2] [ref=e33] [box=89,453,414,28]
+          - paragraph [ref=e34] [box=57,497,1151,24]: Ayúdenos a mejorar su servicio. Su opinión es registrada para optimizar WaveLink.
+          - generic [ref=e35] [box=57,537,1151,262]:
+            - generic [ref=e36] [box=57,537,1151,48]:
+              - generic [ref=e37] [box=57,537,1151,20]: "Calidad de la Fibra: 5/5"
+              - slider [ref=e38] [cursor=pointer] [box=57,570,1151,8]: "5"
+            - generic [ref=e39] [box=57,601,1151,104]:
+              - generic [ref=e40] [box=57,601,1151,20]: Comentarios (Opcional)
+              - textbox [ref=e41] [box=57,625,1151,74]
+            - generic [ref=e42] [box=57,721,1151,20]:
+              - checkbox "Realizar opinión de forma anónima." [ref=e43] [box=57,723,16,16]
+              - generic [ref=e44] [box=81,721,221,20]: Realizar opinión de forma anónima.
+            - button "Enviar Feedback" [ref=e45] [box=57,757,161,42]
+  - alert [ref=e46] [box=-1,862,1,1]

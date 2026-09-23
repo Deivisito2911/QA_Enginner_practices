@@ -1,0 +1,42 @@
+- generic [ref=e1] [box=0,0,1280,720]:
+  - generic [ref=e2] [box=0,0,1280,720]:
+    - banner [ref=e3] [box=0,0,1280,149]:
+      - generic [ref=e4] [box=0,0,1280,148]:
+        - img "WaveLink - Conexión del Futuro" [ref=e6] [box=32,16,78,64]
+        - generic [ref=e7] [box=32,80,1216,52]:
+          - generic [ref=e8] [box=32,80,524,52]:
+            - button "Planes y Calidad" [ref=e9] [box=32,80,232,52]
+            - button "Reporte / Instalación" [active] [ref=e12] [box=280,80,275,52]
+          - generic [ref=e15] [box=1041,85,207,42]:
+            - generic [ref=e16] [box=1041,96,54,20]: Invitado
+            - button "Iniciar Sesión" [ref=e17] [box=1110,85,138,42]
+    - main [ref=e18] [box=0,149,1280,570]:
+      - generic [ref=e64] [box=32,189,1216,490]:
+        - generic [ref=e66] [box=32,189,800,490]:
+          - heading "Reporte de Falla" [level=2] [ref=e70] [box=89,214,232,28]
+          - paragraph [ref=e71] [box=57,258,750,24]: Digitaliza tu solicitud. Nuestro sistema geolocalizará la ubicación y asignará automáticamente.
+          - generic [ref=e72] [box=57,298,750,42]:
+            - button "Reportar Falla" [ref=e73] [box=57,298,141,42]
+            - button "Solicitar Instalación" [ref=e74] [box=214,298,185,42]
+          - generic [ref=e75] [box=57,363,750,290]:
+            - generic [ref=e76] [box=57,363,750,89]:
+              - generic [ref=e77] [box=57,363,750,20]: Zona / Municipio
+              - combobox [ref=e78] [box=57,387,750,45]:
+                - option "Arismendi" [selected] [box=0,0,0,0]
+                - option "García" [box=0,0,0,0]
+                - option "Gómez" [box=0,0,0,0]
+                - option "Maneiro" [box=0,0,0,0]
+                - option "Marcano" [box=0,0,0,0]
+                - option "Mariño" [box=0,0,0,0]
+                - option "Macanao" [box=0,0,0,0]
+                - option "Tubores" [box=0,0,0,0]
+                - option "Díaz" [box=0,0,0,0]
+                - option "Villalba" [box=0,0,0,0]
+                - option "Antolín del Campo" [box=0,0,0,0]
+              - paragraph [ref=e79] [box=57,436,750,16]: WaveLink atiende fallas según la zona seleccionada.
+            - generic [ref=e80] [box=57,468,750,128]:
+              - generic [ref=e81] [box=57,468,750,20]: Descripción del Problema
+              - textbox "Mi servicio se cayó totalmente. El router no enciende la luz PON." [ref=e82] [box=57,492,750,98]
+            - button "Generar Órden de Servicio" [ref=e84] [box=57,612,236,42]
+        - heading "Historial de Tickets" [level=2] [ref=e91] [box=921,214,272,28]
+  - alert [ref=e46] [box=-1,719,1,1]

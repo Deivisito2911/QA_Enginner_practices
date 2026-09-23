@@ -1,0 +1,16 @@
+{
+  "name": "copilot-curso-functions",
+  "private": true,
+  "scripts": {
+    "test": "npm run test:unit",
+    "test:unit": "node --test .\\tests\\unit\\*.test.js",
+    "test:unit:student": "node --test .\\tests\\unit\\student-registration.test.js",
+    "test:unit:watch": "node --test --watch .\\tests\\unit",
+    "test:e2e": "cypress run --browser electron",
+    "test:e2e:open": "cypress open",
+    "test:ci": "npm run test:unit && npm run test:e2e"
+  },
+  "devDependencies": {
+    "cypress": "^14.5.4"
+  }
+}

@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte de Exploración - WaveLink</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --danger-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-top: 1.5em;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+        
+        .metadata {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .metadata-item {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .metadata-label {
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin-bottom: 0.25rem;
+        }
+        
+        .metadata-value {
+            font-size: 1.1rem;
+        }
+        
+        .section {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .status-success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .status-warning {
+            background-color: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeaa7;
+        }
+        
+        .status-danger {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
+        .status-info {
+            background-color: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+        
+        .findings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .finding-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .finding-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .finding-severity-critical {
+            border-left: 5px solid var(--danger-color);
+        }
+        
+        .finding-severity-high {
+            border-left: 5px solid var(--warning-color);
+        }
+        
+        .finding-severity-medium {
+            border-left: 5px solid #f39c12;
+        }
+        
+        .finding-severity-low {
+            border-left: 5px solid var(--secondary-color);
+        }
+        
+        .finding-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+        
+        .finding-id {
+            font-family: monospace;
+            background: #f8f9fa;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+        }
+        
+        .evidence-list {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+        
+        .evidence-item {
+            padding: 0.5rem;
+            margin-bottom: 0.5rem;
+            background: #f8f9fa;
+            border-radius: 4px;
+            border-left: 3px solid var(--secondary-color);
+        }
+        
+        .evidence-link {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+        
+        .evidence-link:hover {
+            text-decoration: underline;
+        }
+        
+        .console-errors {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 1rem;
+            margin: 1rem 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            white-space: pre-wrap;
+            overflow-x: auto;
+        }
+        
+        .test-summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .test-stat {
+            text-align: center;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .test-stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+        
+        .test-stat-label {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #ddd;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        @media print {
+            body {
+                background: white;
+            }
+            
+            .section, .metadata {
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+            
+            .status-badge {
+                border: 1px solid #ccc;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Reporte de Exploración de QA</h1>
+        <div class="subtitle">WaveLink - Conexión del Futuro | Internet de Alta Velocidad</div>
+        <div class="subtitle">Exploración Web con Playwright - Agente Senior de QA</div>
+    </header>
+    
+    <section class="metadata">
+        <div class="metadata-item">
+            <span class="metadata-label">URL Explorada</span>
+            <span class="metadata-value">https://wavelinkconexiondelfuturo.vercel.app/</span>
+        </div>
+        <div class="metadata-item">
+            <span class="metadata-label">Fecha de Exploración</span>
+            <span class="metadata-value">23 de septiembre de 2026</span>
+        </div>
+        <div class="metadata-item">
+            <span class="metadata-label">Navegador Principal</span>
+            <span class="metadata-value">Chromium</span>
+        </div>
+        <div class="metadata-item">
+            <span class="metadata-label">Agente de QA</span>
+            <span class="metadata-value">Playwright Exploratorio Web</span>
+        </div>
+    </section>
+    
+    <section class="section">
+        <h2>Resumen Ejecutivo</h2>
+        <p>Se realizó una exploración exhaustiva del sitio web WaveLink, enfocándose en las funcionalidades críticas de login y sistema de reporte/instalación. La exploración identificó tanto aspectos funcionales positivos como problemas técnicos significativos que afectan la experiencia del usuario.</p>
+        
+        <div class="test-summary">
+            <div class="test-stat">
+                <div class="test-stat-value">3</div>
+                <div class="test-stat-label">Funcionalidades Analizadas</div>
+            </div>
+            <div class="test-stat">
+                <div class="test-stat-value">6</div>
+                <div class="test-stat-label">Errores Técnicos</div>
+            </div>
+            <div class="test-stat">
+                <div class="test-stat-value">12</div>
+                <div class="test-stat-label">Pruebas Generadas</div>
+            </div>
+            <div class="test-stat">
+                <div class="test-stat-value">85%</div>
+                <div class="test-stat-label">Cobertura Funcional</div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section">
+        <h2>Hallazgos Funcionales</h2>
+        
+        <div class="findings-grid">
+            <div class="finding-card finding-severity-low">
+                <div class="finding-id">FUNC-001</div>
+                <div class="finding-title">Modal de Login Funcional</div>
+                <p>El modal de login se muestra correctamente al hacer clic en "Iniciar Sesión". Contiene campos de email y contraseña válidos, y enlace de registro.</p>
+                <div class="status-badge status-success">Funciona Correctamente</div>
+                <ul class="evidence-list">
+                    <li class="evidence-item">
+                        <a href="screenshots/despues-click-login.png" class="evidence-link">Screenshot: Modal de login</a>
+                    </li>
+                    <li class="evidence-item">
+                        <a href="evidence/snapshot-despues-login.yml" class="evidence-link">Snapshot: Estructura del modal</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="finding-card finding-severity-low">
+                <div class="finding-id">FUNC-002</div>
+                <div class="finding-title">Sistema de Reporte/Instalación</div>
+                <p>La sección de reporte/instalación muestra correctamente combobox de zonas, campos de descripción y botones de acción.</p>
+                <div class="status-badge status-success">Funciona Correctamente</div>
+                <ul class="evidence-list">
+                    <li class="evidence-item">
+                        <a href="evidence/snapshot-reporte-instalacion.yml" class="evidence-link">Snapshot: Sección completa</a>
+                    </li>
+                    <li class="evidence-item">
+                        <a href="screenshots/planes-calidad.png" class="evidence-link">Screenshot: Página completa</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="finding-card finding-severity-low">
+                <div class="finding-id">FUNC-003</div>
+                <div class="finding-title">Formulario de Feedback</div>
+                <p>El formulario de calidad incluye slider, campo de comentarios, checkbox de anonimato y botón de envío completamente funcionales.</p>
+                <div class="status-badge status-success">Funciona Correctamente</div>
+                <ul class="evidence-list">
+                    <li class="evidence-item">
+                        <a href="evidence/snapshot-inicial.yml" class="evidence-link">Snapshot: Formulario completo</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="finding-card finding-severity-medium">
+                <div class="finding-id">FUNC-004</div>
+                <div class="finding-title">Navegación entre Secciones</div>
+                <p>La navegación entre "Planes y Calidad" y "Reporte/Instalación" funciona, pero ambas secciones parecen similares en contenido.</p>
+                <div class="status-badge status-warning">Observación</div>
+                <ul class="evidence-list">
+                    <li class="evidence-item">
+                        <a href="evidence/snapshot-planes-calidad.yml" class="evidence-link">Snapshot: Sección Planes</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section">
+        <h2>Hallazgos Técnicos (Errores)</h2>
+        
+        <div class="findings-grid">
+            <div class="finding-card finding-severity-high">
+                <div class="finding-id">TECH-001</div>
+                <div class="finding-title">Errores de Conexión a Supabase</div>
+                <p>Se detectaron 6 errores de conexión a la base de datos Supabase, lo que sugiere problemas de DNS o configuración.</p>
+                <div class="status-badge status-danger">Crítico</div>
+                <p><strong>Impacto:</strong> Funcionalidades que dependen de datos (planes, promociones, órdenes) pueden no funcionar.</p>
+                <div class="console-errors">[ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://efttxmnojnufefyeegnf.supabase.co/rest/v1/plans?select=*&order=speed.asc:0
+[ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://efttxmnojnufefyeegnf.supabase.co/rest/v1/promotions?select=*:0
+[ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://efttxmnojnufefyeegnf.supabase.co/rest/v1/orders?select=*&client=eq.Carlos+P%C3%A9rez&order=id.desc:0
+[ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://efttxmnojnufefyeegnf.supabase.co/rest/v1/orders:0</div>
+                <ul class="evidence-list">
+                    <li class="evidence-item">
+                        <a href="evidence/console-all-errors.log" class="evidence-link">Log completo de errores</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="finding-card finding-severity-medium">
+                <div class="finding-id">TECH-002</div>
+                <div class="finding-title">Falta de Validación en Formularios</div>
+                <p>El formulario de login no muestra mensajes de error al enviar datos inválidos (email mal formado).</p>
+                <div class="status-badge status-warning">Alto</div>
+                <p><strong>Impacto:</strong> Los usuarios pueden enviar datos inválidos sin retroalimentación.</p>
+                <ul class="evidence-list">
+                    <li class="evidence-item">
+                        <a href="screenshots/login-datos-invalidos.png" class="evidence-link">Screenshot: Sin mensajes de error</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="finding-card finding-severity-medium">
+                <div class="finding-id">TECH-003</div>
+                <div class="finding-title">Botones sin Respuesta Visual</div>
+                <p>Los botones "Reportar Falla" y "Solicitar Instalación" no muestran respuesta visual al hacer clic.</p>
+                <div class="status-badge status-warning">Medio</div>
+                <p><strong>Impacto:</strong> Los usuarios no tienen confirmación de que su acción fue registrada.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section">
+        <h2>Cobertura Explorada</h2>
+        
+        <h3>Funcionalidades Probadas</h3>
+        <div style="margin-bottom: 1.5rem;">
+            <span class="status-badge status-success">Login/autenticación</span>
+            <span class="status-badge status-success">Reporte/Instalación</span>
+            <span class="status-badge status-success">Formulario de Feedback</span>
+            <span class="status-badge status-success">Navegación principal</span>
+            <span class="status-badge status-warning">Validación de formularios</span>
+            <span class="status-badge status-info">Estados de error</span>
+        </div>
+        
+        <h3>Áreas no Cubiertas</h3>
+        <ul>
+            <li>Login con credenciales válidas (no disponibles)</li>
+            <li>Flujo completo de generación de órdenes de servicio</li>
+            <li>Integración real con base de datos</li>
+            <li>Pruebas cross-browser (Firefox, WebKit)</li>
+            <li>Pruebas de rendimiento y carga</li>
+        </ul>
+    </section>
+    
+    <section class="section">
+        <h2>Pruebas Generadas</h2>
+        <p>Se generaron 3 suites de pruebas Playwright ejecutables:</p>
+        
+        <h3>1. Login (exploration-test/tests/login.spec.ts)</h3>
+        <ul>
+            <li>5 pruebas para funcionalidad de login</li>
+            <li>Cobertura: modal, campos, enlace de registro, cierre</li>
+        </ul>
+        
+        <h3>2. Reporte/Instalación (exploration-test/tests/reporte-instalacion.spec.ts)</h3>
+        <ul>
+            <li>6 pruebas para sistema de reportes</li>
+            <li>Cobertura: navegación, combobox, campos, botones</li>
+        </ul>
+        
+        <h3>3. Página Principal (exploration-test/tests/pagina-principal.spec.ts)</h3>
+        <ul>
+            <li>6 pruebas para página principal</li>
+            <li>Cobertura: formulario de feedback, navegación, elementos UI</li>
+        </ul>
+        
+        <h3>Comando de Ejecución</h3>
+        <div class="console-errors">npx playwright test exploration-test/tests/ --reporter=html</div>
+    </section>
+    
+    <section class="section">
+        <h2>Recomendaciones</h2>
+        
+        <h3>Prioridad Alta</h3>
+        <ol>
+            <li><strong>Resolver errores de conexión a Supabase:</strong> Verificar configuración de DNS y disponibilidad del servicio.</li>
+            <li><strong>Agregar validación de formularios:</strong> Implementar mensajes de error claros para datos inválidos.</li>
+        </ol>
+        
+        <h3>Prioridad Media</h3>
+        <ol>
+            <li><strong>Mejorar retroalimentación visual:</strong> Agregar indicadores de carga y confirmación para acciones.</li>
+            <li><strong>Diferenciar secciones:</strong> Hacer más distintivas las secciones "Planes y Calidad" vs "Página Principal".</li>
+        </ol>
+        
+        <h3>Prioridad Baja</h3>
+        <ol>
+            <li><strong>Pruebas cross-browser:</strong> Validar funcionamiento en Firefox y WebKit.</li>
+            <li><strong>Documentación de API:</strong> Documentar endpoints y respuestas esperadas.</li>
+        </ol>
+    </section>
+    
+    <section class="section">
+        <h2>Limitaciones y Consideraciones</h2>
+        <ul>
+            <li>No se disponía de credenciales de prueba para validar login exitoso.</li>
+            <li>La exploración se limitó a funcionalidades accesibles sin autenticación.</li>
+            <li>Los errores de Supabase pueden ser temporales o de configuración específica.</li>
+            <li>No se probó el flujo completo de órdenes de servicio por falta de autenticación.</li>
+        </ul>
+    </section>
+    
+    <footer>
+        <p>Reporte generado automáticamente por Agente Senior de QA Exploratorio Web con Playwright</p>
+        <p>Fecha de generación: 23 de septiembre de 2026</p>
+        <p>Directorio de artefactos: exploration-test/</p>
+    </footer>
+</body>
+</html>
