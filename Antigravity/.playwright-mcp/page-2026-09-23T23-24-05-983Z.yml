@@ -1,0 +1,394 @@
+- generic [active] [ref=f3e1]:
+  - generic:
+    - generic:
+      - link "Ir al contenido principal" [ref=f3e2] [cursor=pointer]
+      - link "Ayuda sobre la accesibilidad" [ref=f3e3] [cursor=pointer]:
+        - /url: https://support.google.com/websearch/answer/181196?hl=es-VE
+  - generic [ref=f3e8]:
+    - search [ref=f3e9]:
+      - generic [ref=f3e12]:
+        - link [ref=f3e13] [cursor=pointer]:
+          - /url: https://www.google.com/webhp?hl=es&ictx=0&sa=X&ved=2ahUKEwjQwcK57IWXAxUbRjABHdwfEJ8QpYkNegQIBhAG
+          - img "Ir a la página principal de Google" [ref=f3e14]
+        - generic [ref=f3e19]:
+          - combobox "Buscar" [ref=f3e22]: equipos clasificados a worlds de League of legends 2026 equipos clasificados a worlds de League of legends 2026
+          - generic [ref=f3e23]:
+            - button "Borrar" [ref=f3e25] [cursor=pointer]
+            - generic [ref=f3e30]:
+              - button "Búsqueda por voz" [ref=f3e31] [cursor=pointer]
+              - button "Búsqueda por imagen" [ref=f3e34] [cursor=pointer]
+        - button "Buscar" [ref=f3e37] [cursor=pointer]
+    - generic [ref=f3e42]:
+      - button "Configuración" [ref=f3e44] [cursor=pointer]
+      - button "Compartir" [ref=f3e49] [cursor=pointer]
+      - generic [ref=f3e55]:
+        - button "Aplicaciones de Google" [ref=f3e57] [cursor=pointer]
+        - link "Iniciar sesión" [ref=f3e62] [cursor=pointer]:
+          - /url: https://accounts.google.com/ServiceLogin?hl=es&passive=true&continue=https://www.google.com/search%3Fq%3Dequipos%2Bclasificados%2Ba%2Bworlds%2Bde%2BLeague%2Bof%2Blegends%2B2026%26sca_esv%3D4a0f1201333c9280%26sxsrf%3DAPpeQnuM7q0YEAKr07KcMPKsFXBjEyqd7A%253A1790205816885%26source%3Dhp%26ei%3DeF-0av2XNNXv-LYP696emQY%26iflsig%3DABILxe8AAAAAarRtiBMrFLzqog8ps3pYrP1yr-9CR-QV%26ved%3D0ahUKEwj9s6eu7IWXAxXVN94AHWuvJ2MQ4dUDCBs%26uact%3D5%26oq%3Dequipos%2Bclasificados%2Ba%2Bworlds%2Bde%2BLeague%2Bof%2Blegends%2B2026%26gs_lp%3DEgdnd3Mtd2l6IjdlcXVpcG9zIGNsYXNpZmljYWRvcyBhIHdvcmxkcyBkZSBMZWFndWUgb2YgbGVnZW5kcyAyMDI2SPMJUABYAHAAeACQAQCYAQCgAQCqAQC4AQPIAQD4AQGYAgCgAgCYAwCSBwCgBwCyBwC4BwDCBwDIBwCACAE%26sclient%3Dgws-wiz%26sei%3Dj1-0apCEL56bwbkPsa2iCQ&ec=futura_srp_og_si_72236_p
+  - generic [ref=f3e65]:
+    - navigation [ref=f3e71]:
+      - generic [ref=f3e77]:
+        - list [ref=f3e78]:
+          - listitem [ref=f3e79]:
+            - link "Modo IA" [ref=f3e82] [cursor=pointer]:
+              - /url: /search?q=equipos+clasificados+a+worlds+de+League+of+legends+2026&sca_esv=4a0f1201333c9280&sxsrf=APpeQntRn_LCo0ZpoYAkthNr4Y1Y-qJSYQ:1790205840375&udm=50&source=hp&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDIoZ8TJcYV6w5Zw4mLiz0qaQUZ7s-xEllGFYzQM2ZnNyACTdKvqMtqqp3WpWy1qQgsIldulz6RQd-0NXKIv3UpxaFpSgWRFrp2xK_tlj-xL9jUuS0uAkZURoQz123mrXWZ46xSO02nHjJoKuemC5nSCMXeZw7M3ZDKW-UZOHoomNBarqK3qkLqei1RfFkxZcMLCTEFQ&vsint=&aep=1&ntc=1&cs=0&sa=X&ved=2ahUKEwjQwcK57IWXAxUbRjABHdwfEJ8Q2J8OegQIExAD
+          - listitem [ref=f3e86]:
+            - link "Todo" [disabled] [ref=f3e87]
+          - listitem [ref=f3e90]:
+            - link "Noticias" [ref=f3e91] [cursor=pointer]:
+              - /url: /search?sca_esv=4a0f1201333c9280&sxsrf=APpeQntRn_LCo0ZpoYAkthNr4Y1Y-qJSYQ:1790205840375&q=equipos+clasificados+a+worlds+de+League+of+legends+2026&tbm=nws&source=lnms&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDIoZ8TJcYV6w5Zw4mLiz0qaQUZ7s-xEllGFYzQM2ZnNyACTdKvqMtqqp3WpWy1qQgsIldulz6RQd-0NXKIv3UpxaFpSgWRFrp2xK_tlj-xL9jUuS0uAkZURoQz123mrXWZ46xSO02nHjJoKuemC5nSCMXeZw7M3ZDKW-UZOHoomNBarqK3qkLqei1RfFkxZcMLCTEFQ&sa=X&ved=2ahUKEwjQwcK57IWXAxUbRjABHdwfEJ8Q0pQJegQIGBAB
+          - listitem [ref=f3e94]:
+            - link "Imágenes" [ref=f3e95] [cursor=pointer]:
+              - /url: /search?sca_esv=4a0f1201333c9280&sxsrf=APpeQntRn_LCo0ZpoYAkthNr4Y1Y-qJSYQ:1790205840375&udm=2&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDIoZ8TJcYV6w5Zw4mLiz0qaQUZ7s-xEllGFYzQM2ZnNyACTdKvqMtqqp3WpWy1qQgsIldulz6RQd-0NXKIv3UpxaFpSgWRFrp2xK_tlj-xL9jUuS0uAkZURoQz123mrXWZ46xSO02nHjJoKuemC5nSCMXeZw7M3ZDKW-UZOHoomNBarqK3qkLqei1RfFkxZcMLCTEFQ&q=equipos+clasificados+a+worlds+de+League+of+legends+2026&sa=X&ved=2ahUKEwjQwcK57IWXAxUbRjABHdwfEJ8QtKgLegQIGRAB
+          - listitem [ref=f3e98]:
+            - link "Vídeos" [ref=f3e99] [cursor=pointer]:
+              - /url: /search?sca_esv=4a0f1201333c9280&sxsrf=APpeQntRn_LCo0ZpoYAkthNr4Y1Y-qJSYQ:1790205840375&udm=vids&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDIoZ8TJcYV6w5Zw4mLiz0qaQUZ7s-xEllGFYzQM2ZnNyACTdKvqMtqqp3WpWy1qQgsIldulz6RQd-0NXKIv3UpxaFpSgWRFrp2xK_tlj-xL9jUuS0uAkZURoQz123mrXWZ46xSO02nHjJoKuemC5nSCMXeZw7M3ZDKW-UZOHoomNBarqK3qkLqei1RfFkxZcMLCTEFQ&q=equipos+clasificados+a+worlds+de+League+of+legends+2026&sa=X&ved=2ahUKEwjQwcK57IWXAxUbRjABHdwfEJ8QtKgLegQIFxAB
+          - listitem [ref=f3e102]:
+            - link "Vídeos cortos" [ref=f3e103] [cursor=pointer]:
+              - /url: /search?sca_esv=4a0f1201333c9280&sxsrf=APpeQntRn_LCo0ZpoYAkthNr4Y1Y-qJSYQ:1790205840375&udm=39&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDIoZ8TJcYV6w5Zw4mLiz0qaQUZ7s-xEllGFYzQM2ZnNyACTdKvqMtqqp3WpWy1qQgsIldulz6RQd-0NXKIv3UpxaFpSgWRFrp2xK_tlj-xL9jUuS0uAkZURoQz123mrXWZ46xSO02nHjJoKuemC5nSCMXeZw7M3ZDKW-UZOHoomNBarqK3qkLqei1RfFkxZcMLCTEFQ&q=equipos+clasificados+a+worlds+de+League+of+legends+2026&sa=X&ved=2ahUKEwjQwcK57IWXAxUbRjABHdwfEJ8Qs6gLegQIFhAB
+          - listitem [ref=f3e106]:
+            - link "Web" [ref=f3e107] [cursor=pointer]:
+              - /url: /search?sca_esv=4a0f1201333c9280&sxsrf=APpeQntRn_LCo0ZpoYAkthNr4Y1Y-qJSYQ:1790205840375&udm=web&fbs=ABfTbFUDadgeu2mn4mYJ8iEZ1GUDIoZ8TJcYV6w5Zw4mLiz0qaQUZ7s-xEllGFYzQM2ZnNyACTdKvqMtqqp3WpWy1qQgsIldulz6RQd-0NXKIv3UpxaFpSgWRFrp2xK_tlj-xL9jUuS0uAkZURoQz123mrXWZ46xSO02nHjJoKuemC5nSCMXeZw7M3ZDKW-UZOHoomNBarqK3qkLqei1RfFkxZcMLCTEFQ&q=equipos+clasificados+a+worlds+de+League+of+legends+2026&sa=X&ved=2ahUKEwjQwcK57IWXAxUbRjABHdwfEJ8Qs6gLegQIFRAB
+          - listitem [ref=f3e110]:
+            - button [ref=f3e111] [cursor=pointer]:
+              - generic "Más filtros" [ref=f3e112]: Más
+        - button "Herramientas" [ref=f3e119] [cursor=pointer]
+    - heading "Resultados de búsqueda" [level=1] [ref=f3e126]
+    - generic [ref=f3e131]:
+      - generic [ref=f3e152]:
+        - heading "Visión general creada por IA" [level=2] [ref=f3e158]
+        - generic [ref=f3e161]:
+          - generic [ref=f3e177]:
+            - generic [ref=f3e180]:
+              - generic [ref=f3e181]:
+                - text: Los
+                - link "equipos clasificados a Worlds 2026 de League of Legends" [ref=f3e183] [cursor=pointer]:
+                  - /url: /goto?url=CAEScgHrOzAVLNj8fCdLKLFlDXkI49KavzmEESnSb6jFqTPRgTebT0T1A7awf_YI0lcwfBogqAWGR8NipkGgUVEVq9OpNFWKeGsldI_dDcVGC0_bDFJ8euujhnHfwJHM2lDJ2rZVPq7AGJFRYkkiv5gAoxW_HA
+                - mark [ref=f3e184]: incluyen a representantes de las principales ligas del mundo como la LCK, LPL, LEC, LCS y LCP
+                - text: .
+                - generic [ref=f3e186]:
+                  - link "LoL Esports" [ref=f3e187] [cursor=pointer]:
+                    - /url: /goto?url=CAEScgHrOzAVLNj8fCdLKLFlDXkI49KavzmEESnSb6jFqTPRgTebT0T1A7awf_YI0lcwfBogqAWGR8NipkGgUVEVq9OpNFWKeGsldI_dDcVGC0_bDFJ8euujhnHfwJHM2lDJ2rZVPq7AGJFRYkkiv5gAoxW_HA
+                  - button "LoL Esports (+1) - Resultados relacionados" [ref=f3e188] [cursor=pointer]:
+                    - generic [ref=f3e190]:
+                      - generic [ref=f3e191]: LoL Esports
+                      - generic [ref=f3e192]: "+1"
+              - heading "Equipos clasificados por región" [level=3] [ref=f3e197]
+              - table [ref=f3e200]:
+                - rowgroup [ref=f3e201]:
+                  - row [ref=f3e202]:
+                    - columnheader "Región" [ref=f3e203]
+                    - columnheader "Equipos Clasificados" [ref=f3e204]
+                  - row [ref=f3e205]:
+                    - cell [ref=f3e206]:
+                      - strong [ref=f3e207]: LCK
+                      - text: (Corea)
+                    - cell "Gen.G, Hanwha Life Esports (HLE), T1, DK" [ref=f3e208]
+                  - row [ref=f3e209]:
+                    - cell [ref=f3e210]:
+                      - strong [ref=f3e211]: LPL
+                      - text: (China)
+                    - cell "Invictus Gaming (IG), Top Esports (TES), Anyone's Legend (AL), Bilibili Gaming (BLG)" [ref=f3e212]
+                  - row [ref=f3e213]:
+                    - cell [ref=f3e214]:
+                      - strong [ref=f3e215]: LEC
+                      - text: (EMEA)
+                    - cell "Movistar KOI (MKOI), Karmine Corp (KC), G2 Esports" [ref=f3e216]
+                  - row [ref=f3e217]:
+                    - cell [ref=f3e218]:
+                      - strong [ref=f3e219]: LCS
+                      - text: (Norteamérica)
+                    - cell "Team Liquid (TLAW), Cloud9 (C9)" [ref=f3e220]
+                  - row [ref=f3e221]:
+                    - cell [ref=f3e222]:
+                      - strong [ref=f3e223]: LCP
+                      - text: (Asia-Pacífico)
+                    - cell "CTBC Flying Oyster (CFO), MVK Esports, Team Secret Whales (TSW)" [ref=f3e224]
+              - generic [ref=f3e226]:
+                - emphasis [ref=f3e227]: "(Nota: Algunos cupos adicionales o definitivos de ciertas regiones están por definirse con el cierre de sus torneos respectivos)."
+                - generic [ref=f3e229]:
+                  - link "LoL Esports" [ref=f3e230] [cursor=pointer]:
+                    - /url: /goto?url=CAEScgHrOzAVLNj8fCdLKLFlDXkI49KavzmEESnSb6jFqTPRgTebT0T1A7awf_YI0lcwfBogqAWGR8NipkGgUVEVq9OpNFWKeGsldI_dDcVGC0_bDFJ8euujhnHfwJHM2lDJ2rZVPq7AGJFRYkkiv5gAoxW_HA
+                  - button "LoL Esports (+1) - Resultados relacionados" [ref=f3e231] [cursor=pointer]:
+                    - generic [ref=f3e233]:
+                      - generic [ref=f3e234]: LoL Esports
+                      - generic [ref=f3e235]: "+1"
+              - generic [ref=f3e242]:
+                - text: Si deseas conocer el
+                - strong [ref=f3e243]: calendario exacto de la fase de Zúrich/Suiza
+                - text: o los
+                - generic [ref=f3e244]: detalles de los parches y fechas del mundial
+                - text: ", dímelo y lo revisamos."
+            - generic [ref=f3e249]:
+              - list [ref=f3e251]:
+                - listitem [ref=f3e252]:
+                  - generic [ref=f3e253]:
+                    - link "Clasificación de Mundial - LoL Esports. Se abre en una nueva pestaña." [ref=f3e254] [cursor=pointer]:
+                      - /url: /goto?url=CAEScgHrOzAVLNj8fCdLKLFlDXkI49KavzmEESnSb6jFqTPRgTebT0T1A7awf_YI0lcwfBogqAWGR8NipkGgUVEVq9OpNFWKeGsldI_dDcVGC0_bDFJ8euujhnHfwJHM2lDJ2rZVPq7AGJFRYkkiv5gAoxW_HA
+                    - generic [ref=f3e255]:
+                      - generic [ref=f3e256]:
+                        - generic [ref=f3e259]: LoL Esports
+                        - button "Acerca de este resultado" [ref=f3e265] [cursor=pointer]
+                      - generic [ref=f3e271]:
+                        - generic [ref=f3e272]: Clasificación de Mundial - LoL Esports
+                        - generic [ref=f3e273]: "8 equipos competirán en un cuadro de eliminación única. Equipos clasificados. Se han clasificado los siguientes equipos: LPL. IG. ..."
+                - listitem [ref=f3e276]:
+                  - generic [ref=f3e277]:
+                    - link "Todos los equipos clasificados para Worlds 2026. Se abre en una nueva pestaña." [ref=f3e278] [cursor=pointer]:
+                      - /url: /goto?url=CAESkAEB6zswFTg9TszdOy2Zf_61YLdPLq6A2BdCHoSpmAr7tcn_raRwnJ8eVjcO09l-8Mni1hiuABOBu3HMrzZpDvdoEwg52Zo9k0PCPxxrfdb37kBLm6-TVkGltC7bmCl0oO3Aj_TTBb97zAdMrZXl6nnce3ZbecN_joVHVaLLwnQf2YMzceDJ4aTl7Lag0yw8LO4
+                    - generic [ref=f3e279]:
+                      - generic [ref=f3e280]:
+                        - generic [ref=f3e283]: Strafe Esports
+                        - button "Acerca de este resultado" [ref=f3e289] [cursor=pointer]
+                      - generic [ref=f3e295]:
+                        - generic [ref=f3e296]: Todos los equipos clasificados para Worlds 2026
+                        - generic [ref=f3e297]: "8 sept. 2026 — LoL Worlds 2026: Equipos clasificados. LCK, LPL, LEC, LCS, LCP, CBLOL. Gen.G · Anyone's Legend · G2 Esports · Cloud9 · Team Secret..."
+              - button "Mostrar todos los resultados relacionados" [ref=f3e301] [cursor=pointer]:
+                - generic [ref=f3e302]: Mostrar todo
+          - generic [ref=f3e306]:
+            - generic [ref=f3e307]: La IA puede cometer errores, así que verifica las respuestas
+            - generic [ref=f3e309]:
+              - button "Compartir" [ref=f3e316]
+              - generic [ref=f3e325]:
+                - button "Respuesta correcta" [ref=f3e330] [cursor=pointer]:
+                  - img "Respuesta correcta" [ref=f3e333]
+                - button "Respuesta incorrecta" [ref=f3e339] [cursor=pointer]:
+                  - img "Respuesta incorrecta" [ref=f3e342]
+              - button "Más" [ref=f3e353] [cursor=pointer]
+      - main [ref=f3e360]:
+        - generic [ref=f3e364]:
+          - generic [ref=f3e367]:
+            - heading "Resultados web" [level=2] [ref=f3e368]
+            - generic [ref=f3e369]:
+              - generic [ref=f3e372]:
+                - link "Worlds 2026 - Leaguepedia | Wiki de esports de League of ... Fandom https://lol.fandom.com › wiki › 2026_Season_World_Ch..." [ref=f3e374] [cursor=pointer]:
+                  - /url: /goto?url=CAESuQEB6zswFfpOjMYAdMjbHwU4DvIIqiokO0RDYZHXqKc1UQTFyVa3w1uByyQBCDWkUlIEskTeoJe5ZOK5iG-1jsE4MAx6mZbfTamZxDzeV6Mvd9RazVa082MT2tUJBhJn5eavPL8rjTdeIAdCsSMm0rnDIor8hm1mUZBSCeuD4pDMdVLeTsAA7CpX2-r3STkos-TCdAHDMTV6PcQXLdI-rPzJqt6l-8bf2EeIYD-5G51_c4i2L-hHLmisuw
+                  - heading "Worlds 2026 - Leaguepedia | Wiki de esports de League of ..." [level=3] [ref=f3e375]
+                  - generic [ref=f3e381]:
+                    - generic [ref=f3e382]: Fandom
+                    - generic [ref=f3e384]: https://lol.fandom.com › wiki › 2026_Season_World_Ch...
+                - button "Acerca de este resultado" [ref=f3e390] [cursor=pointer]
+              - generic [ref=f3e395]:
+                - generic [ref=f3e398]:
+                  - text: El ganador avanza a la Etapa 2. Etapa 2 (Suiza). Participan 16
+                  - emphasis [ref=f3e399]: equipos
+                  - text: . 15
+                  - emphasis [ref=f3e400]: equipos
+                  - text: preclasificados para la Etapa 2 + el
+                  - emphasis [ref=f3e401]: clasificado
+                  - text: de la Etapa 1.
+                - generic [ref=f3e406]:
+                  - generic [ref=f3e411]: Traducido por Google ·
+                  - button "Ver original (English)" [ref=f3e412] [cursor=pointer]
+          - generic [ref=f3e417]:
+            - heading "Más preguntas" [level=2] [ref=f3e419]
+            - generic [ref=f3e420]:
+              - button "¿Qué países están clasificados al mundial de 2026?" [ref=f3e426] [cursor=pointer]
+              - button "¿Dónde serán los Worlds LOL 2026?" [ref=f3e440] [cursor=pointer]
+              - button "¿Cuántos equipos clasifican al mundial del 2026?" [ref=f3e454] [cursor=pointer]
+              - button "¿Cuáles son las 48 selecciones del mundial de 2026?" [ref=f3e468] [cursor=pointer]
+          - generic [ref=f3e478]:
+            - heading "Resultados web" [level=2] [ref=f3e479]
+            - generic [ref=f3e480]:
+              - generic [ref=f3e483]:
+                - link "Todos los equipos clasificados para Worlds 2026 Strafe Esports https://www.strafe.com › ... › Noticias" [ref=f3e485] [cursor=pointer]:
+                  - /url: /goto?url=CAESkAEB6zswFZy7PAdO1M1i_uFIAbEiXfgegJQKu_QnZ9acF2BbB32DsOrf6-FQYiEsV4eR1aN4EeS6l1-pHGpex3KfRQHPh7XaLKGU0rmRxXYuTxHsSx52laaCJxlZX_xjCgO9YoPkbAOWWNjb0VNiiqENgAZExlMN3_16YbdBzhRYYksd34SzVyvlyDxT33YpGwE
+                  - heading "Todos los equipos clasificados para Worlds 2026" [level=3] [ref=f3e486]
+                  - generic [ref=f3e492]:
+                    - generic [ref=f3e493]: Strafe Esports
+                    - generic [ref=f3e495]: https://www.strafe.com › ... › Noticias
+                - button "Acerca de este resultado" [ref=f3e501] [cursor=pointer]
+              - generic [ref=f3e507]:
+                - generic [ref=f3e508]: 8 sept. 2026 —
+                - generic [ref=f3e509]:
+                  - emphasis [ref=f3e510]: "LoL Worlds 2026: Equipos clasificados"
+                  - text: ; LCK, LPL, LEC ; Gen.G · Anyone's Legend · G2 Esports ; Hanwha Life Esports · Bilibili Gaming · Movistar KOI ...
+          - generic [ref=f3e514]:
+            - generic [ref=f3e517]:
+              - link "Clasificación de Mundial LoL Esports https://lolesports.com › es-ES › tournament" [ref=f3e519] [cursor=pointer]:
+                - /url: /goto?url=CAEScgHrOzAVm30AWwDOhA3imiUvcGlItryYHVjv7wuD2pg_FIjUnY_o1XJre_GlEXM_G9jZp3qcUWzlyRGpy1ZK8EVP8w97pSB83dttcLIr1Bpius0XiftyhttgWwdYDSdlNXACmS6gkFOsMV8RdBUM0pLE1A
+                - heading "Clasificación de Mundial" [level=3] [ref=f3e520]
+                - generic [ref=f3e526]:
+                  - generic [ref=f3e527]: LoL Esports
+                  - generic [ref=f3e529]: https://lolesports.com › es-ES › tournament
+              - button "Acerca de este resultado" [ref=f3e535] [cursor=pointer]
+            - generic [ref=f3e542]:
+              - text: "8"
+              - emphasis [ref=f3e543]: equipos
+              - text: competirán en un cuadro de eliminación única.
+              - emphasis [ref=f3e544]: Equipos clasificados
+              - text: . Se han
+              - emphasis [ref=f3e545]: clasificado
+              - text: los siguientes
+              - emphasis [ref=f3e546]: equipos
+              - text: ": LPL. IG. TES. AL. BLG."
+          - generic [ref=f3e550]:
+            - generic [ref=f3e553]:
+              - link "Campeonato Mundial de League of Legends 2026 Wikipedia https://en.wikipedia.org › wiki › 2026_League_of_Leg..." [ref=f3e555] [cursor=pointer]:
+                - /url: /goto?url=CAESxgEB6zswFdnTgG4WkTfl7VNi9Hx0alcuEbzF-YVwlKxJrI5-35DykUO1NFNOXZCyD5Nshw9m0XIUoDPlmjBZ2EFJt4zjZFIqjxB1byDABxAGIbloODAoAJ05SICajJ6hXGDMTP2YYZpoMyF3NDw_6nCU1ePLArJ99SY8jyUesdDMfx6NHwo9fUjs6udhO4YbUN9m8peV3_P66fJUVbF2Eb6uMzjInRX1l4xj5A59oWFWF352L3tgIVTGeulOsl736OVUbrCQMx0
+                - heading "Campeonato Mundial de League of Legends 2026" [level=3] [ref=f3e556]
+                - generic [ref=f3e562]:
+                  - generic [ref=f3e563]: Wikipedia
+                  - generic [ref=f3e565]: https://en.wikipedia.org › wiki › 2026_League_of_Leg...
+              - button "Acerca de este resultado" [ref=f3e571] [cursor=pointer]
+            - generic [ref=f3e576]:
+              - generic [ref=f3e579]:
+                - emphasis [ref=f3e580]: Equipos cualificados
+                - text: ; Corea del Sur ; LCK ; Campeón de la temporada · Subcampeón de la temporada. Ganador del Torneo de Mediados de Temporada 2026 ...
+              - generic [ref=f3e585]:
+                - generic [ref=f3e590]: Traducido por Google ·
+                - button "Ver original (English)" [ref=f3e591] [cursor=pointer]
+          - generic [ref=f3e595]:
+            - generic [ref=f3e598]:
+              - link "Campeonato Mundial 2026 - Clasificación Liquipedia https://liquipedia.net › 2026 › Qualification" [ref=f3e600] [cursor=pointer]:
+                - /url: /goto?url=CAESywEB6zswFWoTqVJKdqg7-ajoC5eGsd_haO6mmqembDfh267qnfivnOdnZGkYVIxmOKexjbrcpPPQwHXS0acbEURnJ77g4x3mDDZhI_3yLwhdaaxB5EBv8bYQ5yn0cZIYWcLwS4IfKOT24P26od2FxEPGJbynpYmtmqn2oxu1G5TdCwoe1D2B9TLKVB1YNiJVzLts9SDOjTYwfG6Dcu7lUVINK0XdwkudpoGbY8Ldw4BqY5naUKkpj_z-EfgDY1W6kBnUCYBhMxTim2qgSQ
+                - heading "Campeonato Mundial 2026 - Clasificación" [level=3] [ref=f3e601]
+                - generic [ref=f3e607]:
+                  - generic [ref=f3e608]: Liquipedia
+                  - generic [ref=f3e610]: https://liquipedia.net › 2026 › Qualification
+              - button "Acerca de este resultado" [ref=f3e616] [cursor=pointer]
+            - generic [ref=f3e621]:
+              - generic [ref=f3e622]:
+                - generic [ref=f3e623]: hace 3 días —
+                - generic [ref=f3e625]:
+                  - text: Evento, Fecha, Semilla,
+                  - emphasis [ref=f3e626]: Equipo
+                  - text: ","
+                  - emphasis [ref=f3e627]: Equipos
+                  - text: que aspiran al título. Eliminado (ordenado del más reciente al más antiguo), Notas.
+              - generic [ref=f3e632]:
+                - generic [ref=f3e637]: Traducido por Google ·
+                - button "Ver original (English)" [ref=f3e638] [cursor=pointer]
+          - generic [ref=f3e642]:
+            - generic [ref=f3e645]:
+              - link "Clasificación de Mundial LoL Esports https://lolesports.com › es-ES › tournament › overview" [ref=f3e647] [cursor=pointer]:
+                - /url: /goto?url=CAESewHrOzAVp2dSGHaiuctrOxX5pkZmfNNB3k6Lxakb3AGLoF6mxBr2lDScemaO5DA1TO99D9zhRAU0eF12ouECuE6XfYm0OeRMIHUEDAnUP1X9FtQ5atloXb-t_LDbBI3M9OftdCnQJq_k0dpgf8WTBUy2AfuODCINA-HkrQ
+                - heading "Clasificación de Mundial" [level=3] [ref=f3e648]
+                - generic [ref=f3e654]:
+                  - generic [ref=f3e655]: LoL Esports
+                  - generic [ref=f3e657]: https://lolesports.com › es-ES › tournament › overview
+              - button "Acerca de este resultado" [ref=f3e663] [cursor=pointer]
+            - generic [ref=f3e670]:
+              - text: "Equipos clasificados. Se han clasificado los siguientes equipos:"
+              - emphasis [ref=f3e671]: CB
+              - text: LOL. VKS. LCS. FLY. LEC. G2. MKOI. FNC. LCP. CFO. PSG.
+          - generic [ref=f3e675]:
+            - generic [ref=f3e678]:
+              - link "Ahora mismo hay 11 equipos clasificados para Worlds 2026. Reddit · r/lolesports Más de 50 comentarios · hace 6 días" [ref=f3e680] [cursor=pointer]:
+                - /url: /goto?url=CAESqAEB6zswFbG7UdV6dTzYtQ3rN23umW8lsMHVqU7zLlkGnKsniq1scycqv-rAhi9iili00hnfw9cVZcMaPicQ1c0tiZFdMsWb76vl6bnik31gPP2HVUDdO4gVkLGcfUKB5bGOSFpFNICapyBbvzHhIfYqEde53Er2TsgjtNhyyz2eRJ5B01BHX_urt4BeTqqHVcTYygRQ5N2SsUjXG-K2I604t8XuzUOfLSE
+                - heading "Ahora mismo hay 11 equipos clasificados para Worlds 2026." [level=3] [ref=f3e681]
+                - generic [ref=f3e687]:
+                  - generic [ref=f3e688]: Reddit · r/lolesports
+                  - generic [ref=f3e690]: Más de 50 comentarios · hace 6 días
+              - button "Acerca de este resultado" [ref=f3e696] [cursor=pointer]
+            - generic [ref=f3e703]:
+              - emphasis [ref=f3e704]: Gen.G — Campeón de la LCK
+              - text: Hanwha Life Esports — Campeón del MSI T1 — 3º de la LCK Dplus KIA — 4º de la LCK.
+          - generic [ref=f3e710]:
+            - generic [ref=f3e713]:
+              - 'link "Estos equipos ya estan clasificados a los worlds 2026 # ... TikTok · Huracán Gaming Más de 15,4 k vistas · hace 2 semanas" [ref=f3e715] [cursor=pointer]':
+                - /url: /goto?url=CAESeAHrOzAVJ_mKPKuPq_bLPScaj85wkwyK5njsshp8kiMDLS21YyVu-Jv40WMwMIrk-HNdH_biPkPs3BC28J5mCQNJ8vsL5mCeyCkS1VgW-D6he5QOC-L9Xt2FvkMOEWsycW7C3zfQvXfMTMGlkrVZZ5VPZdAG31jRZQ
+                - 'heading "Estos equipos ya estan clasificados a los worlds 2026 # ..." [level=3] [ref=f3e716]'
+                - generic [ref=f3e722]:
+                  - generic [ref=f3e723]: TikTok · Huracán Gaming
+                  - generic [ref=f3e725]: Más de 15,4 k vistas · hace 2 semanas
+              - button "Acerca de este resultado" [ref=f3e731] [cursor=pointer]
+            - generic [ref=f3e736]:
+              - 'link "Estos equipos ya estan clasificados a los worlds 2026 # ... de huracan.gaming en TikTok. Reproducir en TikTok. 1:10" [ref=f3e737] [cursor=pointer]':
+                - /url: /goto?url=CAESeAHrOzAVJ_mKPKuPq_bLPScaj85wkwyK5njsshp8kiMDLS21YyVu-Jv40WMwMIrk-HNdH_biPkPs3BC28J5mCQNJ8vsL5mCeyCkS1VgW-D6he5QOC-L9Xt2FvkMOEWsycW7C3zfQvXfMTMGlkrVZZ5VPZdAG31jRZQ
+                - generic [ref=f3e738]: 1:10
+              - generic [ref=f3e747]: "Estos equipos ya estan clasificados a los worlds 2026 #riotgames #leagueoflegends #worlds2026 #lolmexico #lolesports · When Does Pixel Worlds ..."
+          - generic [ref=f3e752]:
+            - generic [ref=f3e755]:
+              - link "LoL Esports | Manual de ligas LoL Esports https://lolesports.com › es-ES › season › handbook" [ref=f3e757] [cursor=pointer]:
+                - /url: /goto?url=CAESdwHrOzAVhcPeh5NYS-nhFdcNqXzMiTUq1TM7aTSa016eCRJLkyoOQqK11YmvOgUwOpxWEQBVzxrLoI7ZW11EGCFRK2CTg3mxr5fQ9bAFArm6CAZDHptZT-b2IBp0nQiU-Ev-oLteqLk-3bor8-EayxJVwEoU2f0w
+                - heading "LoL Esports | Manual de ligas" [level=3] [ref=f3e758]
+                - generic [ref=f3e764]:
+                  - generic [ref=f3e765]: LoL Esports
+                  - generic [ref=f3e767]: https://lolesports.com › es-ES › season › handbook
+              - button "Acerca de este resultado" [ref=f3e773] [cursor=pointer]
+            - generic [ref=f3e780]:
+              - text: La Temporada
+              - emphasis [ref=f3e781]: "2026"
+              - text: de los esports de
+              - emphasis [ref=f3e782]: League of Legends
+              - text: comienza con cada región celebrando su propio formato y estilo de split. El mejor
+              - emphasis [ref=f3e783]: equipo
+              - text: de cada región y ...
+        - generic [ref=f3e785]:
+          - generic [ref=f3e790]:
+            - heading "También se buscó" [level=2] [ref=f3e792]
+            - generic [ref=f3e794]:
+              - generic [ref=f3e795]:
+                - link "Mundial League of Legends 2026" [ref=f3e799] [cursor=pointer]:
+                  - /url: /search?sca_esv=4a0f1201333c9280&sxsrf=APpeQntRn_LCo0ZpoYAkthNr4Y1Y-qJSYQ:1790205840375&q=Mundial+League+of+Legends+2026&sa=X&ved=2ahUKEwjQwcK57IWXAxUbRjABHdwfEJ8Q1QJ6BAgpEAE
+                - 'link "Final Worlds 2026: LoL" [ref=f3e813] [cursor=pointer]':
+                  - /url: /search?sca_esv=4a0f1201333c9280&sxsrf=APpeQntRn_LCo0ZpoYAkthNr4Y1Y-qJSYQ:1790205840375&q=Final+Worlds+2026:+LoL&sa=X&ved=2ahUKEwjQwcK57IWXAxUbRjABHdwfEJ8Q1QJ6BAhCEAE
+                - link "Donde seran los Worlds 2026 LoL" [ref=f3e827] [cursor=pointer]:
+                  - /url: /search?sca_esv=4a0f1201333c9280&sxsrf=APpeQntRn_LCo0ZpoYAkthNr4Y1Y-qJSYQ:1790205840375&q=Donde+seran+los+Worlds+2026+LoL&sa=X&ved=2ahUKEwjQwcK57IWXAxUbRjABHdwfEJ8Q1QJ6BAhDEAE
+                - link "LoL Worlds 2026 boletos" [ref=f3e841] [cursor=pointer]:
+                  - /url: /search?sca_esv=4a0f1201333c9280&sxsrf=APpeQntRn_LCo0ZpoYAkthNr4Y1Y-qJSYQ:1790205840375&q=LoL+Worlds+2026+boletos&sa=X&ved=2ahUKEwjQwcK57IWXAxUbRjABHdwfEJ8Q1QJ6BAhEEAE
+              - generic [ref=f3e852]:
+                - link "Worlds 2026 fecha" [ref=f3e856] [cursor=pointer]:
+                  - /url: /search?sca_esv=4a0f1201333c9280&sxsrf=APpeQntRn_LCo0ZpoYAkthNr4Y1Y-qJSYQ:1790205840375&q=Worlds+2026+fecha&sa=X&ved=2ahUKEwjQwcK57IWXAxUbRjABHdwfEJ8Q1QJ6BAhAEAE
+                - link "Cuando empieza Worlds 2026" [ref=f3e870] [cursor=pointer]:
+                  - /url: /search?sca_esv=4a0f1201333c9280&sxsrf=APpeQntRn_LCo0ZpoYAkthNr4Y1Y-qJSYQ:1790205840375&q=Cuando+empieza+Worlds+2026&sa=X&ved=2ahUKEwjQwcK57IWXAxUbRjABHdwfEJ8Q1QJ6BAg9EAE
+                - link "Worlds LoL" [ref=f3e884] [cursor=pointer]:
+                  - /url: /search?sca_esv=4a0f1201333c9280&sxsrf=APpeQntRn_LCo0ZpoYAkthNr4Y1Y-qJSYQ:1790205840375&q=Worlds+LoL&sa=X&ved=2ahUKEwjQwcK57IWXAxUbRjABHdwfEJ8Q1QJ6BAgyEAE
+                - link "Worlds 2026 LoL fechas" [ref=f3e898] [cursor=pointer]:
+                  - /url: /search?sca_esv=4a0f1201333c9280&sxsrf=APpeQntRn_LCo0ZpoYAkthNr4Y1Y-qJSYQ:1790205840375&q=Worlds+2026+LoL+fechas&sa=X&ved=2ahUKEwjQwcK57IWXAxUbRjABHdwfEJ8Q1QJ6BAgxEAE
+          - navigation [ref=f3e909]:
+            - heading "Navegación de páginas" [level=1] [ref=f3e910]
+            - text: "1"
+            - link "Page 2" [ref=f3e913] [cursor=pointer]:
+              - /url: /search?q=equipos+clasificados+a+worlds+de+League+of+legends+2026&sca_esv=4a0f1201333c9280&sxsrf=APpeQntRn_LCo0ZpoYAkthNr4Y1Y-qJSYQ:1790205840375&ei=kF-0atC5FpuMwbkP3L_A-Ak&start=10&sa=N&sstk=AS6-VmL1IFamh0Snh_ba9PB_rUE2buXMEUQRL9rXFN4KYRv9qSV6ZL2zya3X739StEFUa5EhFLFzz63IMSjEhbPSdUvKaMauF2SIwA&ved=2ahUKEwjQwcK57IWXAxUbRjABHdwfEJ8Q8tMDegQIMxAE
+              - text: "2"
+            - link "Page 3" [ref=f3e915] [cursor=pointer]:
+              - /url: /search?q=equipos+clasificados+a+worlds+de+League+of+legends+2026&sca_esv=4a0f1201333c9280&sxsrf=APpeQntRn_LCo0ZpoYAkthNr4Y1Y-qJSYQ:1790205840375&ei=kF-0atC5FpuMwbkP3L_A-Ak&start=20&sa=N&sstk=AS6-VmL1IFamh0Snh_ba9PB_rUE2buXMEUQRL9rXFN4KYRv9qSV6ZL2zya3X739StEFUa5EhFLFzz63IMSjEhbPSdUvKaMauF2SIwA&ved=2ahUKEwjQwcK57IWXAxUbRjABHdwfEJ8Q8tMDegQIMxAG
+              - text: "3"
+            - link "Page 4" [ref=f3e917] [cursor=pointer]:
+              - /url: /search?q=equipos+clasificados+a+worlds+de+League+of+legends+2026&sca_esv=4a0f1201333c9280&sxsrf=APpeQntRn_LCo0ZpoYAkthNr4Y1Y-qJSYQ:1790205840375&ei=kF-0atC5FpuMwbkP3L_A-Ak&start=30&sa=N&sstk=AS6-VmL1IFamh0Snh_ba9PB_rUE2buXMEUQRL9rXFN4KYRv9qSV6ZL2zya3X739StEFUa5EhFLFzz63IMSjEhbPSdUvKaMauF2SIwA&ved=2ahUKEwjQwcK57IWXAxUbRjABHdwfEJ8Q8tMDegQIMxAI
+              - text: "4"
+            - link "Page 5" [ref=f3e919] [cursor=pointer]:
+              - /url: /search?q=equipos+clasificados+a+worlds+de+League+of+legends+2026&sca_esv=4a0f1201333c9280&sxsrf=APpeQntRn_LCo0ZpoYAkthNr4Y1Y-qJSYQ:1790205840375&ei=kF-0atC5FpuMwbkP3L_A-Ak&start=40&sa=N&sstk=AS6-VmL1IFamh0Snh_ba9PB_rUE2buXMEUQRL9rXFN4KYRv9qSV6ZL2zya3X739StEFUa5EhFLFzz63IMSjEhbPSdUvKaMauF2SIwA&ved=2ahUKEwjQwcK57IWXAxUbRjABHdwfEJ8Q8tMDegQIMxAK
+              - text: "5"
+            - link "Page 6" [ref=f3e921] [cursor=pointer]:
+              - /url: /search?q=equipos+clasificados+a+worlds+de+League+of+legends+2026&sca_esv=4a0f1201333c9280&sxsrf=APpeQntRn_LCo0ZpoYAkthNr4Y1Y-qJSYQ:1790205840375&ei=kF-0atC5FpuMwbkP3L_A-Ak&start=50&sa=N&sstk=AS6-VmL1IFamh0Snh_ba9PB_rUE2buXMEUQRL9rXFN4KYRv9qSV6ZL2zya3X739StEFUa5EhFLFzz63IMSjEhbPSdUvKaMauF2SIwA&ved=2ahUKEwjQwcK57IWXAxUbRjABHdwfEJ8Q8tMDegQIMxAM
+              - text: "6"
+            - link "Page 7" [ref=f3e923] [cursor=pointer]:
+              - /url: /search?q=equipos+clasificados+a+worlds+de+League+of+legends+2026&sca_esv=4a0f1201333c9280&sxsrf=APpeQntRn_LCo0ZpoYAkthNr4Y1Y-qJSYQ:1790205840375&ei=kF-0atC5FpuMwbkP3L_A-Ak&start=60&sa=N&sstk=AS6-VmL1IFamh0Snh_ba9PB_rUE2buXMEUQRL9rXFN4KYRv9qSV6ZL2zya3X739StEFUa5EhFLFzz63IMSjEhbPSdUvKaMauF2SIwA&ved=2ahUKEwjQwcK57IWXAxUbRjABHdwfEJ8Q8tMDegQIMxAO
+              - text: "7"
+            - link "Page 8" [ref=f3e925] [cursor=pointer]:
+              - /url: /search?q=equipos+clasificados+a+worlds+de+League+of+legends+2026&sca_esv=4a0f1201333c9280&sxsrf=APpeQntRn_LCo0ZpoYAkthNr4Y1Y-qJSYQ:1790205840375&ei=kF-0atC5FpuMwbkP3L_A-Ak&start=70&sa=N&sstk=AS6-VmL1IFamh0Snh_ba9PB_rUE2buXMEUQRL9rXFN4KYRv9qSV6ZL2zya3X739StEFUa5EhFLFzz63IMSjEhbPSdUvKaMauF2SIwA&ved=2ahUKEwjQwcK57IWXAxUbRjABHdwfEJ8Q8tMDegQIMxAQ
+              - text: "8"
+            - link "Page 9" [ref=f3e927] [cursor=pointer]:
+              - /url: /search?q=equipos+clasificados+a+worlds+de+League+of+legends+2026&sca_esv=4a0f1201333c9280&sxsrf=APpeQntRn_LCo0ZpoYAkthNr4Y1Y-qJSYQ:1790205840375&ei=kF-0atC5FpuMwbkP3L_A-Ak&start=80&sa=N&sstk=AS6-VmL1IFamh0Snh_ba9PB_rUE2buXMEUQRL9rXFN4KYRv9qSV6ZL2zya3X739StEFUa5EhFLFzz63IMSjEhbPSdUvKaMauF2SIwA&ved=2ahUKEwjQwcK57IWXAxUbRjABHdwfEJ8Q8tMDegQIMxAS
+              - text: "9"
+            - link "Page 10" [ref=f3e929] [cursor=pointer]:
+              - /url: /search?q=equipos+clasificados+a+worlds+de+League+of+legends+2026&sca_esv=4a0f1201333c9280&sxsrf=APpeQntRn_LCo0ZpoYAkthNr4Y1Y-qJSYQ:1790205840375&ei=kF-0atC5FpuMwbkP3L_A-Ak&start=90&sa=N&sstk=AS6-VmL1IFamh0Snh_ba9PB_rUE2buXMEUQRL9rXFN4KYRv9qSV6ZL2zya3X739StEFUa5EhFLFzz63IMSjEhbPSdUvKaMauF2SIwA&ved=2ahUKEwjQwcK57IWXAxUbRjABHdwfEJ8Q8tMDegQIMxAU
+              - text: "10"
+            - heading [level=2] [ref=f3e931]:
+              - link "Siguiente" [ref=f3e932] [cursor=pointer]:
+                - /url: /search?q=equipos+clasificados+a+worlds+de+League+of+legends+2026&sca_esv=4a0f1201333c9280&sxsrf=APpeQntRn_LCo0ZpoYAkthNr4Y1Y-qJSYQ:1790205840375&ei=kF-0atC5FpuMwbkP3L_A-Ak&start=10&sa=N&sstk=AS6-VmL1IFamh0Snh_ba9PB_rUE2buXMEUQRL9rXFN4KYRv9qSV6ZL2zya3X739StEFUa5EhFLFzz63IMSjEhbPSdUvKaMauF2SIwA&ved=2ahUKEwjQwcK57IWXAxUbRjABHdwfEJ8Q8NMDegQIMxAW
+        - navigation
+    - contentinfo [ref=f3e935]:
+      - heading "Vínculos a pie de página" [level=1] [ref=f3e936]
+      - generic [ref=f3e940]:
+        - generic [ref=f3e942]:
+          - text: Venezuela
+          - generic [ref=f3e944]:
+            - button "Juangriego, Nueva Esparta - A través de tu dirección IP" [ref=f3e946] [cursor=pointer]:
+              - generic [ref=f3e947]: Juangriego, Nueva Esparta
+              - generic [ref=f3e949]:
+                - text: "-"
+                - generic [ref=f3e950]: A través de tu dirección IP
+            - text: "-"
+            - button "Actualizar ubicación" [ref=f3e952] [cursor=pointer]
+        - generic [ref=f3e955]:
+          - link "Ayuda" [ref=f3e956] [cursor=pointer]:
+            - /url: https://support.google.com/websearch/?p=ws_results_help&hl=es-VE&fg=1
+          - button "Enviar comentarios" [ref=f3e958] [cursor=pointer]
+          - link "Privacidad" [ref=f3e960] [cursor=pointer]:
+            - /url: https://policies.google.com/privacy?hl=es-VE&fg=1
+          - link "Condiciones" [ref=f3e961] [cursor=pointer]:
+            - /url: https://policies.google.com/terms?hl=es-VE&fg=1
