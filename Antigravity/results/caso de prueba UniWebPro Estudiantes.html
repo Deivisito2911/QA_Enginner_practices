@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Casos de Prueba - UniWebPro Estudiantes</title>
+  <style>
+    :root {
+      --bg-color: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --primary: #1e40af;
+      --primary-light: #dbeafe;
+      --border: #cbd5e1;
+      --border-light: #e2e8f0;
+      --success-bg: #ecfdf5;
+      --success-text: #065f46;
+      --success-border: #10b981;
+      --danger-bg: #fef2f2;
+      --danger-text: #991b1b;
+      --danger-border: #ef4444;
+      --warning-bg: #fffbeb;
+      --warning-text: #92400e;
+      --warning-border: #f59e0b;
+      --purple-bg: #faf5ff;
+      --purple-text: #6b21a8;
+      --radius: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 2.5rem 1rem;
+    }
+
+    .container {
+      max-width: 1050px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    header {
+      background: var(--card-bg);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+
+    .badge-hu {
+      display: inline-block;
+      background-color: var(--primary-light);
+      color: var(--primary);
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 0.3rem 0.75rem;
+      border-radius: 9999px;
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      color: #0f172a;
+      margin-bottom: 0.75rem;
+    }
+
+    .hu-desc {
+      background-color: #f1f5f9;
+      border-left: 4px solid var(--primary);
+      padding: 1rem 1.25rem;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      font-size: 0.95rem;
+      color: #334155;
+      margin: 1rem 0;
+    }
+
+    .hu-desc ul {
+      margin-left: 1.25rem;
+      margin-top: 0.5rem;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1.25rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border-light);
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    .meta-grid strong {
+      color: var(--text-main);
+    }
+
+    .section-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1.25rem 0;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    /* Tabla Resumen */
+    .table-container {
+      background: var(--card-bg);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius);
+      overflow-x: auto;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.9rem;
+    }
+
+    th {
+      background-color: #f8fafc;
+      color: #475569;
+      font-weight: 600;
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--border-light);
+      white-space: nowrap;
+    }
+
+    td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--border-light);
+      vertical-align: middle;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background-color: #f8fafc;
+    }
+
+    /* Badges / Pills */
+    .pill {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.25rem 0.55rem;
+      border-radius: 9999px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      display: inline-block;
+    }
+
+    .pill-pos { background: var(--success-bg); color: var(--success-text); }
+    .pill-neg { background: var(--danger-bg); color: var(--danger-text); }
+    .pill-lim { background: var(--purple-bg); color: var(--purple-text); }
+    .pill-ui  { background: #e0f2fe; color: #0369a1; }
+
+    .prio-alta { color: #dc2626; font-weight: 700; }
+    .prio-media { color: #d97706; font-weight: 700; }
+    .prio-baja { color: #475569; font-weight: 600; }
+
+    /* Cards */
+    .test-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius);
+      margin-bottom: 1.5rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+      overflow: hidden;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .test-card:hover {
+      box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.08);
+    }
+
+    .card-header {
+      padding: 1rem 1.5rem;
+      background: #ffffff;
+      border-bottom: 1px solid var(--border-light);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .card-title-group {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .cp-id {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #0f172a;
+      background: #f1f5f9;
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+
+    .cp-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #1e293b;
+    }
+
+    .card-body {
+      padding: 1.25rem 1.5rem;
+    }
+
+    .detail-row {
+      margin-bottom: 0.85rem;
+      font-size: 0.925rem;
+    }
+
+    .detail-label {
+      font-weight: 600;
+      color: #475569;
+      display: inline-block;
+      min-width: 150px;
+    }
+
+    .precond-box, .data-box {
+      background: #f8fafc;
+      border: 1px solid var(--border-light);
+      border-radius: 6px;
+      padding: 0.75rem 1rem;
+      margin: 0.4rem 0 0.85rem 0;
+      font-size: 0.9rem;
+      color: #334155;
+    }
+
+    .steps-list {
+      margin: 0.4rem 0 1rem 1.25rem;
+      font-size: 0.925rem;
+    }
+
+    .steps-list li {
+      margin-bottom: 0.45rem;
+    }
+
+    .expected-result {
+      background-color: var(--success-bg);
+      border-left: 4px solid var(--success-border);
+      padding: 0.85rem 1.1rem;
+      border-radius: 0 6px 6px 0;
+      margin-top: 0.5rem;
+      font-size: 0.925rem;
+      color: #064e3b;
+      font-weight: 500;
+    }
+
+    .expected-result.negative {
+      background-color: var(--danger-bg);
+      border-left-color: var(--danger-border);
+      color: #7f1d1d;
+    }
+
+    /* Sección de PO */
+    .po-box {
+      background-color: #fffbeb;
+      border: 1px solid #fde68a;
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .po-title {
+      font-weight: 700;
+      color: #92400e;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .po-list {
+      margin-left: 1.25rem;
+      color: #78350f;
+      font-size: 0.9rem;
+    }
+
+    .po-list li {
+      margin-bottom: 0.5rem;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-light);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <span class="badge-hu">HU - UniWebPro</span>
+      <h1>Casos de Prueba: Módulo de Registro de Estudiantes</h1>
+      <div class="hu-desc">
+        <strong>Historia de Usuario:</strong><br>
+        <em>Como administrador del sistema, quiero registrar un estudiante en el módulo de Estudiantes para gestionar admisiones y mantener sus datos personales ordenados.</em>
+        <ul style="margin-top: 0.5rem;">
+          <li><strong>Criterio 1:</strong> Al entrar en el módulo de Estudiantes, se muestra la sección Registro de Estudiantes con el botón Registrar Estudiante, el campo de búsqueda y la tabla de resultados.</li>
+          <li><strong>Criterio 2:</strong> Al hacer clic en Registrar Estudiante, se abre un formulario que permite ingresar al menos: Nombre del estudiante, Documento, Carrera, Contacto y Email.</li>
+          <li><strong>Criterio 3:</strong> Al guardar el registro, el nuevo estudiante aparece en la lista y puede encontrarse usando el buscador por nombre o documento.</li>
+        </ul>
+      </div>
+      <div class="meta-grid">
+        <div><strong>URL Analizada:</strong> <a href="https://uniwebpro.geekqa.net/estudiantes" target="_blank" style="color: var(--primary);">uniwebpro.geekqa.net/estudiantes</a></div>
+        <div><strong>Total de Casos:</strong> 8 Casos</div>
+        <div><strong>Estrategia:</strong> Cero Suposición (Cobertura AC-1, AC-2, AC-3)</div>
+      </div>
+    </header>
+
+    <h2 class="section-title">📊 Matriz Resumen de Casos de Prueba</h2>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Criterio</th>
+            <th>Tipo</th>
+            <th>Prioridad</th>
+            <th>Título del Caso</th>
+            <th>Resultado Esperado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>CP-EST-001</code></td>
+            <td>Criterio 1</td>
+            <td><span class="pill pill-ui">UI / Vista</span></td>
+            <td><span class="prio-alta">Alta</span></td>
+            <td>Visualización inicial de la sección Registro de Estudiantes y sus componentes</td>
+            <td>Sección visible con botón "Registrar Estudiante", buscador y tabla de resultados</td>
+          </tr>
+          <tr>
+            <td><code>CP-EST-002</code></td>
+            <td>Criterio 2</td>
+            <td><span class="pill pill-pos">Positivo</span></td>
+            <td><span class="prio-alta">Alta</span></td>
+            <td>Apertura del formulario de registro y verificación de campos obligatorios mínimos</td>
+            <td>Formulario desplegado con campos: Nombre, Documento, Carrera, Contacto y Email</td>
+          </tr>
+          <tr>
+            <td><code>CP-EST-003</code></td>
+            <td>Criterio 3</td>
+            <td><span class="pill pill-pos">Positivo</span></td>
+            <td><span class="prio-alta">Alta</span></td>
+            <td>Registro exitoso de estudiante y visualización inmediata en la tabla</td>
+            <td>El estudiante aparece listado en la tabla de resultados con los datos guardados</td>
+          </tr>
+          <tr>
+            <td><code>CP-EST-004</code></td>
+            <td>Criterio 3</td>
+            <td><span class="pill pill-pos">Positivo</span></td>
+            <td><span class="prio-alta">Alta</span></td>
+            <td>Búsqueda del estudiante registrado por Nombre</td>
+            <td>La tabla filtra y muestra el estudiante cuyo nombre coincide con la búsqueda</td>
+          </tr>
+          <tr>
+            <td><code>CP-EST-005</code></td>
+            <td>Criterio 3</td>
+            <td><span class="pill pill-pos">Positivo</span></td>
+            <td><span class="prio-alta">Alta</span></td>
+            <td>Búsqueda del estudiante registrado por Documento</td>
+            <td>La tabla filtra y muestra el estudiante cuyo documento coincide con la búsqueda</td>
+          </tr>
+          <tr>
+            <td><code>CP-EST-006</code></td>
+            <td>Criterio 2, 3</td>
+            <td><span class="pill pill-neg">Negativo</span></td>
+            <td><span class="prio-alta">Alta</span></td>
+            <td>Intento de guardar registro con campos en blanco</td>
+            <td>El sistema impide el guardado y no agrega registros vacíos a la tabla</td>
+          </tr>
+          <tr>
+            <td><code>CP-EST-007</code></td>
+            <td>Criterio 2</td>
+            <td><span class="pill pill-neg">Negativo</span></td>
+            <td><span class="prio-media">Media</span></td>
+            <td>Ingreso de Email con formato no estándar en el formulario</td>
+            <td>Validación de campo de correo impidiendo el guardado de cadena no válida</td>
+          </tr>
+          <tr>
+            <td><code>CP-EST-008</code></td>
+            <td>Criterio 3</td>
+            <td><span class="pill pill-lim">Límite / Búsqueda</span></td>
+            <td><span class="prio-media">Media</span></td>
+            <td>Búsqueda con término no coincidente (sin resultados)</td>
+            <td>La tabla no muestra registros erróneos ante un criterio no existente</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="section-title">📝 Detalle de Casos de Prueba</h2>
+
+    <!-- CP-EST-001 -->
+    <div class="test-card">
+      <div class="card-header">
+        <div class="card-title-group">
+          <span class="cp-id">CP-EST-001</span>
+          <span class="cp-title">Visualización inicial de la sección Registro de Estudiantes y sus componentes</span>
+        </div>
+        <div style="display: flex; gap: 0.5rem; align-items: center;">
+          <span class="pill pill-ui">UI / Vista</span>
+          <span class="prio-alta">Alta</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="detail-row"><span class="detail-label">Criterio Relacionado:</span><strong>Criterio de Aceptación 1</strong></div>
+        <div class="detail-row">
+          <span class="detail-label">Precondiciones:</span>
+          <div class="precond-box">El administrador tiene acceso al sistema y conectividad al entorno <code>https://uniwebpro.geekqa.net/estudiantes</code>.</div>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Pasos de Ejecución:</span>
+          <ol class="steps-list">
+            <li>Navegar a la URL del módulo de Estudiantes: <code>https://uniwebpro.geekqa.net/estudiantes</code>.</li>
+            <li>Observar el encabezado y secciones de la vista cargada.</li>
+            <li>Verificar la presencia y visibilidad del botón "Registrar Estudiante".</li>
+            <li>Verificar la presencia del campo de entrada para búsqueda.</li>
+            <li>Verificar la presencia de la tabla de resultados.</li>
+          </ol>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Resultado Esperado:</span>
+          <div class="expected-result">
+            La interfaz muestra la sección "Registro de Estudiantes" con el botón "Registrar Estudiante" activo y visible, el campo de búsqueda dispuesto para ingresar texto y la tabla de resultados renderizada en pantalla.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CP-EST-002 -->
+    <div class="test-card">
+      <div class="card-header">
+        <div class="card-title-group">
+          <span class="cp-id">CP-EST-002</span>
+          <span class="cp-title">Apertura del formulario de registro y verificación de campos requeridos mínimos</span>
+        </div>
+        <div style="display: flex; gap: 0.5rem; align-items: center;">
+          <span class="pill pill-pos">Positivo</span>
+          <span class="prio-alta">Alta</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="detail-row"><span class="detail-label">Criterio Relacionado:</span><strong>Criterio de Aceptación 2</strong></div>
+        <div class="detail-row">
+          <span class="detail-label">Precondiciones:</span>
+          <div class="precond-box">Usuario ubicado en la pantalla principal del módulo de Estudiantes.</div>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Pasos de Ejecución:</span>
+          <ol class="steps-list">
+            <li>Hacer clic sobre el botón "Registrar Estudiante".</li>
+            <li>Comprobar la apertura del modal o formulario de registro.</li>
+            <li>Verificar que existan y sean editables los siguientes campos:
+              <br>• Nombre del estudiante
+              <br>• Documento
+              <br>• Carrera
+              <br>• Contacto
+              <br>• Email
+            </li>
+          </ol>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Resultado Esperado:</span>
+          <div class="expected-result">
+            El formulario de registro se despliega correctamente mostrando al menos los 5 campos requeridos ("Nombre del estudiante", "Documento", "Carrera", "Contacto", "Email") y los botones de acción para guardar o cancelar.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CP-EST-003 -->
+    <div class="test-card">
+      <div class="card-header">
+        <div class="card-title-group">
+          <span class="cp-id">CP-EST-003</span>
+          <span class="cp-title">Registro exitoso de estudiante y visualización inmediata en la lista</span>
+        </div>
+        <div style="display: flex; gap: 0.5rem; align-items: center;">
+          <span class="pill pill-pos">Positivo</span>
+          <span class="prio-alta">Alta</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="detail-row"><span class="detail-label">Criterio Relacionado:</span><strong>Criterio de Aceptación 2 y 3</strong></div>
+        <div class="detail-row">
+          <span class="detail-label">Precondiciones:</span>
+          <div class="precond-box">Formulario de "Registrar Estudiante" abierto en pantalla.</div>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Datos de Prueba:</span>
+          <div class="data-box">
+            • <code>Nombre del estudiante</code>: "Carlos Andrés Mendoza"<br>
+            • <code>Documento</code>: "1098765432"<br>
+            • <code>Carrera</code>: "Ingeniería de Sistemas"<br>
+            • <code>Contacto</code>: "+573001234567"<br>
+            • <code>Email</code>: "carlos.mendoza@universidad.edu"
+          </div>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Pasos de Ejecución:</span>
+          <ol class="steps-list">
+            <li>Ingresar "Carlos Andrés Mendoza" en el campo "Nombre del estudiante".</li>
+            <li>Ingresar "1098765432" en el campo "Documento".</li>
+            <li>Ingresar o seleccionar "Ingeniería de Sistemas" en "Carrera".</li>
+            <li>Ingresar "+573001234567" en "Contacto".</li>
+            <li>Ingresar "carlos.mendoza@universidad.edu" en "Email".</li>
+            <li>Hacer clic en el botón para Guardar / Registrar.</li>
+          </ol>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Resultado Esperado:</span>
+          <div class="expected-result">
+            El formulario se cierra o procesa la solicitud, y el nuevo estudiante aparece de inmediato reflejado en la tabla de resultados con los datos ingresados.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CP-EST-004 -->
+    <div class="test-card">
+      <div class="card-header">
+        <div class="card-title-group">
+          <span class="cp-id">CP-EST-004</span>
+          <span class="cp-title">Búsqueda del estudiante registrado por Nombre</span>
+        </div>
+        <div style="display: flex; gap: 0.5rem; align-items: center;">
+          <span class="pill pill-pos">Positivo</span>
+          <span class="prio-alta">Alta</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="detail-row"><span class="detail-label">Criterio Relacionado:</span><strong>Criterio de Aceptación 3</strong></div>
+        <div class="detail-row">
+          <span class="detail-label">Precondiciones:</span>
+          <div class="precond-box">Estudiante "Carlos Andrés Mendoza" previamente registrado en el sistema.</div>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Datos de Prueba:</span>
+          <div class="data-box">
+            • <code>Término de búsqueda</code>: "Carlos Andrés Mendoza" (o fragmento "Mendoza")
+          </div>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Pasos de Ejecución:</span>
+          <ol class="steps-list">
+            <li>Ubicar el cursor en el campo de búsqueda de la sección Registro de Estudiantes.</li>
+            <li>Ingresar "Carlos Andrés Mendoza".</li>
+            <li>(Si aplica) Presionar Enter o esperar la actualización del filtro.</li>
+          </ol>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Resultado Esperado:</span>
+          <div class="expected-result">
+            La tabla filtra los resultados y muestra el registro correspondiente a "Carlos Andrés Mendoza", coincidiendo con el criterio de búsqueda por nombre.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CP-EST-005 -->
+    <div class="test-card">
+      <div class="card-header">
+        <div class="card-title-group">
+          <span class="cp-id">CP-EST-005</span>
+          <span class="cp-title">Búsqueda del estudiante registrado por Documento</span>
+        </div>
+        <div style="display: flex; gap: 0.5rem; align-items: center;">
+          <span class="pill pill-pos">Positivo</span>
+          <span class="prio-alta">Alta</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="detail-row"><span class="detail-label">Criterio Relacionado:</span><strong>Criterio de Aceptación 3</strong></div>
+        <div class="detail-row">
+          <span class="detail-label">Precondiciones:</span>
+          <div class="precond-box">Estudiante con documento "1098765432" registrado en el sistema.</div>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Datos de Prueba:</span>
+          <div class="data-box">
+            • <code>Término de búsqueda</code>: "1098765432"
+          </div>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Pasos de Ejecución:</span>
+          <ol class="steps-list">
+            <li>Limpiar el campo de búsqueda.</li>
+            <li>Escribir "1098765432" en el campo de búsqueda.</li>
+            <li>Verificar el filtrado de la tabla.</li>
+          </ol>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Resultado Esperado:</span>
+          <div class="expected-result">
+            La tabla filtra y mantiene visible únicamente el registro del estudiante cuyo documento es "1098765432".
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CP-EST-006 -->
+    <div class="test-card">
+      <div class="card-header">
+        <div class="card-title-group">
+          <span class="cp-id">CP-EST-006</span>
+          <span class="cp-title">Intento de guardar registro con campos en blanco</span>
+        </div>
+        <div style="display: flex; gap: 0.5rem; align-items: center;">
+          <span class="pill pill-neg">Negativo</span>
+          <span class="prio-alta">Alta</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="detail-row"><span class="detail-label">Criterio Relacionado:</span><strong>Criterio de Aceptación 2, 3</strong></div>
+        <div class="detail-row">
+          <span class="detail-label">Precondiciones:</span>
+          <div class="precond-box">Formulario de registro abierto y en estado inicial (vacío).</div>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Datos de Prueba:</span>
+          <div class="data-box">Todos los campos vacíos (<code>""</code>).</div>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Pasos de Ejecución:</span>
+          <ol class="steps-list">
+            <li>Abrir el formulario "Registrar Estudiante".</li>
+            <li>Sin ingresar datos en ninguno de los campos, hacer clic en el botón de Guardar.</li>
+            <li>Revisar el estado del formulario y de la tabla de resultados.</li>
+          </ol>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Resultado Esperado:</span>
+          <div class="expected-result negative">
+            El sistema no permite el guardado: el botón se encuentra deshabilitado o se activan las validaciones requeridas del formulario impidiendo agregar una fila vacía a la lista de estudiantes.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CP-EST-007 -->
+    <div class="test-card">
+      <div class="card-header">
+        <div class="card-title-group">
+          <span class="cp-id">CP-EST-007</span>
+          <span class="cp-title">Ingreso de Email con formato no estándar en el formulario</span>
+        </div>
+        <div style="display: flex; gap: 0.5rem; align-items: center;">
+          <span class="pill pill-neg">Negativo</span>
+          <span class="prio-media">Media</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="detail-row"><span class="detail-label">Criterio Relacionado:</span><strong>Criterio de Aceptación 2</strong></div>
+        <div class="detail-row">
+          <span class="detail-label">Precondiciones:</span>
+          <div class="precond-box">Formulario de registro abierto con los demás campos con datos válidos.</div>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Datos de Prueba:</span>
+          <div class="data-box">
+            • <code>Nombre</code>: "Ana Pérez"<br>
+            • <code>Documento</code>: "9876543210"<br>
+            • <code>Carrera</code>: "Medicina"<br>
+            • <code>Contacto</code>: "3109876543"<br>
+            • <code>Email</code>: "correo_sin_formato_valido" (sin @ ni dominio)
+          </div>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Pasos de Ejecución:</span>
+          <ol class="steps-list">
+            <li>Completar los campos del estudiante ingresando el correo no válido en "Email".</li>
+            <li>Hacer clic en Guardar.</li>
+          </ol>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Resultado Esperado:</span>
+          <div class="expected-result negative">
+            El campo Email activa la validación nativa o de formulario rechazando la entrada y no permite completar el registro hasta que tenga un formato de correo válido.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CP-EST-008 -->
+    <div class="test-card">
+      <div class="card-header">
+        <div class="card-title-group">
+          <span class="cp-id">CP-EST-008</span>
+          <span class="cp-title">Búsqueda con término no coincidente (sin resultados)</span>
+        </div>
+        <div style="display: flex; gap: 0.5rem; align-items: center;">
+          <span class="pill pill-lim">Límite / Búsqueda</span>
+          <span class="prio-media">Media</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="detail-row"><span class="detail-label">Criterio Relacionado:</span><strong>Criterio de Aceptación 3</strong></div>
+        <div class="detail-row">
+          <span class="detail-label">Precondiciones:</span>
+          <div class="precond-box">Tabla de estudiantes con registros existentes.</div>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Datos de Prueba:</span>
+          <div class="data-box">• <code>Término de búsqueda</code>: "XYZ999Inexistente#"</div>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Pasos de Ejecución:</span>
+          <ol class="steps-list">
+            <li>Escribir en el campo de búsqueda el término no coincidente "XYZ999Inexistente#".</li>
+            <li>Observar la tabla de resultados.</li>
+          </ol>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Resultado Esperado:</span>
+          <div class="expected-result">
+            La tabla no lista registros que no correspondan y muestra 0 resultados (o el mensaje informativo de "No se encontraron resultados"), sin romper la vista.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sección de Dudas / PO -->
+    <div class="po-box">
+      <div class="po-title">⚠️ Preguntas y Ambigüedades para el Product Owner (PO)</div>
+      <p style="font-size: 0.9rem; margin-bottom: 0.75rem;">Aspectos no contemplados en la Historia de Usuario que deben aclararse para automatización y pruebas avanzadas (Principio de Cero Suposición):</p>
+      <ul class="po-list">
+        <li><strong>Unicidad de Documento y Email:</strong> ¿El sistema debe impedir registrar dos estudiantes con el mismo número de Documento o mismo Email? ¿Qué mensaje de alerta debe mostrarse?</li>
+        <li><strong>Persistencia de Datos:</strong> ¿Los estudiantes registrados se guardan en base de datos mediante API REST, o es una demostración en memoria / LocalStorage del navegador?</li>
+        <li><strong>Tipo de control para "Carrera":</strong> ¿El campo "Carrera" es un texto libre o un selector desplegable con una lista predefinida de carreras universitarias?</li>
+        <li><strong>Límites y tipo de dato en "Documento" y "Contacto":</strong> ¿Se permiten solo caracteres numéricos o también alfanuméricos (ej. pasaporte con letras)? ¿Se define una longitud mínima o máxima?</li>
+        <li><strong>Comportamiento del Buscador:</strong> ¿La búsqueda es en tiempo real mientras el usuario escribe (*on-input*), o requiere presionar la tecla Enter o un botón con ícono de lupa?</li>
+      </ul>
+    </div>
+
+    <footer>
+      Generado por la skill <strong>generador-casos-prueba</strong> • Antigravity CLI
+    </footer>
+  </div>
+
+</body>
+</html>
