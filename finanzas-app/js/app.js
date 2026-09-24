@@ -490,13 +490,12 @@ const renderGoals = () => {
     document.getElementById('goalsCompletedCount').textContent = completedCount;
 
     if (goals.length === 0) {
-        emptyState.style.display = 'block';
-        // Remove all goal cards but keep empty state
+        if (emptyState) emptyState.style.display = 'block';
         container.querySelectorAll('.goal-card').forEach(c => c.remove());
         return;
     }
 
-    emptyState.style.display = 'none';
+    if (emptyState) emptyState.style.display = 'none';
 
     container.innerHTML = goals.map(g => {
         const pct = g.targetAmount > 0 ? Math.min(100, Math.round((g.currentAmount / g.targetAmount) * 100)) : 0;

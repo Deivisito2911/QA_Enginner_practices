@@ -1,0 +1,5 @@
+[   81766ms] TypeError: Cannot read properties of null (reading 'style')
+    at renderGoals (http://localhost:3000/js/app.js:499:16)
+    at HTMLFormElement.saveGoal (http://localhost:3000/js/app.js:580:5)
+[  165362ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/x:0
+[  165365ms] [ERROR] XSS executed! @ http://localhost:3000/:0

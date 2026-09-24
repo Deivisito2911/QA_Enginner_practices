@@ -1,0 +1,118 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e4]:
+      - generic [ref=e5]: 
+      - generic [ref=e6]: FinApp
+    - list [ref=e7]:
+      - listitem [ref=e8]:
+        - link " Dashboard" [ref=e9] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e10]: 
+          - generic [ref=e11]: Dashboard
+      - listitem [ref=e12]:
+        - link " Gastos e Ingresos" [ref=e13] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e14]: 
+          - generic [ref=e15]: Gastos e Ingresos
+      - listitem [ref=e16]:
+        - link " Objetivos de Ahorro" [ref=e17] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e18]: 
+          - generic [ref=e19]: Objetivos de Ahorro
+    - paragraph [ref=e21]: FinApp v1.0
+  - main [ref=e22]:
+    - generic [ref=e23]:
+      - generic [ref=e25]:
+        - heading "Panel Principal" [level=1] [ref=e26]
+        - paragraph [ref=e27]: ¡Buenas tardes! Aquí está tu resumen financiero
+      - generic [ref=e28]:
+        - generic [ref=e29]:
+          - generic [ref=e30]: 
+          - generic [ref=e32]:
+            - generic [ref=e33]: Total Ingresos
+            - generic [ref=e34]: US$ 21.100.000
+        - generic [ref=e35]:
+          - generic [ref=e36]: 
+          - generic [ref=e38]:
+            - generic [ref=e39]: Total Gastos
+            - generic [ref=e40]: US$ 9.240.000
+        - generic [ref=e41]:
+          - generic [ref=e42]: 
+          - generic [ref=e44]:
+            - generic [ref=e45]: Balance
+            - generic [ref=e46]: US$ 11.860.000
+        - generic [ref=e47]:
+          - generic [ref=e48]: 
+          - generic [ref=e50]:
+            - generic [ref=e51]: Ahorro Total
+            - generic [ref=e52]: US$ 9.900.000
+      - generic [ref=e53]:
+        - heading " Ingresos vs Gastos" [level=3] [ref=e55]:
+          - generic [ref=e56]: 
+          - text: Ingresos vs Gastos
+        - heading " Gastos por Categoría" [level=3] [ref=e60]:
+          - generic [ref=e61]: 
+          - text: Gastos por Categoría
+      - generic [ref=e64]:
+        - generic [ref=e65]:
+          - heading " Progreso de Objetivos" [level=3] [ref=e66]:
+            - generic [ref=e67]: 
+            - text: Progreso de Objetivos
+          - generic [ref=e68]:
+            - generic [ref=e69]:
+              - generic [ref=e70]:
+                - heading "Vacaciones en la playa" [level=5] [ref=e71]
+                - text: US$ 1.800.000 / US$ 3.000.000
+              - generic [ref=e74]: 60%
+            - generic [ref=e75]:
+              - generic [ref=e76]:
+                - heading "Fondo de emergencia" [level=5] [ref=e77]
+                - text: US$ 4.500.000 / US$ 10.000.000
+              - generic [ref=e80]: 45%
+            - generic [ref=e81]:
+              - generic [ref=e82]:
+                - heading "Laptop nueva" [level=5] [ref=e83]
+                - text: US$ 3.600.000 / US$ 4.000.000
+              - generic [ref=e86]: 90%
+        - generic [ref=e87]:
+          - heading " Últimas Transacciones" [level=3] [ref=e88]:
+            - generic [ref=e89]: 
+            - text: Últimas Transacciones
+          - generic [ref=e90]:
+            - generic [ref=e91]:
+              - generic [ref=e92]:
+                - generic [ref=e93]: 
+                - generic [ref=e95]:
+                  - heading "Proyecto web" [level=5] [ref=e96]
+                  - text: Freelance · 15 sept
+              - generic [ref=e97]: +US$ 800.000
+            - generic [ref=e98]:
+              - generic [ref=e99]:
+                - generic [ref=e100]: 
+                - generic [ref=e102]:
+                  - heading "Netflix y Spotify" [level=5] [ref=e103]
+                  - text: Entretenimiento · 10 sept
+              - generic [ref=e104]: "-US$ 45.000"
+            - generic [ref=e105]:
+              - generic [ref=e106]:
+                - generic [ref=e107]: 
+                - generic [ref=e109]:
+                  - heading "Internet y celular" [level=5] [ref=e110]
+                  - text: Servicios · 08 sept
+              - generic [ref=e111]: "-US$ 95.000"
+            - generic [ref=e112]:
+              - generic [ref=e113]:
+                - generic [ref=e114]: 
+                - generic [ref=e116]:
+                  - heading "Gasolina" [level=5] [ref=e117]
+                  - text: Transporte · 07 sept
+              - generic [ref=e118]: "-US$ 180.000"
+            - generic [ref=e119]:
+              - generic [ref=e120]:
+                - generic [ref=e121]: 
+                - generic [ref=e123]:
+                  - heading "Mercado semanal" [level=5] [ref=e124]
+                  - text: Alimentación · 05 sept
+              - generic [ref=e125]: "-US$ 350.000"
+    - text: +  + +  +
+  - text:   

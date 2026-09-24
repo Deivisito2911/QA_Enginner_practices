@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte Vibe Testing - FinApp</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #f8fafc; color: #1e293b; line-height: 1.6; padding: 2rem; }
+        .container { max-width: 1000px; margin: 0 auto; background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+        h1 { color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem; }
+        .summary { display: flex; gap: 1rem; margin-bottom: 2rem; }
+        .stat-card { background: #f1f5f9; padding: 1rem; border-radius: 6px; flex: 1; text-align: center; }
+        .stat-value { font-size: 2rem; font-weight: bold; color: #3b82f6; }
+        .bug-card { border: 1px solid #e2e8f0; border-left: 4px solid #3b82f6; padding: 1.5rem; margin-bottom: 1.5rem; border-radius: 6px; }
+        .bug-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+        .bug-title { font-size: 1.25rem; font-weight: 600; margin: 0; color: #0f172a; }
+        .badge { padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; }
+        .badge-critical { background: #fee2e2; color: #991b1b; }
+        .badge-high { background: #ffedd5; color: #9a3412; }
+        .badge-medium { background: #fef3c7; color: #92400e; }
+        .badge-low { background: #e0f2fe; color: #075985; }
+        .badge-type { background: #f1f5f9; color: #475569; margin-left: 0.5rem; }
+        .bug-body h4 { margin: 1rem 0 0.5rem 0; color: #334155; }
+        .steps { padding-left: 1.5rem; margin-bottom: 1rem; }
+        .code-block { background: #1e293b; color: #a7f3d0; padding: 1rem; border-radius: 6px; font-family: monospace; font-size: 0.9rem; overflow-x: auto; }
+        .screenshot { max-width: 100%; height: auto; border: 1px solid #cbd5e1; border-radius: 4px; margin-top: 1rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Vibe Testing Exploratorio - Reporte de QA</h1>
+        <p><strong>URL Base:</strong> <code>http://localhost:3000/</code></p>
+        <p><strong>Fecha de ejecución:</strong> 2026-09-24</p>
+
+        <div class="summary">
+            <div class="stat-card">
+                <div class="stat-value">4</div>
+                <div>Bugs Encontrados</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" style="color: #991b1b;">2</div>
+                <div>Críticos / Altos</div>
+            </div>
+        </div>
+
+        <h2>Hallazgos</h2>
+
+        <!-- Bug 1 -->
+        <div class="bug-card" style="border-left-color: #991b1b;">
+            <div class="bug-header">
+                <h3 class="bug-title">1. Vulnerabilidad XSS Almacenado en Descripción</h3>
+                <div>
+                    <span class="badge badge-critical">Crítica</span>
+                    <span class="badge badge-type">Seguridad</span>
+                </div>
+            </div>
+            <div class="bug-body">
+                <p><strong>Área:</strong> Gastos e Ingresos > Nueva Transacción</p>
+                <p><strong>Descripción:</strong> El campo de descripción de transacciones no escapa el código HTML/JS al renderizarse en la tabla, permitiendo inyección de scripts cruzados (XSS).</p>
+                <h4>Pasos para reproducir:</h4>
+                <ol class="steps">
+                    <li>Navegar a "Gastos e Ingresos".</li>
+                    <li>Crear una nueva transacción.</li>
+                    <li>En el campo descripción, inyectar el payload: <code>&lt;img src="x" onerror="console.error('XSS executed!')"&gt;</code></li>
+                    <li>Hacer clic en Guardar.</li>
+                    <li>Observar la consola del navegador.</li>
+                </ol>
+                <h4>Logs (Red/Consola):</h4>
+                <div class="code-block">
+[ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/x:0
+[ERROR] XSS executed! @ http://localhost:3000/:0
+                </div>
+                <img class="screenshot" src="../results/screenshots/bug5-xss.png" alt="Captura de XSS">
+            </div>
+        </div>
+
+        <!-- Bug 2 -->
+        <div class="bug-card" style="border-left-color: #9a3412;">
+            <div class="bug-header">
+                <h3 class="bug-title">2. Excepción JS (TypeError) al Renderizar Objetivos Rotos</h3>
+                <div>
+                    <span class="badge badge-high">Alta</span>
+                    <span class="badge badge-type">Funcional</span>
+                </div>
+            </div>
+            <div class="bug-body">
+                <p><strong>Área:</strong> Objetivos de Ahorro</p>
+                <p><strong>Descripción:</strong> Al agregar un objetivo cuyo monto actual es mayor al objetivo, con fecha límite en el pasado, la app falla al intentar calcular el progreso o aplicar estilos, arrojando una excepción en consola y bloqueando la UI.</p>
+                <h4>Pasos para reproducir:</h4>
+                <ol class="steps">
+                    <li>Navegar a "Objetivos".</li>
+                    <li>Hacer clic en "Nuevo Objetivo".</li>
+                    <li>Completar Monto Objetivo: <code>100000</code>.</li>
+                    <li>Completar Monto Actual: <code>150000</code>.</li>
+                    <li>Seleccionar Fecha límite en el pasado (Ej. <code>2023-01-01</code>).</li>
+                    <li>Guardar y revisar consola.</li>
+                </ol>
+                <h4>Logs (Red/Consola):</h4>
+                <div class="code-block">
+TypeError: Cannot read properties of null (reading 'style')
+    at renderGoals (http://localhost:3000/js/app.js:499:16)
+    at HTMLFormElement.saveGoal (http://localhost:3000/js/app.js:580:5)
+                </div>
+                <img class="screenshot" src="../results/screenshots/bug3-goals-js-error.png" alt="Excepción Objetivos">
+            </div>
+        </div>
+
+        <!-- Bug 3 -->
+        <div class="bug-card" style="border-left-color: #92400e;">
+            <div class="bug-header">
+                <h3 class="bug-title">3. Desbordamiento de Interfaz por Descripciones Largas</h3>
+                <div>
+                    <span class="badge badge-medium">Media</span>
+                    <span class="badge badge-type">UI / UX</span>
+                </div>
+            </div>
+            <div class="bug-body">
+                <p><strong>Área:</strong> Gastos e Ingresos (Tabla)</p>
+                <p><strong>Descripción:</strong> El campo "Descripción" no valida límite de caracteres (maxlength). Textos excesivamente largos rompen la estructura de la tabla y la responsividad de la página.</p>
+                <h4>Pasos para reproducir:</h4>
+                <ol class="steps">
+                    <li>Navegar a "Gastos e Ingresos".</li>
+                    <li>Crear una transacción.</li>
+                    <li>Pegar un texto muy largo (ej. +500 caracteres sin espacios).</li>
+                    <li>Guardar y observar la tabla.</li>
+                </ol>
+                <img class="screenshot" src="../results/screenshots/bug1-extreme-values.png" alt="Bug Text Overflow">
+            </div>
+        </div>
+
+        <!-- Bug 4 -->
+        <div class="bug-card" style="border-left-color: #075985;">
+            <div class="bug-header">
+                <h3 class="bug-title">4. Problemas de Visualización con Valores Numéricos Extremos</h3>
+                <div>
+                    <span class="badge badge-low">Baja</span>
+                    <span class="badge badge-type">UI / Visual</span>
+                </div>
+            </div>
+            <div class="bug-body">
+                <p><strong>Área:</strong> Dashboard y Tarjetas de Métricas</p>
+                <p><strong>Descripción:</strong> Al ingresar transacciones con valores monetarios irracionales (ej. 10.000.000.000.000), el texto se desborda del contenedor en el Dashboard y en los Viewports móviles.</p>
+                <h4>Pasos para reproducir:</h4>
+                <ol class="steps">
+                    <li>Navegar a "Gastos e Ingresos" e ingresar un gasto con Monto = <code>9999999999999999</code>.</li>
+                    <li>Navegar al "Dashboard".</li>
+                    <li>Observar las tarjetas "Total Gastos" y "Balance".</li>
+                    <li>Cambiar el Viewport a Mobile (ej. iPhone X).</li>
+                </ol>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
