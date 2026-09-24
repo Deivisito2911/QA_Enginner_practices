@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reporte de Ejecución de Pruebas QA - Agregar Nueva Transacción</title>
+  <style>
+    :root {
+      --bg-color: #0f172a;
+      --card-bg: #1e293b;
+      --card-border: #334155;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --primary: #3b82f6;
+      --success: #10b981;
+      --success-bg: rgba(16, 185, 129, 0.15);
+      --danger: #ef4444;
+      --danger-bg: rgba(239, 68, 68, 0.15);
+      --warning: #f59e0b;
+      --warning-bg: rgba(245, 158, 11, 0.15);
+      --radius: 10px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; padding: 2.5rem 1rem; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    header { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--radius); padding: 2rem; margin-bottom: 2rem; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25); }
+    .badge-report { display: inline-block; background: rgba(59, 130, 246, 0.2); color: #60a5fa; font-size: 0.8rem; font-weight: 700; padding: 0.3rem 0.75rem; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem; }
+    h1 { font-size: 1.85rem; color: #ffffff; margin-bottom: 0.5rem; }
+    .suite-info { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; }
+    .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+    .metric-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--radius); padding: 1.25rem; text-align: center; }
+    .metric-value { font-size: 2.2rem; font-weight: 800; margin-bottom: 0.25rem; }
+    .metric-label { font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+    .val-total { color: #60a5fa; } .val-passed { color: var(--success); } .val-failed { color: var(--danger); } .val-rate { color: #a78bfa; }
+    .progress-bar-container { width: 100%; height: 12px; background: #334155; border-radius: 9999px; overflow: hidden; display: flex; margin-bottom: 2rem; }
+    .progress-passed { background-color: var(--success); height: 100%; }
+    .progress-failed { background-color: var(--danger); height: 100%; }
+    .section-title { font-size: 1.35rem; font-weight: 700; margin: 2.5rem 0 1rem 0; color: #ffffff; display: flex; align-items: center; gap: 0.6rem; }
+    .table-container { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--radius); overflow-x: auto; margin-bottom: 2.5rem; }
+    table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.9rem; }
+    th { background-color: #172033; color: #cbd5e1; font-weight: 600; padding: 0.9rem 1rem; border-bottom: 1px solid var(--card-border); white-space: nowrap; }
+    td { padding: 0.9rem 1rem; border-bottom: 1px solid var(--card-border); vertical-align: middle; color: #e2e8f0; }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background-color: #243048; }
+    .status-pill { display: inline-block; font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.65rem; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.04em; }
+    .status-passed { background: var(--success-bg); color: var(--success); border: 1px solid var(--success); }
+    .status-failed { background: var(--danger-bg); color: var(--danger); border: 1px solid var(--danger); }
+    .execution-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--radius); margin-bottom: 2rem; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2); }
+    .card-header { padding: 1.1rem 1.5rem; background: #172033; border-bottom: 1px solid var(--card-border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; }
+    .card-id-title { display: flex; align-items: center; gap: 0.75rem; }
+    .cp-code { background: #0f172a; border: 1px solid var(--card-border); color: #60a5fa; font-family: monospace; font-size: 0.9rem; padding: 0.2rem 0.5rem; border-radius: 4px; font-weight: 700; }
+    .cp-heading { font-size: 1.05rem; font-weight: 600; color: #ffffff; }
+    .card-body { padding: 1.5rem; }
+    .field-group { margin-bottom: 1rem; }
+    .field-title { font-weight: 600; color: #94a3b8; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 0.35rem; }
+    .steps-box, .result-comparison { background: #0f172a; border: 1px solid var(--card-border); border-radius: 6px; padding: 1rem; font-size: 0.9rem; }
+    .steps-list { margin-left: 1.25rem; color: #cbd5e1; }
+    .steps-list li { margin-bottom: 0.4rem; }
+    .result-comparison { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    @media (max-width: 768px) { .result-comparison { grid-template-columns: 1fr; } }
+    .res-box { padding: 0.75rem; border-radius: 6px; font-size: 0.875rem; }
+    .res-expected { background: rgba(59, 130, 246, 0.1); border-left: 3px solid var(--primary); color: #bfdbfe; }
+    .res-actual { background: rgba(16, 185, 129, 0.1); border-left: 3px solid var(--success); color: #a7f3d0; }
+    .res-actual.fail { background: rgba(239, 68, 68, 0.1); border-left: 3px solid var(--danger); color: #fecaca; }
+    .screenshot-section { margin-top: 1.25rem; }
+    .screenshot-frame { background: #0f172a; border: 1px solid var(--card-border); border-radius: 6px; padding: 0.5rem; text-align: center; margin-top: 0.5rem; }
+    .screenshot-img { max-width: 100%; height: auto; border-radius: 4px; display: block; margin: 0 auto; border: 1px solid #334155; }
+    footer { text-align: center; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--card-border); color: var(--text-muted); font-size: 0.85rem; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <span class="badge-report">Ejecución Automatizada • Playwright MCP</span>
+      <h1>Reporte de Ejecución: Agregar Nueva Transacción</h1>
+      <div class="suite-info">
+        <strong>Fuente de Casos:</strong> caso de prueba TC01_Agregar_Transaccion.html &nbsp;|&nbsp;
+        <strong>Fecha / Hora:</strong> 2026-09-24 &nbsp;|&nbsp;
+        <strong>Entorno:</strong> http://localhost:8080/index.html
+      </div>
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-value val-total">2</div>
+          <div class="metric-label">Total Pruebas</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value val-passed">2</div>
+          <div class="metric-label">Exitosas (Pass)</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value val-failed">0</div>
+          <div class="metric-label">Fallidas (Fail)</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value val-rate">100%</div>
+          <div class="metric-label">Tasa de Éxito</div>
+        </div>
+      </div>
+      <div class="progress-bar-container">
+        <div class="progress-passed" style="width: 100%;"></div>
+        <div class="progress-failed" style="width: calc(100% - 100%);"></div>
+      </div>
+    </header>
+
+    <h2 class="section-title">📋 Matriz Resumen de Ejecución</h2>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>ID Caso</th>
+            <th>Título del Caso</th>
+            <th>Estado</th>
+            <th>Evidencia</th>
+            <th>Observación</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>CP-001</code></td>
+            <td>Agregar un nuevo gasto con datos válidos</td>
+            <td><span class="status-pill status-passed">Exitoso</span></td>
+            <td><a href="#screenshot-CP-001" style="color: #60a5fa;">Ver Captura</a></td>
+            <td>Se agregó correctamente el gasto y se reflejó en UI.</td>
+          </tr>
+          <tr>
+            <td><code>CP-002</code></td>
+            <td>Intentar agregar una transacción con monto negativo</td>
+            <td><span class="status-pill status-passed">Exitoso</span></td>
+            <td><a href="#screenshot-CP-002" style="color: #60a5fa;">Ver Captura</a></td>
+            <td>El formulario previno el envío por validación de HTML5 nativa.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="section-title">📸 Detalle de Ejecución y Evidencias Visuales</h2>
+
+    <!-- CP-001 -->
+    <div class="execution-card" id="detail-CP-001">
+      <div class="card-header">
+        <div class="card-id-title">
+          <span class="cp-code">CP-001</span>
+          <span class="cp-heading">Agregar un nuevo gasto con datos válidos</span>
+        </div>
+        <span class="status-pill status-passed">Exitoso</span>
+      </div>
+      <div class="card-body">
+        <div class="field-group">
+          <div class="field-title">Pasos Ejecutados</div>
+          <div class="steps-box">
+            <ol class="steps-list">
+              <li>Navegar a la vista de Gastos e Ingresos.</li>
+              <li>Hacer clic en 'Nueva Transacción' para abrir el modal.</li>
+              <li>Completar todos los campos (Monto: 150.50).</li>
+              <li>Hacer clic en el botón 'Guardar'.</li>
+            </ol>
+          </div>
+        </div>
+        <div class="field-group">
+          <div class="field-title">Validación de Resultados</div>
+          <div class="result-comparison">
+            <div class="res-box res-expected">
+              <strong>Esperado:</strong><br>
+              El modal se cierra, la transacción se refleja en la vista con el monto restado/sumado en los balances.
+            </div>
+            <div class="res-box res-actual">
+              <strong>Obtenido:</strong><br>
+              El modal se cerró exitosamente, la nueva transacción aparece en la tabla y los montos reflejan la transacción agregada.
+            </div>
+          </div>
+        </div>
+        <div class="screenshot-section" id="screenshot-CP-001">
+          <div class="field-title">Evidencia Visual (Screenshot)</div>
+          <div class="screenshot-frame">
+            <img class="screenshot-img" src="./screenshots/CP-001.png" alt="Captura CP-001">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CP-002 -->
+    <div class="execution-card" id="detail-CP-002">
+      <div class="card-header">
+        <div class="card-id-title">
+          <span class="cp-code">CP-002</span>
+          <span class="cp-heading">Intentar agregar una transacción con monto negativo</span>
+        </div>
+        <span class="status-pill status-passed">Exitoso</span>
+      </div>
+      <div class="card-body">
+        <div class="field-group">
+          <div class="field-title">Pasos Ejecutados</div>
+          <div class="steps-box">
+            <ol class="steps-list">
+              <li>Hacer clic en 'Nueva Transacción'.</li>
+              <li>Completar los campos ingresando '-50.00' en Monto.</li>
+              <li>Intentar hacer clic en 'Guardar'.</li>
+            </ol>
+          </div>
+        </div>
+        <div class="field-group">
+          <div class="field-title">Validación de Resultados</div>
+          <div class="result-comparison">
+            <div class="res-box res-expected">
+              <strong>Esperado:</strong><br>
+              El formulario no se envía, se muestra el error de validación HTML nativo.
+            </div>
+            <div class="res-box res-actual">
+              <strong>Obtenido:</strong><br>
+              El envío fue bloqueado por validación de formulario nativa. El registro no se guardó.
+            </div>
+          </div>
+        </div>
+        <div class="screenshot-section" id="screenshot-CP-002">
+          <div class="field-title">Evidencia Visual (Screenshot)</div>
+          <div class="screenshot-frame">
+            <img class="screenshot-img" src="./screenshots/CP-002.png" alt="Captura CP-002">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      Generado por la skill <strong>ejecutor-casos-prueba</strong> con Playwright MCP • Antigravity
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,325 @@
+- generic [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e4]:
+      - generic [ref=e5]: 
+      - generic [ref=e6]: FinApp
+    - list [ref=e7]:
+      - listitem [ref=e8]:
+        - link " Dashboard" [ref=e9] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e10]: 
+          - generic [ref=e11]: Dashboard
+      - listitem [ref=e12]:
+        - link " Gastos e Ingresos" [ref=e13] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e14]: 
+          - generic [ref=e15]: Gastos e Ingresos
+      - listitem [ref=e16]:
+        - link " Objetivos de Ahorro" [ref=e17] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e18]: 
+          - generic [ref=e19]: Objetivos de Ahorro
+    - paragraph [ref=e21]: FinApp v1.0
+  - main [ref=e22]:
+    - text:             
+    - generic [ref=e126]:
+      - generic [ref=e127]:
+        - generic [ref=e128]:
+          - heading "Gastos e Ingresos" [level=1] [ref=e129]
+          - paragraph [ref=e130]: Administra tus movimientos financieros
+        - button "+ Nueva Transacción" [active] [ref=e131] [cursor=pointer]:
+          - generic [ref=e132]: +
+          - text: Nueva Transacción
+      - generic [ref=e133]:
+        - generic [ref=e134]:
+          - generic [ref=e135]: "Tipo:"
+          - combobox "Tipo:" [ref=e136] [cursor=pointer]:
+            - option "Todos" [selected]
+            - option "Ingresos"
+            - option "Gastos"
+        - generic [ref=e137]:
+          - generic [ref=e138]: "Mes:"
+          - combobox "Mes:" [ref=e139] [cursor=pointer]:
+            - option "Todos" [selected]
+            - option "Septiembre 2026"
+            - option "Agosto 2026"
+            - option "Julio 2026"
+            - option "Junio 2026"
+            - option "Mayo 2026"
+            - option "Abril 2026"
+      - generic [ref=e140]:
+        - generic [ref=e142]:
+          - generic [ref=e143]: Ingresos
+          - generic [ref=e144]: US$ 21.100.000
+        - generic [ref=e146]:
+          - generic [ref=e147]: Gastos
+          - generic [ref=e148]: US$ 9.240.000
+        - generic [ref=e150]:
+          - generic [ref=e151]: Balance
+          - generic [ref=e152]: US$ 11.860.000
+      - generic [ref=e153]:
+        - table [ref=e155]:
+          - rowgroup [ref=e156]:
+            - row [ref=e157]:
+              - columnheader "Fecha" [ref=e158]
+              - columnheader "Tipo" [ref=e159]
+              - columnheader "Categoría" [ref=e160]
+              - columnheader "Descripción" [ref=e161]
+              - columnheader "Monto" [ref=e162]
+              - columnheader "Acciones" [ref=e163]
+          - rowgroup [ref=e164]:
+            - row [ref=e165]:
+              - cell "15 sept 2026" [ref=e166]
+              - cell "Ingreso" [ref=e167]
+              - cell "Freelance" [ref=e169]
+              - cell "Proyecto web" [ref=e170]
+              - cell "+US$ 800.000" [ref=e171]
+              - cell [ref=e172]:
+                - button "" [ref=e173]
+            - row [ref=e175]:
+              - cell "10 sept 2026" [ref=e176]
+              - cell "Gasto" [ref=e177]
+              - cell "Entretenimiento" [ref=e179]
+              - cell "Netflix y Spotify" [ref=e180]
+              - cell "-US$ 45.000" [ref=e181]
+              - cell [ref=e182]:
+                - button "" [ref=e183]
+            - row [ref=e185]:
+              - cell "08 sept 2026" [ref=e186]
+              - cell "Gasto" [ref=e187]
+              - cell "Servicios" [ref=e189]
+              - cell "Internet y celular" [ref=e190]
+              - cell "-US$ 95.000" [ref=e191]
+              - cell [ref=e192]:
+                - button "" [ref=e193]
+            - row [ref=e195]:
+              - cell "07 sept 2026" [ref=e196]
+              - cell "Gasto" [ref=e197]
+              - cell "Transporte" [ref=e199]
+              - cell "Gasolina" [ref=e200]
+              - cell "-US$ 180.000" [ref=e201]
+              - cell [ref=e202]:
+                - button "" [ref=e203]
+            - row [ref=e205]:
+              - cell "05 sept 2026" [ref=e206]
+              - cell "Gasto" [ref=e207]
+              - cell "Alimentación" [ref=e209]
+              - cell "Mercado semanal" [ref=e210]
+              - cell "-US$ 350.000" [ref=e211]
+              - cell [ref=e212]:
+                - button "" [ref=e213]
+            - row [ref=e215]:
+              - cell "03 sept 2026" [ref=e216]
+              - cell "Gasto" [ref=e217]
+              - cell "Salud" [ref=e219]
+              - cell "Gimnasio mensual" [ref=e220]
+              - cell "-US$ 120.000" [ref=e221]
+              - cell [ref=e222]:
+                - button "" [ref=e223]
+            - row [ref=e225]:
+              - cell "02 sept 2026" [ref=e226]
+              - cell "Gasto" [ref=e227]
+              - cell "Vivienda" [ref=e229]
+              - cell "Arriendo apartamento" [ref=e230]
+              - cell "-US$ 1.200.000" [ref=e231]
+              - cell [ref=e232]:
+                - button "" [ref=e233]
+            - row [ref=e235]:
+              - cell "01 sept 2026" [ref=e236]
+              - cell "Ingreso" [ref=e237]
+              - cell "Salario" [ref=e239]
+              - cell "Salario mensual" [ref=e240]
+              - cell "+US$ 3.500.000" [ref=e241]
+              - cell [ref=e242]:
+                - button "" [ref=e243]
+            - row [ref=e245]:
+              - cell "18 ago 2026" [ref=e246]
+              - cell "Gasto" [ref=e247]
+              - cell "Educación" [ref=e249]
+              - cell "Curso online" [ref=e250]
+              - cell "-US$ 150.000" [ref=e251]
+              - cell [ref=e252]:
+                - button "" [ref=e253]
+            - row [ref=e255]:
+              - cell "12 ago 2026" [ref=e256]
+              - cell "Gasto" [ref=e257]
+              - cell "Ropa" [ref=e259]
+              - cell "Ropa nueva" [ref=e260]
+              - cell "-US$ 250.000" [ref=e261]
+              - cell [ref=e262]:
+                - button "" [ref=e263]
+            - row [ref=e265]:
+              - cell "04 ago 2026" [ref=e266]
+              - cell "Gasto" [ref=e267]
+              - cell "Alimentación" [ref=e269]
+              - cell "Mercado quincenal" [ref=e270]
+              - cell "-US$ 420.000" [ref=e271]
+              - cell [ref=e272]:
+                - button "" [ref=e273]
+            - row [ref=e275]:
+              - cell "02 ago 2026" [ref=e276]
+              - cell "Gasto" [ref=e277]
+              - cell "Vivienda" [ref=e279]
+              - cell "Arriendo apartamento" [ref=e280]
+              - cell "-US$ 1.200.000" [ref=e281]
+              - cell [ref=e282]:
+                - button "" [ref=e283]
+            - row [ref=e285]:
+              - cell "01 ago 2026" [ref=e286]
+              - cell "Ingreso" [ref=e287]
+              - cell "Salario" [ref=e289]
+              - cell "Salario mensual" [ref=e290]
+              - cell "+US$ 3.500.000" [ref=e291]
+              - cell [ref=e292]:
+                - button "" [ref=e293]
+            - row [ref=e295]:
+              - cell "20 jul 2026" [ref=e296]
+              - cell "Ingreso" [ref=e297]
+              - cell "Inversiones" [ref=e299]
+              - cell "Dividendos" [ref=e300]
+              - cell "+US$ 200.000" [ref=e301]
+              - cell [ref=e302]:
+                - button "" [ref=e303]
+            - row [ref=e305]:
+              - cell "14 jul 2026" [ref=e306]
+              - cell "Gasto" [ref=e307]
+              - cell "Entretenimiento" [ref=e309]
+              - cell "Cena restaurante" [ref=e310]
+              - cell "-US$ 120.000" [ref=e311]
+              - cell [ref=e312]:
+                - button "" [ref=e313]
+            - row [ref=e315]:
+              - cell "06 jul 2026" [ref=e316]
+              - cell "Gasto" [ref=e317]
+              - cell "Alimentación" [ref=e319]
+              - cell "Supermercado" [ref=e320]
+              - cell "-US$ 380.000" [ref=e321]
+              - cell [ref=e322]:
+                - button "" [ref=e323]
+            - row [ref=e325]:
+              - cell "02 jul 2026" [ref=e326]
+              - cell "Gasto" [ref=e327]
+              - cell "Vivienda" [ref=e329]
+              - cell "Arriendo apartamento" [ref=e330]
+              - cell "-US$ 1.200.000" [ref=e331]
+              - cell [ref=e332]:
+                - button "" [ref=e333]
+            - row [ref=e335]:
+              - cell "01 jul 2026" [ref=e336]
+              - cell "Ingreso" [ref=e337]
+              - cell "Salario" [ref=e339]
+              - cell "Salario mensual" [ref=e340]
+              - cell "+US$ 3.500.000" [ref=e341]
+              - cell [ref=e342]:
+                - button "" [ref=e343]
+            - row [ref=e345]:
+              - cell "10 jun 2026" [ref=e346]
+              - cell "Gasto" [ref=e347]
+              - cell "Transporte" [ref=e349]
+              - cell "Mantenimiento carro" [ref=e350]
+              - cell "-US$ 450.000" [ref=e351]
+              - cell [ref=e352]:
+                - button "" [ref=e353]
+            - row [ref=e355]:
+              - cell "02 jun 2026" [ref=e356]
+              - cell "Gasto" [ref=e357]
+              - cell "Vivienda" [ref=e359]
+              - cell "Arriendo" [ref=e360]
+              - cell "-US$ 1.200.000" [ref=e361]
+              - cell [ref=e362]:
+                - button "" [ref=e363]
+            - row [ref=e365]:
+              - cell "01 jun 2026" [ref=e366]
+              - cell "Ingreso" [ref=e367]
+              - cell "Salario" [ref=e369]
+              - cell "Salario mensual" [ref=e370]
+              - cell "+US$ 3.200.000" [ref=e371]
+              - cell [ref=e372]:
+                - button "" [ref=e373]
+            - row [ref=e375]:
+              - cell "15 may 2026" [ref=e376]
+              - cell "Gasto" [ref=e377]
+              - cell "Salud" [ref=e379]
+              - cell "Consulta médica" [ref=e380]
+              - cell "-US$ 180.000" [ref=e381]
+              - cell [ref=e382]:
+                - button "" [ref=e383]
+            - row [ref=e385]:
+              - cell "05 may 2026" [ref=e386]
+              - cell "Gasto" [ref=e387]
+              - cell "Alimentación" [ref=e389]
+              - cell "Mercado del mes" [ref=e390]
+              - cell "-US$ 400.000" [ref=e391]
+              - cell [ref=e392]:
+                - button "" [ref=e393]
+            - row [ref=e395]:
+              - cell "01 may 2026" [ref=e396]
+              - cell "Ingreso" [ref=e397]
+              - cell "Salario" [ref=e399]
+              - cell "Salario mensual" [ref=e400]
+              - cell "+US$ 3.200.000" [ref=e401]
+              - cell [ref=e402]:
+                - button "" [ref=e403]
+            - row [ref=e405]:
+              - cell "20 abr 2026" [ref=e406]
+              - cell "Gasto" [ref=e407]
+              - cell "Otros" [ref=e409]
+              - cell "Regalos" [ref=e410]
+              - cell "-US$ 200.000" [ref=e411]
+              - cell [ref=e412]:
+                - button "" [ref=e413]
+            - row [ref=e415]:
+              - cell "02 abr 2026" [ref=e416]
+              - cell "Gasto" [ref=e417]
+              - cell "Vivienda" [ref=e419]
+              - cell "Arriendo" [ref=e420]
+              - cell "-US$ 1.100.000" [ref=e421]
+              - cell [ref=e422]:
+                - button "" [ref=e423]
+            - row [ref=e425]:
+              - cell "01 abr 2026" [ref=e426]
+              - cell "Ingreso" [ref=e427]
+              - cell "Salario" [ref=e429]
+              - cell "Salario mensual" [ref=e430]
+              - cell "+US$ 3.200.000" [ref=e431]
+              - cell [ref=e432]:
+                - button "" [ref=e433]
+        - text:  +
+    - text: +  +
+  - generic [ref=e436]:
+    - generic [ref=e437]:
+      - heading "Nueva Transacción" [level=2] [ref=e438]
+      - button "×" [ref=e439] [cursor=pointer]
+    - generic [ref=e440]:
+      - generic [ref=e441]:
+        - generic [ref=e442]: Tipo
+        - combobox "Tipo" [ref=e443]:
+          - option "Gasto" [selected]
+          - option "Ingreso"
+      - generic [ref=e444]:
+        - generic [ref=e445]: Categoría
+        - combobox "Categoría" [ref=e446]:
+          - option "Alimentación" [selected]
+          - option "Transporte"
+          - option "Vivienda"
+          - option "Entretenimiento"
+          - option "Salud"
+          - option "Educación"
+          - option "Ropa"
+          - option "Servicios"
+          - option "Otros"
+      - generic [ref=e447]:
+        - generic [ref=e448]: Descripción
+        - textbox "Descripción" [ref=e449]:
+          - /placeholder: "Ej: Compras del supermercado"
+      - generic [ref=e450]:
+        - generic [ref=e451]:
+          - generic [ref=e452]: Monto ($)
+          - spinbutton "Monto ($)" [ref=e453]
+        - generic [ref=e454]:
+          - generic [ref=e455]: Fecha
+          - textbox "Fecha" [ref=e456]: 2026-09-24
+      - generic [ref=e457]:
+        - button "Cancelar" [ref=e458] [cursor=pointer]
+        - button "Guardar" [ref=e459] [cursor=pointer]
+  - text:   

@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Casos de Prueba - HU-001 - Agregar Nueva Transacción</title>
+  <style>
+    :root {
+      --bg-color: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --primary: #2563eb;
+      --primary-light: #eff6ff;
+      --border: #e2e8f0;
+      --success-bg: #ecfdf5;
+      --success-text: #065f46;
+      --danger-bg: #fef2f2;
+      --danger-text: #991b1b;
+      --warning-bg: #fffbeb;
+      --warning-text: #92400e;
+      --purple-bg: #faf5ff;
+      --purple-text: #6b21a8;
+      --radius: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    header {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    .badge-hu {
+      display: inline-block;
+      background-color: var(--primary-light);
+      color: var(--primary);
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: 1.6rem;
+      color: #0f172a;
+      margin-bottom: 0.75rem;
+    }
+
+    .hu-desc {
+      background-color: #f1f5f9;
+      border-left: 4px solid var(--primary);
+      padding: 0.75rem 1rem;
+      border-radius: 0 4px 4px 0;
+      font-size: 0.95rem;
+      color: #334155;
+      margin-top: 0.5rem;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin: 2rem 0 1rem 0;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .test-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 1.5rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+      overflow: hidden;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .test-card:hover {
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.08);
+    }
+
+    .card-header {
+      padding: 1rem 1.5rem;
+      background: #ffffff;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .card-title-group {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .cp-id {
+      font-weight: 700;
+      font-size: 1rem;
+      color: #0f172a;
+      background: #f1f5f9;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+    }
+
+    .cp-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #1e293b;
+    }
+
+    .pill {
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.25rem 0.5rem;
+      border-radius: 9999px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .pill-pos { background: var(--success-bg); color: var(--success-text); }
+    .pill-neg { background: var(--danger-bg); color: var(--danger-text); }
+    .pill-lim { background: var(--purple-bg); color: var(--purple-text); }
+    .pill-sec { background: var(--warning-bg); color: var(--warning-text); }
+
+    .prio-alta { color: #dc2626; font-weight: 700; }
+    .prio-media { color: #d97706; font-weight: 700; }
+    .prio-baja { color: #4b5563; font-weight: 700; }
+
+    .card-body {
+      padding: 1.25rem 1.5rem;
+    }
+
+    .detail-row {
+      margin-bottom: 0.75rem;
+      font-size: 0.95rem;
+    }
+
+    .detail-label {
+      font-weight: 600;
+      color: #475569;
+      display: inline-block;
+      min-width: 140px;
+    }
+
+    .precond-box, .data-box {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.75rem 1rem;
+      margin: 0.5rem 0 1rem 0;
+      font-size: 0.9rem;
+    }
+
+    .steps-list {
+      margin: 0.5rem 0 1rem 1.25rem;
+      font-size: 0.95rem;
+    }
+
+    .steps-list li {
+      margin-bottom: 0.4rem;
+    }
+
+    .expected-result {
+      background-color: var(--success-bg);
+      border-left: 4px solid #10b981;
+      padding: 0.75rem 1rem;
+      border-radius: 0 6px 6px 0;
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
+      color: #064e3b;
+    }
+
+    .expected-result.negative {
+      background-color: var(--danger-bg);
+      border-left-color: #ef4444;
+      color: #7f1d1d;
+    }
+
+    .table-container {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow-x: auto;
+      margin-bottom: 2rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.9rem;
+    }
+
+    th {
+      background-color: #f8fafc;
+      color: #475569;
+      font-weight: 600;
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--border);
+      white-space: nowrap;
+    }
+
+    td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .po-box {
+      background-color: #fffbeb;
+      border: 1px solid #fde68a;
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .po-title {
+      font-weight: 700;
+      color: #92400e;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .po-list {
+      margin-left: 1.25rem;
+      color: #78350f;
+      font-size: 0.9rem;
+    }
+
+    .po-list li {
+      margin-bottom: 0.35rem;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <span class="badge-hu">HU-001</span>
+      <h1>Casos de Prueba: Agregar Nueva Transacción</h1>
+      <div class="hu-desc">
+        <strong>Historia de Usuario (inferida):</strong><br>
+        Como usuario, quiero poder agregar una nueva transacción (ingreso o gasto) desde el modal correspondiente para registrar mis movimientos financieros.
+      </div>
+      <div class="meta-grid">
+        <div><strong>Generado:</strong> 2026-09-24</div>
+        <div><strong>Total de Casos:</strong> 2</div>
+        <div><strong>Herramienta:</strong> Antigravity CLI</div>
+      </div>
+    </header>
+
+    <h2 class="section-title">📊 Matriz Resumen de Casos de Prueba</h2>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Criterio (AC)</th>
+            <th>Tipo</th>
+            <th>Prioridad</th>
+            <th>Objetivo / Título</th>
+            <th>Resultado Esperado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>CP-001</code></td>
+            <td>N/A (UI)</td>
+            <td><span class="pill pill-pos">Positivo</span></td>
+            <td><span class="prio-alta">Alta</span></td>
+            <td>Agregar un nuevo gasto con datos válidos</td>
+            <td>Gasto registrado correctamente y listado en la interfaz.</td>
+          </tr>
+          <tr>
+            <td><code>CP-002</code></td>
+            <td>N/A (BVA)</td>
+            <td><span class="pill pill-neg">Negativo</span></td>
+            <td><span class="prio-media">Media</span></td>
+            <td>Intentar agregar una transacción con monto negativo</td>
+            <td>Error de validación HTML; no se envía el formulario.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="section-title">📝 Detalle de Casos de Prueba</h2>
+
+    <div class="test-card">
+      <div class="card-header">
+        <div class="card-title-group">
+          <span class="cp-id">CP-001</span>
+          <span class="cp-title">Agregar un nuevo gasto con datos válidos</span>
+        </div>
+        <div style="display: flex; gap: 0.5rem; align-items: center;">
+          <span class="pill pill-pos">Positivo</span>
+          <span class="prio-alta">Alta</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="detail-row">
+          <span class="detail-label">Criterio Relacionado:</span>
+          <strong>N/A (Basado en wireframes / UI)</strong>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Precondiciones:</span>
+          <div class="precond-box">
+            • Aplicación ejecutándose y usuario en la vista "Gastos e Ingresos".<br>
+            • Modal de "Nueva Transacción" abierto.
+          </div>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Datos de Prueba:</span>
+          <div class="data-box">
+            • <code>transactionType</code>: "gasto"<br>
+            • <code>transactionCategory</code>: [Primera categoría disponible]<br>
+            • <code>transactionDescription</code>: "Compra en supermercado"<br>
+            • <code>transactionAmount</code>: "150.50"<br>
+            • <code>transactionDate</code>: [Fecha actual]
+          </div>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Pasos de Ejecución:</span>
+          <ol class="steps-list">
+            <li>Seleccionar "Gasto" en el campo Tipo.</li>
+            <li>Seleccionar una categoría válida en el campo Categoría.</li>
+            <li>Ingresar "Compra en supermercado" en la Descripción.</li>
+            <li>Ingresar "150.50" en el campo Monto ($).</li>
+            <li>Seleccionar la fecha actual en el campo Fecha.</li>
+            <li>Hacer clic en "Guardar".</li>
+          </ol>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Resultado Esperado:</span>
+          <div class="expected-result">
+            El modal se cierra y la transacción se refleja en la vista de gastos e ingresos, con el monto restado/sumado en los balances (toast de confirmación según UI).
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="test-card">
+      <div class="card-header">
+        <div class="card-title-group">
+          <span class="cp-id">CP-002</span>
+          <span class="cp-title">Intentar agregar una transacción con monto negativo</span>
+        </div>
+        <div style="display: flex; gap: 0.5rem; align-items: center;">
+          <span class="pill pill-neg">Negativo</span>
+          <span class="prio-media">Media</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="detail-row">
+          <span class="detail-label">Criterio Relacionado:</span>
+          <strong>Validación de campo (min="0")</strong>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Precondiciones:</span>
+          <div class="precond-box">
+            • Aplicación ejecutándose y usuario en la vista "Gastos e Ingresos".<br>
+            • Modal de "Nueva Transacción" abierto.
+          </div>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Datos de Prueba:</span>
+          <div class="data-box">
+            • <code>transactionType</code>: "ingreso"<br>
+            • <code>transactionAmount</code>: "-50.00"<br>
+            • Resto de los campos obligatorios completados.
+          </div>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Pasos de Ejecución:</span>
+          <ol class="steps-list">
+            <li>Completar los campos Tipo, Categoría, Descripción y Fecha con datos válidos.</li>
+            <li>Ingresar "-50.00" en el campo Monto ($).</li>
+            <li>Hacer clic en "Guardar".</li>
+          </ol>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Resultado Esperado:</span>
+          <div class="expected-result negative">
+            El formulario no se envía. El navegador muestra un mensaje de validación nativo indicando que el valor debe ser mayor o igual a 0.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="po-box">
+      <div class="po-title">⚠️ Preguntas y Ambigüedades para el Product Owner (PO)</div>
+      <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">Aspectos no contemplados en la HU o adjuntos que deben aclararse:</p>
+      <ul class="po-list">
+        <li>¿Qué notificaciones/mensajes exactos se deben mostrar al usuario cuando la transacción se guarda exitosamente? (Ej. Toast, Alert).</li>
+        <li>¿Se permiten descripciones con caracteres especiales o existe algún límite de longitud para el campo Descripción?</li>
+        <li>¿Está permitido registrar transacciones con fechas futuras (proyecciones)?</li>
+      </ul>
+    </div>
+
+    <footer>
+      Generado automáticamente por Antigravity CLI • Generador de Casos de Prueba
+    </footer>
+  </div>
+
+</body>
+</html>
