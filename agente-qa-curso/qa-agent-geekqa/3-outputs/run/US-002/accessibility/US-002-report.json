@@ -1,0 +1,75 @@
+{
+  "storyId": "US-002",
+  "url": "https://testing1.geekqa.net/",
+  "timestamp": "2026-09-24T01:46:28.813Z",
+  "standard": "WCAG 2.2 AA",
+  "breakpoints": {
+    "mobile": {
+      "viewport": "375x667",
+      "violationsCount": 1,
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.9/color-contrast?application=axeAPI",
+          "nodesCount": 1,
+          "elements": [
+            "button"
+          ]
+        }
+      ],
+      "passesCount": 15,
+      "screenshot": "accessibility_mobile.png"
+    },
+    "tablet": {
+      "viewport": "768x1024",
+      "violationsCount": 1,
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.9/color-contrast?application=axeAPI",
+          "nodesCount": 1,
+          "elements": [
+            "button"
+          ]
+        }
+      ],
+      "passesCount": 15,
+      "screenshot": "accessibility_tablet.png"
+    },
+    "desktop": {
+      "viewport": "1440x900",
+      "violationsCount": 1,
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.9/color-contrast?application=axeAPI",
+          "nodesCount": 1,
+          "elements": [
+            "button"
+          ]
+        }
+      ],
+      "passesCount": 15,
+      "screenshot": "accessibility_desktop.png"
+    }
+  },
+  "uniqueViolations": [
+    {
+      "id": "color-contrast",
+      "impact": "serious",
+      "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+      "help": "Elements must meet minimum color contrast ratio thresholds",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.9/color-contrast?application=axeAPI",
+      "element": "button"
+    }
+  ]
+}

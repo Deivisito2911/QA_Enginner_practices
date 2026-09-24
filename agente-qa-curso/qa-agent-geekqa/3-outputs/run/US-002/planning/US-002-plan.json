@@ -1,0 +1,115 @@
+{
+  "storyId": "US-002",
+  "title": "Gestión de incorporación de nuevos empleados",
+  "url": "https://testing1.geekqa.net/",
+  "selectedSkills": [
+    "run-tests-browser",
+    "run-accessibility-tests",
+    "run-lighthouse-tests",
+    "generate-automated-tests",
+    "log-results"
+  ],
+  "conditionalSkills": {
+    "report-bugs": {
+      "condition": "run-tests-browser has failures",
+      "dependsOn": "run-tests-browser",
+      "description": "Genera reportes de bugs si se encuentran fallos en las pruebas funcionales"
+    }
+  },
+  "selectedBrowsers": ["chromium"],
+  "analyzedAssets": [
+    {
+      "name": "Gestion empledos.md",
+      "path": "2-inputs/Empleados-US-002/Gestion empledos.md",
+      "relation": "Especificación de la historia de usuario y criterios de aceptación funcionales (AC 1)."
+    },
+    {
+      "name": "mock.png",
+      "path": "2-inputs/Empleados-US-002/mock.png",
+      "relation": "Mockup visual del formulario de registro y tabla de empleados registrados en GeekRetail."
+    }
+  ],
+  "testScenarios": [
+    {
+      "id": "TC_001",
+      "title": "Registro exitoso con datos válidos completos y visualización en tabla",
+      "description": "Dado que el usuario completa todos los campos obligatorios con valores válidos (Nombre: 'Carlos Santana', Edad: 35, Fecha de Nacimiento: '1989-05-15', Género: 'Masculino', Dirección: 'Av. Siempre Viva 742', Correo: 'carlos.santana@geekretail.com', Teléfono: '1234567890', Cargo: 'Desarrollador Senior', Departamento: 'Ventas', Estado: Activo, Horario: '08:00 - 17:00', URL: 'https://linkedin.com/in/csantana', Salario: 3500), cuando hace clic en 'Registrar Empleado', entonces el empleado se agrega a la tabla y se muestra el mensaje de éxito.",
+      "type": "Funcional / Positivo",
+      "acceptanceCriteria": "AC 1"
+    },
+    {
+      "id": "TC_002",
+      "title": "Validación de longitud mínima de Nombre (< 3 caracteres)",
+      "description": "Ingresar un nombre con menos de 3 caracteres (ej. 'Al') y enviar el formulario. El sistema debe mostrar el mensaje de error 'El nombre debe tener al menos 3 caracteres' y no registrar.",
+      "type": "Funcional / Negativo",
+      "acceptanceCriteria": "AC 1"
+    },
+    {
+      "id": "TC_003",
+      "title": "Validación de Edad Límite Inferior (Menor a 18 años)",
+      "description": "Ingresar una edad de 16 años (menor de edad según AC: 18-65) y enviar el formulario. El sistema debe rechazar el registro con el mensaje 'La edad debe estar entre 18 y 65 años'.",
+      "type": "Funcional / Límite",
+      "acceptanceCriteria": "AC 1"
+    },
+    {
+      "id": "TC_004",
+      "title": "Validación de Edad Válida en Rango Superior (62 años)",
+      "description": "Ingresar una edad de 62 años (dentro del rango de AC: 18-65 años) con datos válidos y enviar formulario. El sistema debe permitir el registro exitoso.",
+      "type": "Funcional / Límite",
+      "acceptanceCriteria": "AC 1"
+    },
+    {
+      "id": "TC_005",
+      "title": "Validación de Salario menor o igual a 0",
+      "description": "Ingresar un salario de 0 o valor negativo y enviar el formulario. El sistema debe mostrar el mensaje 'El salario debe ser mayor a 0' y no registrar.",
+      "type": "Funcional / Negativo",
+      "acceptanceCriteria": "AC 1"
+    },
+    {
+      "id": "TC_006",
+      "title": "Integridad del dato Salario en la tabla de Empleados Registrados",
+      "description": "Al registrar un empleado con salario de 4500, verificar que el valor reflejado en la columna 'Salario' de la tabla sea '4500' y no '0' u otro valor alterado.",
+      "type": "Funcional / Integridad de Datos",
+      "acceptanceCriteria": "AC 1"
+    },
+    {
+      "id": "TC_007",
+      "title": "Validación de Formato de Correo Electrónico",
+      "description": "Ingresar un correo con formato inválido (ej. 'usuario-sin-arroba') y enviar formulario. Debe mostrar 'Correo electrónico inválido'.",
+      "type": "Funcional / Formato",
+      "acceptanceCriteria": "AC 1"
+    },
+    {
+      "id": "TC_008",
+      "title": "Validación de Campo Obligatorio Fecha de Nacimiento",
+      "description": "Dejar el campo de fecha de nacimiento vacío e intentar registrar. Debe mostrar 'La fecha de nacimiento es obligatoria'.",
+      "type": "Funcional / Obligatoriedad",
+      "acceptanceCriteria": "AC 1"
+    },
+    {
+      "id": "TC_009",
+      "title": "Validación de Género Obligatorio y Bloqueo de Envío",
+      "description": "Dejar sin seleccionar la opción de Género e intentar registrar. El sistema debe marcar error y bloquear el registro del empleado.",
+      "type": "Funcional / Obligatoriedad",
+      "acceptanceCriteria": "AC 1"
+    },
+    {
+      "id": "TC_010",
+      "title": "Validación de Texto Exacto del Mensaje de Éxito",
+      "description": "Al registrar un empleado exitoso, verificar que el mensaje coincida textualmente con el criterio de aceptación: '¡Empleado registrado con éxito!'.",
+      "type": "Funcional / UI Copy",
+      "acceptanceCriteria": "AC 1"
+    }
+  ],
+  "riskAnalysis": {
+    "overallRisk": "HIGH",
+    "justification": "Módulo de gestión de personal y contratos en GeekRetail. Se identifican riesgos críticos de integridad de datos financieros (sobrescritura de salario a 0), validaciones inconsistentes de edad laboral (permite menores de edad y bloquea adultos mayores de 60), y fuga en validación de género."
+  },
+  "earlyRecommendations": [
+    "Corregir el operador de asignación en validación de salario: cambiar 'if (salary = 0)' por 'if (parseFloat(salary) <= 0 || isNaN(salary))'.",
+    "Alinear la condición de edad con el requerimiento de negocio y mensaje: cambiar 'if (age < 5 || age > 60)' por 'if (age < 18 || age > 65)'.",
+    "Asegurar que la validación de género active 'hasError = true;' para evitar registros con género nulo.",
+    "Corregir la discrepancia entre mensajes de error y condiciones de longitud en Dirección y Teléfono.",
+    "Ajustar el texto del mensaje de confirmación para cumplir estrictamente con el criterio de aceptación '¡Empleado registrado con éxito!'."
+  ]
+}

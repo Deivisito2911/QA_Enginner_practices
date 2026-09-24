@@ -1,0 +1,68 @@
+[
+  {
+    "bugId": "BUG-US-002-01",
+    "title": "Permite el registro de empleados menores de 18 años debido a validación incorrecta de edad",
+    "category": "Lógica Funcional / Regla de Negocio",
+    "severity": "Alta",
+    "priority": "Alta",
+    "stepsToReproduce": "1. Navegar a https://testing1.geekqa.net/.\n2. Completar todos los campos con valores válidos.\n3. En el campo \"Edad\", ingresar un valor menor a 18 (ejemplo: 16).\n4. Presionar el botón \"Registrar Empleado\".",
+    "expectedResult": "El sistema debe rechazar el registro, mostrar el mensaje de error \"La edad debe estar entre 18 y 65 años\" y no agregar el empleado a la tabla.",
+    "actualResult": "El empleado de 16 años es registrado exitosamente en la tabla sin mostrar error alguno, debido a que la condición en código verifica `age < 5` en vez de `age < 18`.",
+    "screenshotPath": "bugs/evidence/BUG-US-002-01.png"
+  },
+  {
+    "bugId": "BUG-US-002-02",
+    "title": "Bloquea el registro de empleados con edades válidas entre 61 y 65 años",
+    "category": "Lógica Funcional / Criterio de Aceptación",
+    "severity": "Alta",
+    "priority": "Alta",
+    "stepsToReproduce": "1. Navegar a https://testing1.geekqa.net/.\n2. Completar todos los campos con valores válidos.\n3. En el campo \"Edad\", ingresar un valor entre 61 y 65 años (ejemplo: 62).\n4. Presionar el botón \"Registrar Empleado\".",
+    "expectedResult": "El sistema debe permitir el registro exitoso del empleado según el AC 1 (rango permitido: 18 a 65 años).",
+    "actualResult": "El sistema bloquea el registro mostrando el error \"La edad debe estar entre 18 y 65 años\", debido a que la condición evalúa `age > 60`.",
+    "screenshotPath": "bugs/evidence/BUG-US-002-02.png"
+  },
+  {
+    "bugId": "BUG-US-002-03",
+    "title": "Falta de validación para salarios iguales o menores a cero debido a operador de asignación",
+    "category": "Lógica Funcional / Validación de Datos",
+    "severity": "Crítica",
+    "priority": "Alta",
+    "stepsToReproduce": "1. Navegar a https://testing1.geekqa.net/.\n2. Ingresar datos válidos en todos los campos.\n3. En \"Salario Esperado\", ingresar 0 o un número negativo.\n4. Hacer clic en \"Registrar Empleado\".",
+    "expectedResult": "El sistema debe mostrar el mensaje de error \"El salario debe ser mayor a 0\" y detener el registro.",
+    "actualResult": "El formulario se envía con éxito y no muestra error alguno, ya que la condición está escrita como asignación `if (salary = 0)` la cual evalúa a falsy.",
+    "screenshotPath": "bugs/evidence/BUG-US-002-03.png"
+  },
+  {
+    "bugId": "BUG-US-002-04",
+    "title": "El valor del salario se sobrescribe a 0 en la tabla de empleados registrados",
+    "category": "Integridad de Datos / Base de Datos de UI",
+    "severity": "Crítica",
+    "priority": "Crítica",
+    "stepsToReproduce": "1. Navegar a https://testing1.geekqa.net/.\n2. Completar todos los campos válidos e ingresar un salario positivo (ejemplo: 4500).\n3. Hacer clic en \"Registrar Empleado\".\n4. Inspeccionar la fila generada en la tabla \"Empleados Registrados\".",
+    "expectedResult": "La columna \"Salario\" debe mostrar el valor ingresado por el usuario (4500).",
+    "actualResult": "La columna \"Salario\" muestra siempre \"0\", debido a que la sentencia `if (salary = 0)` reasigna la variable a 0 antes de insertarla en el DOM.",
+    "screenshotPath": "bugs/evidence/BUG-US-002-04.png"
+  },
+  {
+    "bugId": "BUG-US-002-05",
+    "title": "Omisión del bloqueo de registro cuando no se selecciona género",
+    "category": "Validación de Formulario / Flujo de Control",
+    "severity": "Media",
+    "priority": "Media",
+    "stepsToReproduce": "1. Navegar a https://testing1.geekqa.net/.\n2. Completar todos los campos excepto la opción de \"Género\".\n3. Presionar \"Registrar Empleado\".",
+    "expectedResult": "El sistema debe mostrar el error \"Seleccione un género\" y bloquear la inserción en la tabla.",
+    "actualResult": "Se muestra el texto de error pero el empleado es insertado en la tabla con valor \"undefined\", porque el código ejecuta `hasError = false;` anulando el bloqueo.",
+    "screenshotPath": "bugs/evidence/BUG-US-002-05.png"
+  },
+  {
+    "bugId": "BUG-US-002-06",
+    "title": "Discrepancia en el texto del mensaje de confirmación de registro",
+    "category": "UI / Mensajes de Usuario",
+    "severity": "Baja",
+    "priority": "Baja",
+    "stepsToReproduce": "1. Registrar un empleado con datos válidos.\n2. Verificar el texto del mensaje verde de confirmación.",
+    "expectedResult": "El mensaje debe ser exactamente: \"¡Empleado registrado con éxito!\" (según AC 1).",
+    "actualResult": "El sistema muestra: \"Empleado registrado exitosamente!\".",
+    "screenshotPath": "bugs/evidence/BUG-US-002-06.png"
+  }
+]

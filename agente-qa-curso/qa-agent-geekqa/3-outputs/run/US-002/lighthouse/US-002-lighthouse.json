@@ -1,0 +1,47 @@
+{
+  "storyId": "US-002",
+  "url": "https://testing1.geekqa.net/",
+  "timestamp": "2026-09-24T01:46:32.142Z",
+  "categories": {
+    "performance": {
+      "title": "Rendimiento",
+      "score": 88
+    },
+    "accessibility": {
+      "title": "Accesibilidad",
+      "score": 85
+    },
+    "bestPractices": {
+      "title": "Mejores Prácticas",
+      "score": 92
+    },
+    "seo": {
+      "title": "SEO",
+      "score": 90
+    }
+  },
+  "audits": {
+    "first-contentful-paint": {
+      "title": "First Contentful Paint",
+      "displayValue": "2.45 s",
+      "score": 0.8
+    },
+    "interactive": {
+      "title": "Time to Interactive",
+      "displayValue": "2.45 s",
+      "score": 1
+    },
+    "viewport": {
+      "title": "Tiene meta viewport tag",
+      "score": 1
+    },
+    "document-title": {
+      "title": "El documento tiene elemento <title>",
+      "score": 1
+    },
+    "html-has-lang": {
+      "title": "Elemento <html> tiene atributo lang",
+      "score": 1
+    }
+  }
+}

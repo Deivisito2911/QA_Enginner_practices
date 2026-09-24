@@ -1,0 +1,12 @@
+{
+  "endpoints": [
+    {
+      "storyId": "US-002",
+      "url": "https://testing1.geekqa.net/",
+      "method": "GET",
+      "description": "Página estática y aplicación cliente de gestión de empleados GeekRetail",
+      "contentType": "text/html",
+      "authentication": "none"
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+{
+  "storyId": "US-002",
+  "url": "https://testing1.geekqa.net/",
+  "browser": "chromium-chrome",
+  "timestamp": "2026-09-24T01:46:18.233Z",
+  "summary": {
+    "total": 10,
+    "passed": 3,
+    "failed": 7,
+    "successRate": 30
+  },
+  "results": [
+    {
+      "id": "TC_001",
+      "title": "Registro exitoso con datos válidos completos y visualización en tabla",
+      "testScenario": "Completar todos los campos con datos válidos y verificar inserción en tabla",
+      "acceptanceCriteria": "AC 1: Registro exitoso y visualización en la tabla",
+      "testType": "Funcional",
+      "type": "Positivo",
+      "status": "PASSED",
+      "errorDetails": "Empleado registrado y fila insertada en la tabla correctamente.",
+      "evidence": "execution/TC_001_registro_exitoso.png",
+      "bugId": null
+    },
+    {
+      "id": "TC_002",
+      "title": "Validación de longitud mínima de Nombre (< 3 caracteres)",
+      "testScenario": "Ingresar nombre de 2 caracteres y validar mensaje de error",
+      "acceptanceCriteria": "AC 1: Nombre con más de 3 caracteres",
+      "testType": "Funcional",
+      "type": "Negativo",
+      "status": "PASSED",
+      "errorDetails": "Mensaje de error correcto mostrado: \"El nombre debe tener al menos 3 caracteres\"",
+      "evidence": "execution/TC_002_nombre_invalido.png",
+      "bugId": null
+    },
+    {
+      "id": "TC_003",
+      "title": "Validación de Edad Límite Inferior (Menor a 18 años)",
+      "testScenario": "Ingresar edad de 16 años y verificar rechazo según criterio 18-65 años",
+      "acceptanceCriteria": "AC 1: Edad entre 18 y 65 años",
+      "testType": "Funcional",
+      "type": "Límite",
+      "status": "FAILED",
+      "errorDetails": "Defecto: El sistema permitió registrar un empleado de 16 años sin mostrar error debido a la condición errónea `age < 5`.",
+      "evidence": "execution/TC_003_edad_menor_18.png",
+      "bugId": "BUG-US-002-01"
+    },
+    {
+      "id": "TC_004",
+      "title": "Validación de Edad Válida en Rango Superior (62 años)",
+      "testScenario": "Ingresar edad de 62 años y verificar que se permita el registro dentro del rango 18-65",
+      "acceptanceCriteria": "AC 1: Edad entre 18 y 65 años",
+      "testType": "Funcional",
+      "type": "Límite",
+      "status": "FAILED",
+      "errorDetails": "Defecto: El sistema bloqueó una edad válida (62 años) mostrando el error: \"La edad debe estar entre 18 y 65 años\" debido a la condición `age > 60`.",
+      "evidence": "execution/TC_004_edad_62_anios.png",
+      "bugId": "BUG-US-002-02"
+    },
+    {
+      "id": "TC_005",
+      "title": "Validación de Salario menor o igual a 0",
+      "testScenario": "Ingresar salario 0 y verificar mensaje de error y bloqueo de registro",
+      "acceptanceCriteria": "AC 1: Salario mayor que 0",
+      "testType": "Funcional",
+      "type": "Negativo",
+      "status": "FAILED",
+      "errorDetails": "Defecto: El sistema no validó salario <= 0 debido al operador de asignación `if (salary = 0)` y registró el registro.",
+      "evidence": "execution/TC_005_salario_cero.png",
+      "bugId": "BUG-US-002-03"
+    },
+    {
+      "id": "TC_006",
+      "title": "Integridad del dato Salario en la tabla de Empleados Registrados",
+      "testScenario": "Registrar empleado con salario 4500 y comprobar el valor en la columna Salario",
+      "acceptanceCriteria": "AC 1: Visualización correcta de datos en tabla",
+      "testType": "Funcional",
+      "type": "Integridad",
+      "status": "FAILED",
+      "errorDetails": "Defecto Crítico: Se ingresó salario 4500 pero en la tabla se guardó \"0\" debido a la mutación en `salary = 0`.",
+      "evidence": "execution/TC_006_integridad_salario_tabla.png",
+      "bugId": "BUG-US-002-04"
+    },
+    {
+      "id": "TC_007",
+      "title": "Validación de Formato de Correo Electrónico",
+      "testScenario": "Ingresar correo no válido y verificar mensaje de error",
+      "acceptanceCriteria": "AC 1: Validación de campos obligatorios y formatos",
+      "testType": "Funcional",
+      "type": "Formato",
+      "status": "FAILED",
+      "errorDetails": "No se mostró error de correo inválido.",
+      "evidence": "execution/TC_007_correo_invalido.png",
+      "bugId": null
+    },
+    {
+      "id": "TC_008",
+      "title": "Validación de Campo Obligatorio Fecha de Nacimiento",
+      "testScenario": "Dejar fecha de nacimiento vacía y validar mensaje de error",
+      "acceptanceCriteria": "AC 1: Campos obligatorios",
+      "testType": "Funcional",
+      "type": "Obligatoriedad",
+      "status": "PASSED",
+      "errorDetails": "Error de fecha mostrado correctamente: \"La fecha de nacimiento es obligatoria\"",
+      "evidence": "execution/TC_008_fecha_nacimiento_vacia.png",
+      "bugId": null
+    },
+    {
+      "id": "TC_009",
+      "title": "Validación de Género Obligatorio y Bloqueo de Envío",
+      "testScenario": "Intentar registrar sin marcar género y validar que no se permita el registro",
+      "acceptanceCriteria": "AC 1: Campos obligatorios",
+      "testType": "Funcional",
+      "type": "Obligatoriedad",
+      "status": "FAILED",
+      "errorDetails": "Defecto: El formulario se envió y registró el empleado sin género porque `hasError = false` desactiva el bloqueo.",
+      "evidence": "execution/TC_009_genero_sin_bloqueo.png",
+      "bugId": "BUG-US-002-05"
+    },
+    {
+      "id": "TC_010",
+      "title": "Validación de Texto Exacto del Mensaje de Éxito",
+      "testScenario": "Verificar que el mensaje de éxito coincida con el AC: \"¡Empleado registrado con éxito!\"",
+      "acceptanceCriteria": "AC 1: Mensaje de éxito exacto",
+      "testType": "Funcional",
+      "type": "UI Copy",
+      "status": "FAILED",
+      "errorDetails": "Defecto: Se esperaba \"¡Empleado registrado con éxito!\", pero la aplicación muestra \"Empleado registrado exitosamente!\".",
+      "evidence": "execution/TC_010_mensaje_exito_copy.png",
+      "bugId": "BUG-US-002-06"
+    }
+  ],
+  "consoleLogs": [
+    "[error] Failed to load resource: the server responded with a status of 404 ()"
+  ]
+}

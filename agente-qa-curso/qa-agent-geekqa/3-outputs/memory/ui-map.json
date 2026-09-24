@@ -1,0 +1,44 @@
+{
+  "pages": [
+    {
+      "storyId": "US-002",
+      "url": "https://testing1.geekqa.net/",
+      "title": "Registro de Empleados - GeekRetail",
+      "elements": {
+        "form": "#employeeForm",
+        "inputs": {
+          "name": { "selector": "#name", "type": "text", "errorSelector": "#nameError" },
+          "age": { "selector": "#age", "type": "number", "errorSelector": "#ageError" },
+          "dob": { "selector": "#dob", "type": "date", "errorSelector": "#dobError" },
+          "genderMale": { "selector": "#male", "type": "radio", "value": "Masculino" },
+          "genderFemale": { "selector": "#female", "type": "radio", "value": "Femenino" },
+          "genderError": { "selector": "#genderError" },
+          "address": { "selector": "#address", "type": "textarea", "errorSelector": "#addressError" },
+          "email": { "selector": "#email", "type": "email", "errorSelector": "#emailError" },
+          "phone": { "selector": "#phone", "type": "tel", "errorSelector": "#phoneError" },
+          "position": { "selector": "#position", "type": "text", "errorSelector": "#positionError" },
+          "department": { "selector": "#department", "type": "select", "options": ["ventas", "administracion", "logistica"] },
+          "contractStatus": { "selector": "#contractStatus", "type": "checkbox" },
+          "workHours": { "selector": "#workHours", "type": "text", "errorSelector": "#workHoursError" },
+          "profileUrl": { "selector": "#profileUrl", "type": "url", "errorSelector": "#profileUrlError" },
+          "salary": { "selector": "#salary", "type": "number", "errorSelector": "#salaryError" }
+        },
+        "buttons": {
+          "submit": "button[type=\"submit\"]"
+        },
+        "feedback": {
+          "successMessage": "#successMessage"
+        },
+        "table": {
+          "tableElement": "#employeeTable",
+          "body": "#tableBody",
+          "columns": [
+            "Nombre", "Edad", "Fecha de Nacimiento", "Género", "Dirección",
+            "Correo", "Teléfono", "Cargo", "Departamento", "Estado del Contrato",
+            "Horario de Trabajo", "URL Perfil", "Salario"
+          ]
+        }
+      }
+    }
+  ]
+}
