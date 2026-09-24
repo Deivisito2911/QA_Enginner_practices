@@ -12,6 +12,8 @@ El proyecto está diseñado como un monorepo donde cada directorio funciona como
 *   **`/copilot curso`**: Prácticas iniciales de automatización. Contiene pruebas E2E configuradas con **Cypress**, reportes de accesibilidad (axe-core) y documentación de historias de usuario.
 *   **`/playwright_Agents` & `/Antigravity`**: Implementaciones avanzadas usando **Playwright**. Incluye flujos de prueba, captura de evidencias (screenshots), reportes HTML y la integración de herramientas a través del protocolo MCP (Model Context Protocol).
 *   **`/prueba` & `/poc-aidlc-robotica`**: Entornos de prueba para la configuración del framework AI-DLC integrados con **Kiro IDE**. Contiene las políticas de los agentes, los *hooks* nativos del sistema y el conocimiento base (`.kiro/knowledge/`) para los perfiles de QA, Arquitectura y Producto.
+*   **`/agente-qa-curso/qa-agent-geekqa`**: Resolución práctica de historias de usuario (ej. US-002, US-003, US-004) guiadas por IA. Contiene las entradas (criterios de aceptación, mockups) y las salidas generadas por los agentes (reportes de accesibilidad, bugs, Lighthouse y ejecución de pruebas).
+*   **`_AI-powered QA_ Prompts usados en el curso.pdf`**: Material de referencia centralizado con las técnicas de ingeniería de prompts aplicadas durante la formación.
 *   *(Nuevas carpetas por definir según el avance de los cursos)*...
 
 ## 🛠️ Stack Tecnológico Actual
