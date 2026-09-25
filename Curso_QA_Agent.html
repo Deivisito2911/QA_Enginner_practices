@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Curso Completo: AI-DLC y el Rol del QA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  --paper:#FAFAFA; --surface:#FFFFFF; --ink:#1A1A1A; --muted:#5F6368;
+  --line:#E0E0E0; --primary:#0052CC; --primary-soft:#E3F2FD; --accent:#00875A; --accent-soft:#E3FCEF;
+  --warn:#FFAB00; --warn-soft:#FFF7E6; --danger:#DE350B; --danger-soft:#FFEBE6; --purple:#5243AA; --purple-soft:#EAE6FF;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#121212; --surface:#1E1E1E; --ink:#E0E0E0; --muted:#9AA0A6;
+    --line:#333333; --primary:#64B5F6; --primary-soft:#1A3A5A; --accent:#4CAF50; --accent-soft:#1B3E25;
+    --warn:#FFD54F; --warn-soft:#423714; --danger:#E57373; --danger-soft:#4A1E1E; --purple:#B39DDB; --purple-soft:#311B92;
+  }
+}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Atkinson Hyperlegible",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:1.1rem;line-height:1.6}
+.wrap{max-width:55rem;margin:0 auto;padding:3rem 1.5rem 4rem}
+h1,h2,h3,h4{font-family:"Bricolage Grotesque","Atkinson Hyperlegible",system-ui,sans-serif;line-height:1.2;margin:0}
+h1{font-size:clamp(2.2rem,6vw,3.5rem);font-weight:700;color:var(--primary);margin-bottom:1rem;}
+h2{font-size:1.8rem;font-weight:700;margin:3.5rem 0 1rem; border-bottom: 2px solid var(--line); padding-bottom: 0.5rem; color:var(--ink);}
+h3{font-size:1.3rem;font-weight:700;margin:2rem 0 0.5rem; color:var(--primary);}
+p{margin:1rem 0}
+a{color:var(--primary); text-decoration: none;}
+a:hover{text-decoration: underline;}
+.lede{font-size:1.25rem;color:var(--muted);max-width:48rem;margin-top:1rem; border-left: 4px solid var(--primary); padding-left: 1rem;}
+code{background:var(--primary-soft);color:var(--ink);padding:.15em .4em;border-radius:4px; font-family: ui-monospace, monospace; font-size: 0.9em;}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:1.5rem;margin:1.5rem 0; box-shadow: 0 4px 6px rgba(0,0,0,0.05);}
+.tag{font-family:ui-monospace, monospace;font-size:.85rem;background:var(--accent);color:white;padding:.2rem .5rem;border-radius:4px; font-weight: bold; margin-right: 0.5rem;}
+.tag.purple{background: var(--purple);}
+.highlight{background:var(--warn-soft); border-left: 4px solid var(--warn); padding: 1rem; margin: 1.5rem 0; border-radius: 4px;}
+.quote{font-style: italic; color: var(--muted); padding-left: 1rem; border-left: 4px solid var(--line);}
+.concept-grid{display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 1rem;}
+.concept-item{background: var(--surface); padding: 1rem; border: 1px solid var(--line); border-radius: 6px; border-top: 4px solid var(--primary);}
+.concept-item.qa{border-top-color: var(--accent);}
+ul, ol { margin: 1rem 0; padding-left: 1.5rem; }
+li { margin-bottom: 0.5rem; }
+table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; background: var(--surface); }
+th, td { border: 1px solid var(--line); padding: 0.75rem; text-align: left; }
+th { background: var(--primary-soft); font-weight: bold; }
+.toc { background: var(--surface); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--line); margin-bottom: 3rem; }
+.toc ul { list-style: none; padding-left: 0; }
+.toc li { margin-bottom: 0.8rem; font-weight: 500; }
+.toc ul ul { padding-left: 1.5rem; margin-top: 0.5rem; }
+.toc ul ul li { font-weight: 400; font-size: 0.95em; }
+.phase-box { background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--purple); padding: 1.5rem; margin: 1.5rem 0; border-radius: 8px;}
+</style>
+</head>
+<body>
+<main class="wrap">
+
+<h1>Curso Completo: AI-DLC y el Rol del QA</h1>
+<p class="lede">Bienvenido, Deivith. Este documento ha sido expandido para abarcar no solo tu rol específico, sino el contexto completo del framework <strong>AI-DLC</strong> (Artificial Intelligence-Driven Development Life Cycle). Entender el bosque te permitirá ser un mejor guardabosques.</p>
+
+<div class="toc">
+  <h2>Índice de Contenidos</h2>
+  <ul>
+    <li><a href="#modulo-1">Módulo 1: Conceptos Fundamentales (Scopes y Gates)</a></li>
+    <li><a href="#modulo-2">Módulo 2: El Flujo Completo (Las 5 Fases)</a>
+      <ul>
+        <li><a href="#fase-0">Fase 0: Inicialización</a></li>
+        <li><a href="#fase-1">Fase 1: Ideación</a></li>
+        <li><a href="#fase-2">Fase 2: Incepción</a></li>
+        <li><a href="#fase-3">Fase 3: Construcción</a></li>
+        <li><a href="#fase-4">Fase 4: Operación</a></li>
+      </ul>
+    </li>
+    <li><a href="#modulo-3">Módulo 3: Tu Rol Profundo como Quality Agent (QA)</a>
+      <ul>
+        <li><a href="#qa-lidera">Etapas que Lideras</a></li>
+        <li><a href="#qa-soporta">Etapas a las que das Soporte</a></li>
+        <li><a href="#qa-principios">Los 5 Principios Clave</a></li>
+        <li><a href="#qa-casos">Casos Prácticos de Debate</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<!-- ================= MÓDULO 1 ================= -->
+<h2 id="modulo-1">Módulo 1: Conceptos Fundamentales (Scopes y Gates)</h2>
+<p>Antes de escribir código o pruebas, la IA necesita saber el tamaño del trabajo y cuándo detenerse a pedirte permiso. Esto lo controlan los <em>Scopes</em> y las <em>Gates</em>.</p>
+
+<div class="concept-grid">
+  <div class="concept-item">
+    <h4 style="color:var(--primary);">¿Qué es un Scope? (Alcance)</h4>
+    <p>El scope controla <strong>cuántas de las 33 etapas</strong> del sistema se van a ejecutar. No todo cambio requiere el ciclo completo.</p>
+    <ul>
+      <li><code>feature</code>: Ciclo completo (33 etapas). Para funcionalidades nuevas.</li>
+      <li><code>bugfix</code>: Ruta corta (9 etapas). Salta el diseño, va directo a corregir el código, probar y desplegar.</li>
+      <li><code>workshop</code>: Laboratorio (26 etapas). Ideal para tu semana 1. Salta ideación, hace pruebas mínimas, y te permite aprender.</li>
+      <li><code>enterprise</code>: Para banca o sistemas muy críticos. Máximo nivel de documentación y pruebas.</li>
+    </ul>
+  </div>
+  <div class="concept-item">
+    <h4 style="color:var(--warn);">¿Qué es una Gate? (Puerta)</h4>
+    <p>La IA no hace las cosas a ciegas de principio a fin. Al final de cada etapa o fase, hay una <strong>puerta de verificación (Verification Gate)</strong> donde el proceso se detiene.</p>
+    <ul>
+      <li>La máquina valida la <strong>trazabilidad</strong> (ej. que no haya código sin un requisito que lo justifique).</li>
+      <li><strong>El Humano decide:</strong> El sistema espera a que TÚ leas los artefactos generados y presiones "Approve" (Aprobar) o "Request Changes" (Rechazar con feedback).</li>
+      <li>Tu poder radica en no abrir la puerta si algo no te convence.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ================= MÓDULO 2 ================= -->
+<h2 id="modulo-2">Módulo 2: El Flujo Completo (Las 5 Fases)</h2>
+<p>El AI-DLC es un proceso ordenado de 5 grandes fases secuenciales. Entender este flujo te ayudará a saber de dónde viene la información que pruebas y a dónde va cuando terminas.</p>
+
+<div class="phase-box" id="fase-0">
+  <h3>Fase 0: Initialization (Inicialización)</h3>
+  <p><strong>El propósito:</strong> Preparar el terreno. (No interviene IA avanzada).</p>
+  <ul>
+    <li><span class="tag purple">0.1 - 0.3</span> Se prepara la carpeta de trabajo, se detecta qué lenguajes o infraestructura ya usa el proyecto (ej. detecta si es Node.js con AWS) y se inicia el estado de auditoría. Es instantáneo.</li>
+  </ul>
+</div>
+
+<div class="phase-box" id="fase-1">
+  <h3>Fase 1: Ideation (Ideación)</h3>
+  <p><strong>El propósito:</strong> Responder al <em>"Qué queremos hacer"</em> y <em>"Por qué"</em>.</p>
+  <p>Aquí se trabaja el problema de negocio antes de pensar en el código.</p>
+  <ul>
+    <li><span class="tag purple">1.1 Intent Capture:</span> Se recibe tu instrucción y se enmarca el problema.</li>
+    <li><span class="tag purple">1.2 - 1.3 Feasibility & Research:</span> Se evalúa si es viable, si existen herramientas en el mercado o si choca con restricciones normativas de CarConnect.</li>
+    <li><span class="tag purple">1.4 Scope Definition:</span> Se raya la cancha. Qué entra y qué no entra.</li>
+    <li><span class="tag purple">1.5 - 1.6 Team & Mockups:</span> Se seleccionan los agentes de IA necesarios y se pueden hacer bocetos (wireframes) de UI.</li>
+    <li><span class="tag purple">1.7 Approval & Handoff:</span> Se empaqueta todo y se pide tu aprobación final para empezar a pensar en la solución técnica.</li>
+  </ul>
+</div>
+
+<div class="phase-box" id="fase-2">
+  <h3>Fase 2: Inception (Incepción)</h3>
+  <p><strong>El propósito:</strong> Responder al <em>"Cómo lo vamos a construir"</em>.</p>
+  <p>Aquí los arquitectos, producto y tú (QA) traducen la idea en un plan técnico.</p>
+  <ul>
+    <li><span class="tag purple">2.1 Reverse Eng.:</span> Si el proyecto ya existe (como el tuyo en la semana 2), el sistema lee el código existente para entenderlo.</li>
+    <li><span class="tag purple">2.2 Practices Discovery:</span> La IA aprende qué reglas de equipo ya existen en el repositorio.</li>
+    <li><span class="tag purple">2.3 - 2.4 Requisitos e Historias:</span> Se escriben los requisitos formales y las <strong>Historias de Usuario</strong> (Aquí interviene QA fuertemente).</li>
+    <li><span class="tag purple">2.6 Domain Design:</span> El arquitecto diseña los componentes y bases de datos (ej. DynamoDB, SQS).</li>
+    <li><span class="tag purple">2.7 Units Generation:</span> <strong>¡Crucial!</strong> Se descompone todo el proyecto en tareas diminutas ("Units of Work") para que los programadores las ataquen en orden.</li>
+    <li><span class="tag purple">2.8 - 2.9 Contratos y Plan:</span> Se diseñan los contratos de API y se planifica en qué orden se desarrollarán las unidades.</li>
+  </ul>
+</div>
+
+<div class="phase-box" id="fase-3">
+  <h3>Fase 3: Construction (Construcción)</h3>
+  <p><strong>El propósito:</strong> Escribir el código y probarlo.</p>
+  <p>Las primeras 5 etapas se repiten por cada "Unit of Work" que se generó en la fase anterior.</p>
+  <ul>
+    <li><span class="tag purple">3.1 Functional Design:</span> Reglas de negocio para esa pequeña tarea.</li>
+    <li><span class="tag purple">3.2 - 3.3 NFRs:</span> Requisitos y Diseño No Funcionales (velocidad, capacidad). (Aquí intervienes).</li>
+    <li><span class="tag purple">3.4 Infra Design:</span> Diseño de código de nube (Terraform, CDK).</li>
+    <li><span class="tag purple">3.5 Code Generation:</span> El desarrollador escribe el código fuente de la aplicación.</li>
+    <li><span class="tag purple">3.6 Build and Test:</span> <strong>(Tu dominio).</strong> Se compila todo el proyecto, se generan las pruebas automatizadas y se valida la calidad de lo construido.</li>
+    <li><span class="tag purple">3.7 CI Pipeline:</span> Se configuran los flujos de integración continua (Github Actions).</li>
+  </ul>
+</div>
+
+<div class="phase-box" id="fase-4">
+  <h3>Fase 4: Operation (Operación)</h3>
+  <p><strong>El propósito:</strong> Llevarlo al entorno real, monitorearlo y probarlo bajo estrés.</p>
+  <ul>
+    <li><span class="tag purple">4.1 - 4.3 Despliegue:</span> Se crea el pipeline (CD), se levantan los recursos en la nube y se ejecuta el despliegue enviando el código.</li>
+    <li><span class="tag purple">4.4 - 4.5 Observabilidad e Incidentes:</span> Se configuran paneles de monitoreo y "runbooks" por si el sistema cae.</li>
+    <li><span class="tag purple">4.6 Performance Validation:</span> <strong>(Tu dominio).</strong> Pruebas de carga extremas contra el entorno real para validar si los NFRs (velocidad) se cumplen bajo estrés.</li>
+    <li><span class="tag purple">4.7 Feedback:</span> Cierre del ciclo. La retroalimentación y los costos se documentan y vuelven a la Fase 1 para la siguiente iteración.</li>
+  </ul>
+</div>
+
+<hr style="border: 1px solid var(--line); margin: 3rem 0;">
+
+<!-- ================= MÓDULO 3 ================= -->
+<h2 id="modulo-3">Módulo 3: Tu Rol Profundo como Quality Agent (QA)</h2>
+<p>Ahora que conoces todo el flujo, nos enfocaremos en tu alter ego: el <strong>Quality Agent</strong> (`aidlc-quality-agent`). Su objetivo es que nunca llegue un código roto o mal diseñado a la fase de Operación.</p>
+
+<div class="card" id="qa-lidera">
+  <h3>Etapas que Lideras (Tus momentos de brillar)</h3>
+  
+  <p><strong><span class="tag">3.6</span> Build and Test (Construcción)</strong></p>
+  <p>Ejecutas el proceso de construcción, generas el código de las pruebas y las lanzas contra el código que escribió el Developer Agent. Validas los "quality gates".</p>
+  <div class="highlight">
+    <strong>Tu rol humano en CarConnect:</strong>
+    <ul>
+      <li>Exigir la tabla de trazabilidad: <code>Requisito &rarr; Test que lo cubre</code>.</li>
+      <li>Verificar que los tests no sean "frágiles". Si un test depende de que la base de datos ya tenga un dato específico, recházalo y pide que el test sea independiente (setup/teardown).</li>
+      <li>Asegurar que se hayan generado pruebas de integración.</li>
+    </ul>
+  </div>
+
+  <p><strong><span class="tag">4.6</span> Performance Validation (Operación)</strong></p>
+  <p>Diseñas pruebas de carga, las ejecutas en el ambiente provisionado y validas si el sistema cumple con la capacidad planificada.</p>
+  <div class="highlight">
+    <strong>Tu rol humano en CarConnect:</strong>
+    <ul>
+      <li>Revisar la <strong>matriz de validación NFR</strong>. El agente entregará una tabla <em>"Objetivo esperado vs. Resultado real"</em>.</li>
+      <li>Si pediste que la alerta de batería dispare en menos de 500ms, aquí debes ver la evidencia. Si dice 800ms, detienes la puerta.</li>
+    </ul>
+  </div>
+</div>
+
+<h3 id="qa-soporta">Etapas a las que das Soporte</h3>
+<p>En estas etapas el QA no es el líder, pero aporta su "voz" mediante revisiones cruzadas. Es vital que apruebes estas etapas asegurándote de que el QA fue escuchado.</p>
+<table>
+  <thead>
+    <tr>
+      <th>Etapa</th>
+      <th>Fase</th>
+      <th>¿Qué aporta el QA Agent?</th>
+      <th>Tu criterio para aprobar (CarConnect)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>2.4 User Stories</strong></td>
+      <td>Incepción</td>
+      <td>Aporta la voz sobre la <strong>"testeabilidad"</strong> y redacta criterios de aceptación.</td>
+      <td>No aprobar historias con criterios ambiguos ("debe funcionar rápido"). Exige criterios binarios (Sí/No).</td>
+    </tr>
+    <tr>
+      <td><strong>3.2 NFR Requirements</strong></td>
+      <td>Construcción</td>
+      <td>Define escenarios de atributos de calidad que se puedan probar.</td>
+      <td>No aprobar NFRs sin métricas. Pregunta siempre: <em>¿Qué pasa si SQS reintenta?</em> <em>¿A dónde van los mensajes fallidos (DLQ)?</em></td>
+    </tr>
+    <tr>
+      <td><strong>2.2 Practices Discovery</strong></td>
+      <td>Incepción</td>
+      <td>Investiga la postura de pruebas actual del equipo de forma independiente.</td>
+      <td>Revisar que la IA haya detectado correctamente los frameworks de pruebas (ej. Jest, pytest) de CarConnect.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="qa-principios">Los 5 Principios Clave del QA Agent</h3>
+<p>Estos principios son tu <strong>"Constitución QA"</strong>. Úsalos el Día 14 de tu práctica para escribir las "Reglas de testing del equipo".</p>
+
+<div class="concept-grid">
+  <div class="concept-item qa">
+    <h4>1. Prueba el Requisito, no la Implementación</h4>
+    <p>Los tests deben validar QUÉ hace el código, no CÓMO lo hace. Si refactorizan el código, el test no debería romperse.</p>
+  </div>
+  <div class="concept-item qa">
+    <h4>2. Sigue la Pirámide de Pruebas</h4>
+    <p>Exige muchas pruebas unitarias (rápidas), algunas de integración (ej. Lambda -> SQS), y muy pocas end-to-end (lentas).</p>
+  </div>
+  <div class="concept-item qa">
+    <h4>3. Test Driven Bugfixing</h4>
+    <p>Obligatorio para la Semana 2: Cuando haya un defecto, escribir un test que <strong>reproduzca y falle</strong> por ese bug ANTES de que el desarrollador toque el código.</p>
+  </div>
+  <div class="concept-item qa">
+    <h4>4. Independencia Total</h4>
+    <p>Los tests no deben compartir estado. Cada test prepara su propia data y la limpia.</p>
+  </div>
+  <div class="concept-item qa">
+    <h4>5. Cobertura Significativa > 100%</h4>
+    <p>Un 70% de código cubierto con pruebas pensadas en el negocio es mejor que 100% con asserts inútiles.</p>
+  </div>
+</div>
+
+<h3 id="qa-casos">Casos Prácticos de Debate</h3>
+
+<div class="card">
+  <h4>Caso A: El test frágil (Etapa 3.6)</h4>
+  <p class="quote">El agente generó el envío a SQS y el QA hizo un test que verifica que `sqs.sendMessage` responde 200 OK. El test falla a veces cuando AWS está lento.</p>
+  <p><strong>Tu Criterio:</strong> Rechaza en la puerta. Exige que el QA use un <strong>MOCK</strong> para SQS en pruebas unitarias, dejando las llamadas reales solo para la suite de integración.</p>
+</div>
+
+<div class="card">
+  <h4>Caso B: El Bugfix sin red (Semana 2 - Bug Real)</h4>
+  <p class="quote">Lanzas `/aidlc bugfix`. En la etapa 3.5, el Developer arregla el código. En la 3.6, el QA te dice "El código compila y los tests antiguos pasan".</p>
+  <p><strong>Tu Criterio:</strong> Rechazar. Invocando el Principio #3, exige que el QA demuestre un nuevo <strong>test de regresión</strong> específico para ese bug. Sin ese test, el fix no va a PR.</p>
+</div>
+
+<footer>
+  <p style="text-align: center; margin-top: 2rem; padding: 2rem; background: var(--surface); border-radius: 8px;">
+    <strong>Resumen:</strong> AI-DLC es una fábrica automatizada de software con 5 naves industriales (las fases) y 33 estaciones de ensamblaje (las etapas). Como QA, tu trabajo es supervisar los puntos de control clave (Gates) y asegurarte de que el producto nunca pase a la siguiente nave si no cumple los estándares de calidad de CarConnect.
+  </p>
+</footer>
+</main>
+</body>
+</html>
