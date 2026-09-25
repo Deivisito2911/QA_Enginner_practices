@@ -1,0 +1,353 @@
+{
+  "info": {
+    "_postman_id": "8ff9c0f8-4f81-4228-a2bf-73d79985a951",
+    "name": "Geek product",
+    "description": "# Geek product\n\n## Objetivo\nColección para consultar el catálogo y crear productos reales en la API de GeekQA.\n\n## URL base\n`https://apis.geekqa.net`\n\n## Autenticación\nTodos los endpoints usan autenticación Bearer mediante la variable de colección `{{json_web_token_13zx}}`:\n\n`Authorization: Bearer {{json_web_token_13zx}}`\n\nNo incluya tokens directamente en requests, ejemplos ni documentación.\n\n## Requisitos\n- Tener un token válido configurado en `{{json_web_token_13zx}}`.\n- Enviar `Accept: application/json`.\n- Para POST, enviar además `Content-Type: application/json`.\n- Disponer de acceso de red a `https://apis.geekqa.net`.\n\n## Endpoints disponibles\n| Nombre | Método | Ruta | Descripción |\n|---|---|---|---|\n| Listar productos | GET | `/api/products` | Devuelve el catálogo completo observado. |\n| Crear productos | POST | `/api/products` | Crea un producto real y devuelve el registro creado. |\n\n## Modelo de producto\nUn producto incluye identificador, nombre, estado comercial, modelo, URL, cantidad, precio sin impuestos, porcentaje de impuesto, valoración, descripción, marca, categorías, atributos, miniatura, estado interno y fechas. `products_price_ex_tax`, `products_tax_percentage` y `products_rating` se representan como strings decimales. `products_categories` es un arreglo de strings y `products_attributes` es un arreglo de objetos cuyas claves pueden variar.\n\n## Ejecución\n1. Seleccione un entorno o alcance que permita resolver `{{json_web_token_13zx}}`.\n2. Ejecute **Listar productos** para validar conectividad y autenticación.\n3. Revise cuidadosamente el body generado antes de ejecutar **Crear productos**.\n4. Consulte los resultados en **Test Results** y el cuerpo de la respuesta.\n\n## Pruebas\nEl GET comprueba que la respuesta contenga al menos un producto. El POST valida el estado 201, JSON válido, mensaje de creación, coincidencia del nombre generado, ID numérico y URL HTTPS de la miniatura.\n\n## Notas\n- Se observó un límite de 60 solicitudes; modere la frecuencia de ejecución y atienda los headers de rate limit devueltos por el servicio.\n- El GET devuelve el catálogo completo y no se observó paginación visible.\n- **El POST crea datos reales en cada ejecución**; no debe ejecutarse como una prueba inocua o repetirse sin control.\n- Los ejemplos guardados omiten credenciales y tokens.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58074045",
+    "_collection_link": "https://go.postman.co/collection/58074045-8ff9c0f8-4f81-4228-a2bf-73d79985a951?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Listar productos",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"La respuesta JSON contiene al menos 1 artículo\", function () {\n    const json = pm.response.json();\n    const items = Array.isArray(json)\n        ? json\n        : [\"products\", \"data\", \"items\", \"results\"]\n            .map(function (key) { return json && json[key]; })\n            .find(Array.isArray);\n\n    pm.expect(items, \"Se esperaba un arreglo directo o en products, data, items o results\").to.be.an(\"array\");\n    pm.expect(items.length, \"El arreglo de artículos está vacío\").to.be.above(0);\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "accept",
+            "value": "application/json"
+          },
+          {
+            "key": "accept-language",
+            "value": "es-ES,es;q=0.7"
+          },
+          {
+            "key": "authorization",
+            "value": "Bearer {{json_web_token_13zx}}"
+          },
+          {
+            "key": "cache-control",
+            "value": "no-cache"
+          },
+          {
+            "key": "content-type",
+            "value": "application/json"
+          },
+          {
+            "key": "origin",
+            "value": "https://www.store1.geekqa.net"
+          },
+          {
+            "key": "pragma",
+            "value": "no-cache"
+          },
+          {
+            "key": "priority",
+            "value": "u=1, i"
+          },
+          {
+            "key": "referer",
+            "value": "https://www.store1.geekqa.net/"
+          },
+          {
+            "key": "sec-ch-ua",
+            "value": "\"Brave\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\""
+          },
+          {
+            "key": "sec-ch-ua-mobile",
+            "value": "?0"
+          },
+          {
+            "key": "sec-ch-ua-platform",
+            "value": "\"Windows\""
+          },
+          {
+            "key": "sec-fetch-dest",
+            "value": "empty"
+          },
+          {
+            "key": "sec-fetch-mode",
+            "value": "cors"
+          },
+          {
+            "key": "sec-fetch-site",
+            "value": "same-site"
+          },
+          {
+            "key": "sec-gpc",
+            "value": "1"
+          },
+          {
+            "key": "user-agent",
+            "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36"
+          }
+        ],
+        "url": {
+          "raw": "https://apis.geekqa.net/api/products",
+          "protocol": "https",
+          "host": [
+            "apis",
+            "geekqa",
+            "net"
+          ],
+          "path": [
+            "api",
+            "products"
+          ]
+        },
+        "description": "# Listar productos\n\n## Propósito\nObtiene el catálogo de productos disponible en GeekQA. En la respuesta observada, el servicio devolvió `total_items` y un arreglo `products` con el catálogo completo, sin paginación visible.\n\n## Método y ruta\n`GET https://apis.geekqa.net/api/products`\n\n## Autenticación\nBearer token mediante `{{json_web_token_13zx}}`.\n\n## Headers esenciales\n| Header | Valor |\n|---|---|\n| `Accept` | `application/json` |\n| `Authorization` | `Bearer {{json_web_token_13zx}}` |\n\n## Parámetros\nNo se observaron parámetros de ruta ni de consulta.\n\n## Campos principales de respuesta\n| Campo | Tipo | Descripción |\n|---|---|---|\n| `total_items` | number | Cantidad total de productos. |\n| `products` | array<object> | Productos del catálogo. |\n| `products[].id` | number | Identificador del producto. |\n| `products[].products_name` | string | Nombre. |\n| `products[].products_status` | string | Disponibilidad comercial. |\n| `products[].products_model` | string | Modelo. |\n| `products[].products_url` | string | URL asociada. |\n| `products[].products_quantity` | number | Existencias. |\n| `products[].products_price_ex_tax` | string decimal | Precio sin impuestos. |\n| `products[].products_tax_percentage` | string decimal | Porcentaje de impuesto. |\n| `products[].products_rating` | string decimal | Valoración. |\n| `products[].products_categories` | array<string> | Categorías. |\n| `products[].products_attributes` | array<object> | Atributos con claves variables. |\n| `products[].products_thumbnail` | string o null | Imagen. |\n| `products[].created_at` / `updated_at` | string o null | Fechas del registro. |\n\n## Respuesta exitosa\n`200 OK` con un objeto que contiene `total_items` y `products`.\n\n## Pruebas automatizadas\nEl script existente comprueba que la respuesta contenga un arreglo de artículos y que tenga al menos un elemento.\n\n## Consideraciones\n- La respuesta puede ser muy grande porque no se observó paginación.\n- Se observó un rate limit de 60 solicitudes; evite ejecuciones intensivas.\n- Los importes, impuestos y rating son strings decimales.\n- Los atributos pueden cambiar de estructura entre productos."
+      },
+      "response": [
+        {
+          "name": "Respuesta exitosa - 200",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json",
+                "description": "Solicita una respuesta JSON."
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://apis.geekqa.net/api/products",
+              "protocol": "https",
+              "host": [
+                "apis",
+                "geekqa",
+                "net"
+              ],
+              "path": [
+                "api",
+                "products"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "accept",
+              "value": "application/json",
+              "description": "Solicita una respuesta JSON.",
+              "enabled": true
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"total_items\": 4046,\n  \"products\": [\n    {\n      \"id\": 3595,\n      \"products_name\": \"Computer\",\n      \"products_status\": \"Available\",\n      \"products_model\": \"Iphone\",\n      \"products_url\": \"https://www.store1.geekqa.net/products/computer\",\n      \"products_quantity\": 52,\n      \"status\": 1,\n      \"products_price_ex_tax\": \"188.75\",\n      \"products_tax_percentage\": \"21.00\",\n      \"products_rating\": \"4.50\",\n      \"products_description\": \"Producto tecnológico de ejemplo del catálogo.\",\n      \"products_brand_name\": \"Apple\",\n      \"products_brand_id\": 1,\n      \"products_categories\": [\"mobile\", \"electronics\"],\n      \"products_attributes\": [{\"color\": \"Negro\"}],\n      \"products_thumbnail\": null,\n      \"created_at\": null,\n      \"updated_at\": \"2024-09-23T00:43:54.000000Z\"\n    }\n  ]\n}"
+        }
+      ]
+    },
+    {
+      "name": "Crear productos",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "\n// ── Catálogo de productos tecnológicos realistas ──────────────────────────────\nconst catalog = [\n  {\n    name: \"Auriculares Sony WH-1000XM5\",\n    model: \"WH-1000XM5\",\n    brand: \"Sony\",\n    brandId: 3,\n    category: [\"electronics\", \"audio\", \"headphones\"],\n    description: \"Auriculares inalámbricos con cancelación de ruido líder en la industria, hasta 30 h de batería y micrófono de alta resolución.\",\n    attributes: [{ color: \"Negro\" }, { connectivity: \"Bluetooth 5.2\" }, { noise_cancellation: \"Activa\" }],\n    priceMin: 279.99, priceMax: 349.99,\n    tax: \"21.00\",\n    imageSlug: \"headphones\"\n  },\n  {\n    name: \"Teclado Mecánico Logitech MX Keys S\",\n    model: \"MX Keys S\",\n    brand: \"Logitech\",\n    brandId: 5,\n    category: [\"electronics\", \"peripherals\", \"keyboards\"],\n    description: \"Teclado inalámbrico de perfil bajo con retroiluminación inteligente, compatible con Windows, macOS y Linux.\",\n    attributes: [{ color: \"Grafito\" }, { layout: \"ES\" }, { connectivity: \"Bluetooth / USB-C\" }],\n    priceMin: 109.99, priceMax: 139.99,\n    tax: \"21.00\",\n    imageSlug: \"keyboard\"\n  },\n  {\n    name: \"Monitor LG UltraWide 34WP65C\",\n    model: \"34WP65C-B\",\n    brand: \"LG\",\n    brandId: 7,\n    category: [\"electronics\", \"monitors\", \"displays\"],\n    description: \"Monitor curvo UltraWide 21:9 de 34 pulgadas, resolución WQHD 3440×1440, panel VA con HDR10 y AMD FreeSync Premium.\",\n    attributes: [{ size: \"34 pulgadas\" }, { resolution: \"3440x1440\" }, { panel: \"VA\" }],\n    priceMin: 399.99, priceMax: 499.99,\n    tax: \"21.00\",\n    imageSlug: \"monitor\"\n  },\n  {\n    name: \"Cámara Web Logitech StreamCam\",\n    model: \"StreamCam\",\n    brand: \"Logitech\",\n    brandId: 5,\n    category: [\"electronics\", \"cameras\", \"webcams\"],\n    description: \"Cámara web Full HD 1080p/60fps con autoenfoque inteligente por IA, ideal para streaming y videoconferencias.\",\n    attributes: [{ resolution: \"1080p 60fps\" }, { connection: \"USB-C\" }, { autofocus: \"IA\" }],\n    priceMin: 89.99, priceMax: 129.99,\n    tax: \"21.00\",\n    imageSlug: \"camera\"\n  },\n  {\n    name: \"Altavoz Portátil JBL Charge 5\",\n    model: \"Charge 5\",\n    brand: \"JBL\",\n    brandId: 9,\n    category: [\"electronics\", \"audio\", \"speakers\"],\n    description: \"Altavoz Bluetooth portátil resistente al agua IP67, 20 h de reproducción y función de carga para dispositivos móviles.\",\n    attributes: [{ color: \"Azul\" }, { waterproof: \"IP67\" }, { battery: \"20 horas\" }],\n    priceMin: 149.99, priceMax: 189.99,\n    tax: \"21.00\",\n    imageSlug: \"speaker\"\n  },\n  {\n    name: \"Ratón Gaming Razer DeathAdder V3\",\n    model: \"DeathAdder V3\",\n    brand: \"Razer\",\n    brandId: 11,\n    category: [\"electronics\", \"peripherals\", \"mice\"],\n    description: \"Ratón gaming ergonómico ultraligero de 59 g con sensor óptico Focus Pro 30K y hasta 90 h de batería inalámbrica.\",\n    attributes: [{ weight: \"59g\" }, { dpi: \"30000\" }, { connectivity: \"HyperSpeed Wireless\" }],\n    priceMin: 79.99, priceMax: 109.99,\n    tax: \"21.00\",\n    imageSlug: \"mouse\"\n  },\n  {\n    name: \"SSD Externo Samsung T7 Shield\",\n    model: \"T7 Shield\",\n    brand: \"Samsung\",\n    brandId: 2,\n    category: [\"electronics\", \"storage\", \"ssd\"],\n    description: \"SSD portátil con carcasa resistente a golpes, polvo y agua (IP65), velocidades de lectura de hasta 1050 MB/s.\",\n    attributes: [{ capacity: \"1 TB\" }, { interface: \"USB 3.2 Gen 2\" }, { color: \"Beige\" }],\n    priceMin: 89.99, priceMax: 119.99,\n    tax: \"21.00\",\n    imageSlug: \"ssd\"\n  }\n];\n\nconst statuses = [\"In Stock\", \"Out of Stock\", \"Pre-order\", \"Limited Stock\"];\n\n// ── Selección aleatoria ───────────────────────────────────────────────────────\nconst idx  = Math.floor(Math.random() * catalog.length);\nconst item = catalog[idx];\n\nconst price    = (item.priceMin + Math.random() * (item.priceMax - item.priceMin)).toFixed(2);\nconst quantity = Math.floor(Math.random() * 200) + 1;\nconst rating   = (3.5 + Math.random() * 1.5).toFixed(2);\nconst status   = statuses[Math.floor(Math.random() * statuses.length)];\nconst seed     = Math.floor(Math.random() * 9000) + 1000;   // semilla para imagen\nconst imageUrl = `https://picsum.photos/seed/${item.imageSlug}${seed}/640/480`;\nconst slug     = item.name.toLowerCase().replace(/\\s+/g, \"-\").replace(/[^a-z0-9-]/g, \"\");\nconst productUrl = `https://www.store1.geekqa.net/products/${slug}`;\nconst now      = new Date().toISOString();\n\n// ── Guardar variables locales ─────────────────────────────────────────────────\npm.variables.set(\"gen_products_name\",          item.name);\npm.variables.set(\"gen_products_status\",        status);\npm.variables.set(\"gen_products_model\",         item.model);\npm.variables.set(\"gen_products_url\",           productUrl);\npm.variables.set(\"gen_products_quantity\",      String(quantity));\npm.variables.set(\"gen_products_price_ex_tax\",  price);\npm.variables.set(\"gen_products_tax_percentage\",item.tax);\npm.variables.set(\"gen_products_rating\",        rating);\npm.variables.set(\"gen_products_description\",   item.description);\npm.variables.set(\"gen_products_brand_name\",    item.brand);\npm.variables.set(\"gen_products_brand_id\",      String(item.brandId));\npm.variables.set(\"gen_products_thumbnail\",     imageUrl);\npm.variables.set(\"gen_products_categories\",    JSON.stringify(item.category));\npm.variables.set(\"gen_products_attributes\",    JSON.stringify(item.attributes));\npm.variables.set(\"gen_updated_at\",             now);\n\nconsole.log(`[Pre-request] Producto generado: ${item.name} | Precio: ${price} | Estado: ${status}`);\n"
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "\n// ── Test: Creación exitosa ────────────────────────────────────────────────────\npm.test(\"Status 201 - Producto creado exitosamente\", function () {\n    pm.response.to.have.status(201);\n});\n\n// ── Test: Respuesta es JSON válido ────────────────────────────────────────────\npm.test(\"La respuesta es JSON válido\", function () {\n    pm.response.to.be.json;\n});\n\n// ── Test: El cuerpo contiene mensaje de éxito ─────────────────────────────────\npm.test(\"El cuerpo contiene mensaje de creación\", function () {\n    const json = pm.response.json();\n    pm.expect(json).to.have.property(\"message\");\n    pm.expect(json.message).to.include(\"created\");\n});\n\n// ── Test: El producto devuelto tiene el nombre generado ───────────────────────\npm.test(\"El producto devuelto coincide con el nombre generado\", function () {\n    const json = pm.response.json();\n    pm.expect(json).to.have.property(\"product\");\n    pm.expect(json.product.products_name).to.eql(pm.variables.get(\"gen_products_name\"));\n});\n\n// ── Test: El producto tiene ID asignado ───────────────────────────────────────\npm.test(\"El producto tiene un ID asignado\", function () {\n    const json = pm.response.json();\n    pm.expect(json.product).to.have.property(\"id\");\n    pm.expect(json.product.id).to.be.a(\"number\");\n});\n\n// ── Test: La URL de imagen es HTTPS ───────────────────────────────────────────\npm.test(\"La URL de imagen es HTTPS\", function () {\n    const json = pm.response.json();\n    pm.expect(json.product.products_thumbnail).to.match(/^https:\\/\\//);\n});\n"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "accept",
+            "value": "application/json"
+          },
+          {
+            "key": "accept-language",
+            "value": "es-ES,es;q=0.7"
+          },
+          {
+            "key": "authorization",
+            "value": "Bearer {{json_web_token_13zx}}"
+          },
+          {
+            "key": "cache-control",
+            "value": "no-cache"
+          },
+          {
+            "key": "content-type",
+            "value": "application/json"
+          },
+          {
+            "key": "origin",
+            "value": "https://www.store1.geekqa.net"
+          },
+          {
+            "key": "pragma",
+            "value": "no-cache"
+          },
+          {
+            "key": "priority",
+            "value": "u=1, i"
+          },
+          {
+            "key": "referer",
+            "value": "https://www.store1.geekqa.net/"
+          },
+          {
+            "key": "sec-ch-ua",
+            "value": "\"Brave\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\""
+          },
+          {
+            "key": "sec-ch-ua-mobile",
+            "value": "?0"
+          },
+          {
+            "key": "sec-ch-ua-platform",
+            "value": "\"Windows\""
+          },
+          {
+            "key": "sec-fetch-dest",
+            "value": "empty"
+          },
+          {
+            "key": "sec-fetch-mode",
+            "value": "cors"
+          },
+          {
+            "key": "sec-fetch-site",
+            "value": "same-site"
+          },
+          {
+            "key": "sec-gpc",
+            "value": "1"
+          },
+          {
+            "key": "user-agent",
+            "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"products_name\": \"{{gen_products_name}}\",\n  \"products_status\": \"{{gen_products_status}}\",\n  \"products_model\": \"{{gen_products_model}}\",\n  \"products_url\": \"{{gen_products_url}}\",\n  \"products_quantity\": {{gen_products_quantity}},\n  \"products_price_ex_tax\": \"{{gen_products_price_ex_tax}}\",\n  \"products_tax_percentage\": \"{{gen_products_tax_percentage}}\",\n  \"products_rating\": \"{{gen_products_rating}}\",\n  \"products_description\": \"{{gen_products_description}}\",\n  \"products_brand_name\": \"{{gen_products_brand_name}}\",\n  \"products_brand_id\": {{gen_products_brand_id}},\n  \"products_thumbnail\": \"{{gen_products_thumbnail}}\",\n  \"products_categories\": {{gen_products_categories}},\n  \"products_attributes\": {{gen_products_attributes}},\n  \"status\": 1,\n  \"created_at\": null,\n  \"updated_at\": \"{{gen_updated_at}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://apis.geekqa.net/api/products",
+          "protocol": "https",
+          "host": [
+            "apis",
+            "geekqa",
+            "net"
+          ],
+          "path": [
+            "api",
+            "products"
+          ]
+        },
+        "description": "# Crear productos\n\n## Propósito\nCrea un producto real en el catálogo de GeekQA. El script previo existente genera datos tecnológicos realistas y los asigna a variables usadas por el body.\n\n## Método y ruta\n`POST https://apis.geekqa.net/api/products`\n\n## Autenticación\nBearer token mediante `{{json_web_token_13zx}}`.\n\n## Headers esenciales\n| Header | Valor |\n|---|---|\n| `Accept` | `application/json` |\n| `Content-Type` | `application/json` |\n| `Authorization` | `Bearer {{json_web_token_13zx}}` |\n\n## Parámetros\nNo se observaron parámetros de ruta ni de consulta.\n\n## Body\nJSON con los datos del producto. El request conserva variables `gen_*` generadas por el script previo para producir valores dinámicos.\n\n## Campos del body\n| Campo | Tipo | Descripción |\n|---|---|---|\n| `products_name` | string | Nombre del producto. |\n| `products_status` | string | Estado comercial. |\n| `products_model` | string | Modelo. |\n| `products_url` | string | URL pública del producto. |\n| `products_quantity` | number | Cantidad disponible. |\n| `products_price_ex_tax` | string decimal | Precio sin impuestos. |\n| `products_tax_percentage` | string decimal | Porcentaje de impuesto. |\n| `products_rating` | string decimal | Valoración. |\n| `products_description` | string | Descripción. |\n| `products_brand_name` | string | Marca. |\n| `products_brand_id` | number | Identificador de marca. |\n| `products_thumbnail` | string | URL HTTPS de imagen. |\n| `products_categories` | array<string> | Categorías. |\n| `products_attributes` | array<object> | Atributos; admite claves variables. |\n| `status` | number | Estado interno. |\n| `created_at` | string o null | Fecha de creación. |\n| `updated_at` | string | Fecha de actualización. |\n\n## Respuesta exitosa\n`201 Created` con `message` y `product`. El objeto `product` contiene los datos enviados y el `id` asignado por el servicio.\n\n## Pruebas automatizadas\nLos tests existentes validan estado 201, JSON válido, mensaje de creación, coincidencia del nombre generado, ID numérico y URL HTTPS de la miniatura.\n\n## Consideraciones\n- **Cada ejecución crea un registro real.** Revise el body antes de enviar y evite repeticiones innecesarias.\n- Se observó un rate limit de 60 solicitudes.\n- Los importes, impuestos y rating deben conservarse como strings decimales.\n- `products_attributes` admite objetos con claves variables.\n- La descripción cURL anterior fue sustituida por esta documentación; scripts, headers, body, autenticación y tests permanecen sin cambios."
+      },
+      "response": [
+        {
+          "name": "Respuesta exitosa - 201",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json",
+                "description": "Solicita una respuesta JSON."
+              },
+              {
+                "key": "content-type",
+                "value": "application/json",
+                "description": "Indica un body JSON."
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"products_name\": \"Auriculares Sony WH-1000XM5\",\n  \"products_status\": \"In Stock\",\n  \"products_model\": \"WH-1000XM5\",\n  \"products_url\": \"https://www.store1.geekqa.net/products/auriculares-sony-wh-1000xm5\",\n  \"products_quantity\": 43,\n  \"products_price_ex_tax\": \"308.25\",\n  \"products_tax_percentage\": \"21.00\",\n  \"products_rating\": \"4.58\",\n  \"products_description\": \"Auriculares inalámbricos con cancelación de ruido líder en la industria, hasta 30 h de batería y micrófono de alta resolución.\",\n  \"products_brand_name\": \"Sony\",\n  \"products_brand_id\": 3,\n  \"products_thumbnail\": \"https://picsum.photos/seed/headphones8233/640/480\",\n  \"products_categories\": [\"electronics\", \"audio\", \"headphones\"],\n  \"products_attributes\": [{\"color\":\"Negro\"},{\"connectivity\":\"Bluetooth 5.2\"},{\"noise_cancellation\":\"Activa\"}],\n  \"status\": 1,\n  \"created_at\": null,\n  \"updated_at\": \"2026-09-24T23:54:27.000000Z\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://apis.geekqa.net/api/products",
+              "protocol": "https",
+              "host": [
+                "apis",
+                "geekqa",
+                "net"
+              ],
+              "path": [
+                "api",
+                "products"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "accept",
+              "value": "application/json",
+              "description": "Solicita una respuesta JSON.",
+              "enabled": true
+            },
+            {
+              "key": "content-type",
+              "value": "application/json",
+              "description": "Indica un body JSON.",
+              "enabled": true
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"message\": \"Auriculares Sony WH-1000XM5 created successfully\",\n  \"product\": {\n    \"products_name\": \"Auriculares Sony WH-1000XM5\",\n    \"products_status\": \"In Stock\",\n    \"products_model\": \"WH-1000XM5\",\n    \"products_url\": \"https://www.store1.geekqa.net/products/auriculares-sony-wh-1000xm5\",\n    \"products_quantity\": 43,\n    \"products_price_ex_tax\": \"308.25\",\n    \"products_tax_percentage\": \"21.00\",\n    \"products_rating\": \"4.58\",\n    \"products_description\": \"Auriculares inalámbricos con cancelación de ruido líder en la industria, hasta 30 h de batería y micrófono de alta resolución.\",\n    \"products_brand_name\": \"Sony\",\n    \"products_brand_id\": 3,\n    \"products_thumbnail\": \"https://picsum.photos/seed/headphones8233/640/480\",\n    \"products_categories\": [\"electronics\", \"audio\", \"headphones\"],\n    \"products_attributes\": [\n      {\"color\": \"Negro\"},\n      {\"connectivity\": \"Bluetooth 5.2\"},\n      {\"noise_cancellation\": \"Activa\"}\n    ],\n    \"status\": 1,\n    \"created_at\": null,\n    \"updated_at\": \"2026-09-24T23:54:27.000000Z\",\n    \"id\": 10856\n  }\n}"
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "json_web_token_13zx",
+      "secret": true
+    },
+    {
+      "key": "bearer_token_0j5q",
+      "secret": true
+    }
+  ]
+}
