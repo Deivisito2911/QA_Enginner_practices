@@ -1,1 +1,4 @@
 node_modules/
+.aidlc-transaction.lock
+.aidlc-txn-*
+.aidlc-recovery-* 	
