@@ -30,6 +30,10 @@ Este documento define la jerarquía de directorios y reglas de organización par
 *   **Propósito:** Material de capacitación, guías teóricas, reglas de automatización (como la Pirámide de Pruebas o la Guía de Cucumber) y buenas prácticas para el equipo.
 *   **Archivos esperados:** `.html`, `.md`, recursos gráficos.
 
+### `07_Test_Automation/`
+*   **Propósito:** Almacenar el código fuente de los scripts automatizados (Selenium, Playwright, Cypress).
+*   **Archivos esperados:** Scripts en `.js`, `.py`, `.java`, separados en sus respectivas subcarpetas por tecnología.
+
 ---
 
 ## 🤖 Instrucciones para Futuras Peticiones (System Instructions)
@@ -38,5 +42,6 @@ Este documento define la jerarquía de directorios y reglas de organización par
 3. Cuando el usuario solicite un **"Feature File" o "Gherkin"**, créalo automáticamente en `04_BDD_Features/`.
 4. Cuando el usuario solicite **"Datos de Prueba o Matrices"**, guárdalos en `05_Test_Data/`.
 5. Si el usuario hace una pregunta conceptual o pide una guía, guárdala en `06_Guides_and_Training/`.
-6. Mantén la consistencia en el formato de los nombres de archivo.
-7. **REGLA ESTRICTA DE GIT:** Jamás debes realizar un `git commit` ni un `git push` por tu cuenta. Siempre debes pedir autorización explícita al usuario antes de ejecutar comandos que alteren el repositorio remoto o el historial de Git.
+6. Cuando el usuario solicite **"Scripts de Automatización o Código"**, guárdalos en `07_Test_Automation/` dentro de su subcarpeta correspondiente.
+7. Mantén la consistencia en el formato de los nombres de archivo.
+8. **REGLA ESTRICTA DE GIT:** Jamás debes realizar un `git commit` ni un `git push` por tu cuenta. Siempre debes pedir autorización explícita al usuario antes de ejecutar comandos que alteren el repositorio remoto o el historial de Git.
