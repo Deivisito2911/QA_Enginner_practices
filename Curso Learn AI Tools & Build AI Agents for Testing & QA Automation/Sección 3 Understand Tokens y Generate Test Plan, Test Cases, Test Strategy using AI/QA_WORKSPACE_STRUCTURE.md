@@ -39,3 +39,4 @@ Este documento define la jerarquía de directorios y reglas de organización par
 4. Cuando el usuario solicite **"Datos de Prueba o Matrices"**, guárdalos en `05_Test_Data/`.
 5. Si el usuario hace una pregunta conceptual o pide una guía, guárdala en `06_Guides_and_Training/`.
 6. Mantén la consistencia en el formato de los nombres de archivo.
+7. **REGLA ESTRICTA DE GIT:** Jamás debes realizar un `git commit` ni un `git push` por tu cuenta. Siempre debes pedir autorización explícita al usuario antes de ejecutar comandos que alteren el repositorio remoto o el historial de Git.
