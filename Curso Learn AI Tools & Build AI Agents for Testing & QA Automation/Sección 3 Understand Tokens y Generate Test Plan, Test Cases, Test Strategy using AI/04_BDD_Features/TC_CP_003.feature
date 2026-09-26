@@ -4,6 +4,12 @@ Característica: Catálogo de Productos - Detalles del Producto
   Quiero ver los detalles completos de un producto
   Para poder decidir si deseo agregarlo a mi carrito de compras
 
+  Antecedentes: Usuario logueado en la plataforma
+    Dado que un usuario registrado navega a la página de "Login"
+    Y ingresa su correo y contraseña válidos
+    Y hace clic en el botón "Iniciar Sesión"
+    Entonces el sistema autentica al usuario correctamente
+
   Escenario: Visualización correcta de la información detallada de un producto
     Dado que existe el producto "Zapatillas Adidas Ultraboost" con SKU "AD-UB-001"
     Y el producto tiene configuradas múltiples imágenes, tallas y reseñas
