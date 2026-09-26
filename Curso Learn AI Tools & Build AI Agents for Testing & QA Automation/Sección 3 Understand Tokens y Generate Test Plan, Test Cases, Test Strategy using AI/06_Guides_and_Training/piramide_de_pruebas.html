@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Pirámide de Pruebas (Test Pyramid)</title>
+    <style>
+        :root {
+            --color-unit: #27ae60;
+            --color-api: #f39c12;
+            --color-ui: #e74c3c;
+            --color-manual: #7f8c8d;
+            --color-bg: #f4f7f6;
+            --color-text: #2c3e50;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--color-text);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px 20px;
+            background-color: var(--color-bg);
+        }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #2980b9;
+        }
+        header p {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+        }
+        /* Pyramid Visualization */
+        .pyramid-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 50px 0;
+            gap: 4px;
+        }
+        .manual-cloud {
+            width: 250px;
+            height: 50px;
+            background: var(--color-manual);
+            border-radius: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        .manual-cloud::after {
+            content: 'Nube Exploratoria';
+            position: absolute;
+            top: -25px;
+            font-size: 0.8rem;
+            color: var(--color-text);
+            font-weight: normal;
+        }
+        .level {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 70px;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, filter 0.3s ease;
+            cursor: default;
+        }
+        .level:hover {
+            transform: scale(1.02);
+            filter: brightness(1.1);
+        }
+        .level-ui { width: 35%; background-color: var(--color-ui); border-radius: 15px 15px 0 0; }
+        .level-api { width: 65%; background-color: var(--color-api); }
+        .level-unit { width: 100%; background-color: var(--color-unit); border-radius: 0 0 15px 15px; }
+        
+        /* Content Sections */
+        .content-section {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        .layer-detail {
+            margin-bottom: 30px;
+            padding-left: 15px;
+            border-left: 4px solid transparent;
+        }
+        .layer-unit { border-left-color: var(--color-unit); }
+        .layer-api { border-left-color: var(--color-api); }
+        .layer-ui { border-left-color: var(--color-ui); }
+        .layer-manual { border-left-color: var(--color-manual); }
+        
+        h3 {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: white;
+            margin-left: 15px;
+        }
+        .bg-unit { background-color: var(--color-unit); }
+        .bg-api { background-color: var(--color-api); }
+        .bg-ui { background-color: var(--color-ui); }
+        .bg-manual { background-color: var(--color-manual); }
+        
+        ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .anti-pattern {
+            background-color: #fdf2e9;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #e67e22;
+        }
+        .anti-pattern h3 {
+            color: #d35400;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>La Pirámide de Pruebas</h1>
+        <p>Estrategia de Automatización en Ingeniería de Calidad (QA)</p>
+    </header>
+
+    <div class="pyramid-container">
+        <div class="manual-cloud">Pruebas Manuales (UX, Exploratorias)</div>
+        <div class="level level-ui">UI / E2E (5 - 10%)</div>
+        <div class="level level-api">Integración / Servicios API (20 - 25%)</div>
+        <div class="level level-unit">Pruebas Unitarias (70%+)</div>
+    </div>
+
+    <div class="content-section">
+        <h2>¿Qué es la Pirámide de Pruebas?</h2>
+        <p>La Pirámide de Pruebas (Test Pyramid) es un modelo conceptual introducido por Mike Cohn. Sirve como guía para decidir <strong>qué nivel es el más adecuado para automatizar un caso de prueba</strong>, equilibrando velocidad de ejecución, costo de mantenimiento y confiabilidad. Nos indica la proporción ideal de pruebas que deberíamos tener en cada capa.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>Los Niveles de Automatización</h2>
+
+        <div class="layer-detail layer-unit">
+            <h3>1. La Base: Pruebas Unitarias <span class="badge bg-unit">70%+</span></h3>
+            <p><strong>¿Qué son?</strong> Prueban el código al nivel más bajo (funciones, métodos o clases individuales) de forma aislada mediante <em>mocks</em> y <em>stubs</em>.</p>
+            <ul>
+                <li><strong>Características:</strong> Extremadamente rápidas (milisegundos), baratas de mantener y localizan exactamente la línea donde ocurre el error.</li>
+                <li><strong>¿Qué automatizar?:</strong> Lógica de negocio, cálculos matemáticos, validaciones de datos y casos extremos (edge cases).</li>
+            </ul>
+        </div>
+
+        <div class="layer-detail layer-api">
+            <h3>2. El Medio: Pruebas de Integración y API <span class="badge bg-api">20% - 25%</span></h3>
+            <p><strong>¿Qué son?</strong> Verifican que los diferentes módulos o servicios (bases de datos, APIs, microservicios) interactúen correctamente sin depender de la interfaz gráfica.</p>
+            <ul>
+                <li><strong>Características:</strong> Más lentas que las unitarias, pero mucho más rápidas y estables que las pruebas UI.</li>
+                <li><strong>¿Qué automatizar?:</strong> Respuestas de endpoints HTTP (200, 400, 500), integración con bases de datos, seguridad, y contratos de datos.</li>
+            </ul>
+        </div>
+
+        <div class="layer-detail layer-ui">
+            <h3>3. La Cima: Pruebas UI / End-to-End (E2E) <span class="badge bg-ui">5% - 10%</span></h3>
+            <p><strong>¿Qué son?</strong> Simulan a un usuario real interactuando con la aplicación completa a través del navegador web o dispositivo móvil (ej. Selenium, Cypress, Playwright).</p>
+            <ul>
+                <li><strong>Características:</strong> Lentas de ejecutar, frágiles (propensas a falsos positivos por problemas de red o cambios de diseño) y costosas de mantener.</li>
+                <li><strong>¿Qué automatizar?:</strong> Solamente <strong>flujos críticos de negocio (Happy Paths)</strong>. Ejemplos: login exitoso, flujo completo de pago o registro de usuario.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>Más allá de la Automatización</h2>
+        <div class="layer-detail layer-manual">
+            <h3>Pruebas Manuales Exploratorias <span class="badge bg-manual">No Automatizable</span></h3>
+            <p>La pirámide no elimina la prueba manual; la desplaza hacia tareas de mayor valor cognitivo donde la inteligencia humana es insustituible.</p>
+            <ul>
+                <li><strong>Pruebas Exploratorias:</strong> Donde el QA aplica su ingenio e intuición para descubrir comportamientos inesperados fuera de los scripts.</li>
+                <li><strong>Usabilidad (UX):</strong> Evaluar si el sistema es intuitivo, estéticamente agradable y accesible para usuarios reales.</li>
+                <li><strong>Funcionalidades Efímeras:</strong> Campañas de marketing cortas donde automatizar cuesta más de lo que ahorra.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="content-section anti-pattern">
+        <h3>🚨 El Anti-Patrón: El Cono de Helado (Ice Cream Cone)</h3>
+        <p>Un error común en equipos que recién comienzan con la automatización es crear demasiadas pruebas de UI y casi ninguna prueba unitaria. Esto invierte la pirámide creando un "cono de helado".</p>
+        <p><strong>Consecuencias:</strong> Pipielines de integración continua (CI/CD) que tardan horas en ejecutarse, pruebas que fallan por intermitencias (flakiness) y equipos frustrados por el alto costo de mantenimiento.</p>
+    </div>
+
+</body>
+</html>

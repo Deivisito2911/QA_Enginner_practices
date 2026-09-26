@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Avanzada de Cucumber para QA Automation</title>
+    <style>
+        :root {
+            --primary: #27ae60;
+            --secondary: #2c3e50;
+            --light-bg: #f8f9fa;
+            --border: #e2e8f0;
+            --code-bg: #1e1e1e;
+            --code-text: #d4d4d4;
+            --gherkin-keyword: #c586c0;
+            --gherkin-string: #ce9178;
+        }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 30px 20px;
+            background-color: #f1f5f9;
+        }
+        header {
+            background-color: var(--secondary);
+            color: white;
+            padding: 40px;
+            border-radius: 10px 10px 0 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            color: #2ecc71;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        h2 {
+            color: var(--primary);
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+        h3 {
+            color: var(--secondary);
+            margin-top: 25px;
+        }
+        .concept-card {
+            background: var(--light-bg);
+            border-left: 4px solid var(--primary);
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 4px;
+        }
+        .concept-title {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+        pre {
+            background-color: var(--code-bg);
+            color: var(--code-text);
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+        .kw { color: var(--gherkin-keyword); font-weight: bold; }
+        .str { color: var(--gherkin-string); }
+        .tag { color: #569cd6; }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        th, td {
+            border: 1px solid var(--border);
+            padding: 10px;
+            text-align: left;
+        }
+        th { background-color: var(--light-bg); }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Guía Definitiva de Cucumber</h1>
+        <p>Conceptos clave para el QA Automation Engineer Experimentado</p>
+    </header>
+
+    <div class="container">
+        
+        <h2>1. Los Cimientos Filosóficos</h2>
+        <div class="concept-card">
+            <div class="concept-title">BDD (Behavior-Driven Development)</div>
+            <p><strong>Definición:</strong> Es una metodología ágil que fomenta la colaboración entre desarrolladores, QA y personas no técnicas o de negocio (Product Owners). BDD no es una herramienta, es la cultura de discutir cómo debe comportarse el sistema antes de programarlo.</p>
+            <p><strong>Aplicación:</strong> Cucumber es la herramienta que materializa BDD permitiendo que esos comportamientos se conviertan en pruebas automatizadas ejecutables.</p>
+        </div>
+
+        <h2>2. Gherkin: El Lenguaje</h2>
+        <p>Gherkin es el lenguaje estructurado (con palabras clave específicas) que Cucumber entiende. Un archivo `.feature` está escrito en Gherkin.</p>
+
+        <div class="concept-card">
+            <div class="concept-title">La Sintaxis de los Pasos (Given, When, Then)</div>
+            <ul>
+                <li><strong>Given (Dado):</strong> Establece el contexto inicial o precondiciones. (Ej. Estado de la base de datos, usuario logueado).</li>
+                <li><strong>When (Cuando):</strong> Describe la acción o el evento principal que el usuario o sistema realiza.</li>
+                <li><strong>Then (Entonces):</strong> Describe el resultado esperado o la aserción (assert) que valida si la prueba pasó.</li>
+                <li><strong>And / But (Y / Pero):</strong> Se usan para encadenar pasos del mismo tipo y mantener la legibilidad.</li>
+            </ul>
+        </div>
+
+        <h2>3. Conceptos Avanzados de Estructura</h2>
+
+        <div class="concept-card">
+            <div class="concept-title">Background (Antecedentes)</div>
+            <p><strong>Definición:</strong> Pasos que son comunes a TODOS los escenarios dentro de un archivo Feature. Se ejecutan antes de cada escenario para evitar repetir código.</p>
+            <pre>
+<span class="kw">Feature:</span> Gestión de Carrito
+
+  <span class="kw">Background:</span>
+    <span class="kw">Given</span> que el usuario ha iniciado sesión
+    <span class="kw">And</span> tiene saldo positivo en su cuenta
+
+  <span class="kw">Scenario:</span> Añadir producto
+    <span class="kw">When</span> añade un libro
+    ...
+            </pre>
+        </div>
+
+        <div class="concept-card">
+            <div class="concept-title">Scenario Outline & Examples (Esquema del Escenario)</div>
+            <p><strong>Definición:</strong> Implementa <em>Data-Driven Testing</em>. Permite ejecutar el mismo escenario exacto múltiples veces utilizando diferentes conjuntos de datos proporcionados en una tabla.</p>
+            <pre>
+<span class="kw">Scenario Outline:</span> Login con múltiples roles
+  <span class="kw">Given</span> que estoy en el login
+  <span class="kw">When</span> ingreso el usuario <span class="str">"&lt;usuario&gt;"</span> y clave <span class="str">"&lt;clave&gt;"</span>
+  <span class="kw">Then</span> debo ver el panel <span class="str">"&lt;panel&gt;"</span>
+
+  <span class="kw">Examples:</span>
+    | usuario | clave | panel       |
+    | admin   | 1234  | Dashboard   |
+    | cliente | 5678  | Mi Perfil   |
+            </pre>
+        </div>
+
+        <div class="concept-card">
+            <div class="concept-title">Data Tables (Tablas de Datos)</div>
+            <p><strong>Definición:</strong> A diferencia de los <em>Examples</em> (que repiten todo el escenario), las <em>Data Tables</em> se usan para pasar listas completas o matrices de datos a un <strong>solo paso (step)</strong>.</p>
+            <pre>
+<span class="kw">Scenario:</span> Crear nuevo usuario con múltiples roles
+  <span class="kw">Given</span> que el administrador crea el usuario "Juan" con los roles:
+    | Rol       | Permiso |
+    | Editor    | Leer    |
+    | Autor     | Escribir|
+  <span class="kw">Then</span> el usuario se crea con éxito
+            </pre>
+        </div>
+
+        <h2>4. Organización y Ejecución</h2>
+
+        <div class="concept-card">
+            <div class="concept-title">Tags (Etiquetas)</div>
+            <p><strong>Definición:</strong> Permiten agrupar y filtrar escenarios. Un QA experimentado usa Tags para organizar qué pruebas correr en el Pipeline (CI/CD) dependiendo del contexto.</p>
+            <p><strong>Ejemplo de Aplicación:</strong> Correr solo las pruebas de sanidad en producción usando el comando de consola: <code>cucumber --tags "@Smoke and not @WIP"</code></p>
+            <pre>
+<span class="tag">@Regresion @ModuloPagos</span>
+<span class="kw">Feature:</span> Pagos con Tarjeta
+
+  <span class="tag">@Smoke @PrioridadAlta</span>
+  <span class="kw">Scenario:</span> Pago exitoso con Visa
+            </pre>
+        </div>
+
+        <div class="concept-card">
+            <div class="concept-title">Hooks (@Before, @After)</div>
+            <p><strong>Definición:</strong> Código técnico oculto que se ejecuta antes o después de los escenarios. A diferencia del <em>Background</em> (que es legible por negocio), los Hooks son puramente para el QA técnico (ej. limpiar cookies, abrir la base de datos, tomar captura de pantalla si falla).</p>
+            <pre>
+// Ejemplo en JavaScript (Playwright/Cypress)
+Before(async function () {
+    // Iniciar navegador antes del escenario
+});
+
+After({tags: "@UI"}, async function (scenario) {
+    if (scenario.result.status === Status.FAILED) {
+        // Tomar captura de pantalla
+    }
+});
+            </pre>
+        </div>
+
+        <h2>5. Step Definitions (El Código "Pegamento")</h2>
+        <div class="concept-card">
+            <p><strong>Definición:</strong> Es el código fuente (Java, JS, Python, C#) que mapea el texto de Gherkin a acciones reales (como usar Selenium). Cucumber usa Expresiones Regulares o "Cucumber Expressions" para capturar los parámetros de las frases.</p>
+            <pre>
+// Ejemplo de Step Definition en JavaScript
+Given(<span class="str">'que el usuario navega a {string}'</span>, async function (url) {
+  await browser.url(url);
+});
+
+When(<span class="str">'hace clic en el botón {string}'</span>, async function (nombreBoton) {
+  await page.click(`button:has-text("${nombreBoton}")`);
+});
+            </pre>
+        </div>
+
+    </div>
+</body>
+</html>
