@@ -34,9 +34,15 @@ Este documento servirá como bitácora para registrar los aprendizajes, práctic
   - [x] Configuración del servidor MCP de MySQL en el IDE Kiro mediante el archivo `mcp_config.json`.
   - [x] Creación del script SQL `rahulshettyacademy.sql` localmente para inicializar la base de datos.
   - [x] Creación de `.agents/mcp_config.json` en el workspace actual para integrar Playwright y MySQL MCP servers con Gemini Antigravity, corrigiendo la compatibilidad para Windows (`uvx`).
+  - [x] Ejecución de consulta SQL analítica: Agrupación de la tabla `Orders` para encontrar empresas con más de un pedido realizado (`Tech Solutions Inc.`).
+  - [x] Interacción cruzada: Creación de tabla `registerdetails` en SQL, unión con `Customers`, e inyección de dichos datos en el navegador usando Playwright MCP para registrar 2 usuarios automáticamente.
 
 ### 26. Hands-On Practice Resources for Testing Skills
-- **Notas:** (Por completar)
+- **Notas:** 
+  - Se recomienda encarecidamente utilizar el **Practice Hub** de Rahul Shetty Academy (`rahulshettyacademy.com` -> Practice Apps) para fortalecer las habilidades de automatización en aplicaciones reales.
+  - El hub incluye entornos de práctica para: aplicaciones Web (UI), APIs, aplicaciones Móviles y aplicaciones modernas de IA (LLM/RAG).
+  - Para objetivos profesionales en la industria, se sugiere revisar el portal de oportunidades laborales en `rahulshettyacademy.com` -> QA Jobs.
+  - El enfoque principal es que la práctica consistente en sistemas reales mejorará significativamente la confianza y comprensión práctica.
 
 ### 27. Build Agent which can perform API Testing & talk to local File systems for data
 - **Notas:** (Por completar)
@@ -45,3 +51,13 @@ Este documento servirá como bitácora para registrar los aprendizajes, práctic
 ### 28. Build Agent which can read/write to excel file for...
 - **Notas:** (Por completar)
 - **Prácticas/Código:** (Por completar)
+
+### 27. Build Agent which can perform API Testing & talk to local File systems for data
+- **Notas:** 
+  - Se verific� en el historial de logs y base de datos las credenciales de los usuarios reci�n creados (Alice Smith: alice.smith.test99@example.com).
+- **Pr�cticas/C�digo:** 
+  - [x] Actualizaci�n del archivo EcomBasic.postman_collection.json con el usuario y contrase�a creados para probar en Postman.
+
+- [x] Instalaci�n y configuraci�n del MCP REST API Tester (dkmaker-mcp-rest-api) en el archivo de agentes locales.
+
+- [x] Sincronizaci�n del repositorio local con el remoto (commit y push) para respaldar los cambios de la colecci�n de Postman, la instalaci�n de REST API MCP y la bit�cora.
