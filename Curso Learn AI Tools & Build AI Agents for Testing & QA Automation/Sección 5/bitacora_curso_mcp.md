@@ -61,3 +61,15 @@ Este documento servirÃ¡ como bitÃ¡cora para registrar los aprendizajes, prÃ¡ctic
 - [x] Instalación y configuración del MCP REST API Tester (dkmaker-mcp-rest-api) en el archivo de agentes locales.
 
 - [x] Sincronización del repositorio local con el remoto (commit y push) para respaldar los cambios de la colección de Postman, la instalación de REST API MCP y la bitácora.
+
+- [x] Extracción de datos del usuario Charlie Brown desde la base de datos (tablas customers y registerdetails).
+- [x] Automatización del registro de usuario en 'https://rahulshettyacademy.com/client' mediante Playwright MCP.
+- [x] Validación del contrato de API basándose en Postman y ejecución de login a '/api/ecom/auth/login' con el servidor MCP rest_api obteniendo un status 200 OK y el token respectivo.
+
+### 28. Build Agent which can read/write to excel file for...
+- **Notas:**
+  - Se instaló globalmente y se configuró localmente el servidor MCP para manejo de archivos Excel (@negokaz/excel-mcp-server).
+- **Prácticas/Código:**
+  - [x] Configuración del servidor MCP en '.agents/mcp_config.json'.
+
+- [x] Sincronización del repositorio (pull y push) previo al reinicio de la sesión de Antigravity para cargar las nuevas herramientas MCP.
