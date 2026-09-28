@@ -24,6 +24,16 @@ El proyecto está diseñado como un monorepo donde cada directorio funciona como
 *   **`_AI-powered QA_ Prompts usados en el curso.pdf`**: Material de referencia centralizado con técnicas avanzadas de ingeniería de prompts aplicadas al ciclo de vida de QA.
 *   **`Curso_QA_Agent.html`**: Exportación y apuntes clave del curso de agentes de QA.
 
+## 🛡️ Políticas de Git y Exclusiones (.gitignore)
+
+Para mantener el monorepo limpio y evitar subir archivos generados automáticamente o sensibles, se ha configurado un `.gitignore` en la raíz del repositorio que aplica recursivamente a todos los proyectos y cursos. Las exclusiones principales cubren:
+
+*   **Entornos de Node y UI Testing:** `node_modules/`, `playwright-report/`, `test-results/`, evidencias de Cypress.
+*   **Archivos de Agentes e IA:** Configuración y logs locales de herramientas como `.playwright-mcp/`, `.agents/`, `.kiro/` y lockfiles de transacciones.
+*   **Python y Entornos Virtuales:** `.venv/`, `__pycache__/`, y archivos compilados `.pyc`.
+*   **Configuración y Secretos:** Variables de entorno y credenciales en archivos `.env`.
+*   **Logs y Sistema:** Cualquier archivo `.log` general, además de archivos nativos del SO (`.DS_Store`, `Thumbs.db`).
+
 ## 🛠️ Stack Tecnológico & Herramientas
 
 *   **Frameworks de Agentes:** AI-DLC v2.9.0, Kiro IDE, Claude Code, Antigravity.
