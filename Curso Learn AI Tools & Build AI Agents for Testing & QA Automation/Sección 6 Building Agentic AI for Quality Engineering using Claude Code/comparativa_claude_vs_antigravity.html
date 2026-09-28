@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Comparativa: Claude Code vs Gemini Antigravity</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; color: #333; }
+        h1 { color: #2c3e50; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #f4f7f6; color: #333; }
+        .highlight { background-color: #e8f4f8; }
+    </style>
+</head>
+<body>
+
+    <h1>Adaptación de Skills: Claude Code a Gemini Antigravity</h1>
+    <p>Este documento justifica técnica y operativamente la migración de los recursos del curso (pensados originalmente para Claude Code) hacia nuestro entorno de trabajo con Gemini Antigravity.</p>
+
+    <h2>Tabla Comparativa de Ecosistemas</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Concepto (Curso / Claude Code)</th>
+                <th>Adaptación (Gemini Antigravity / KIRO IDE)</th>
+                <th>Justificación de la Adaptación</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>claude</code> (Modo interactivo CLI)</td>
+                <td>Interfaz del KIRO IDE / CLI de Antigravity</td>
+                <td>Antigravity ya está integrado en el IDE, tiene contexto completo del workspace, y acceso directo a herramientas del SO, Playwright MCP y gestión de subagentes sin requerir instalaciones extra.</td>
+            </tr>
+            <tr>
+                <td>Directorio <code>.claude/skills/</code></td>
+                <td>Directorio <code>.agents/skills/</code></td>
+                <td>El sistema de "Customization" de Antigravity descubre automáticamente habilidades en la carpeta <code>.agents/</code> en la raíz del proyecto. Al mover la carpeta logramos una integración nativa e instantánea de los recursos del curso (como <code>create-scenarios</code>, <code>eventhub-domain</code>, etc.).</td>
+            </tr>
+            <tr>
+                <td><code>/init</code> o <code>CLAUDE.md</code></td>
+                <td><code>GEMINI.md</code> (Manifiesto)</td>
+                <td>En Antigravity, <code>GEMINI.md</code> sirve como el archivo de reglas raíz (Knowledge Skill) para inyectar instrucciones clave (como nuestras credenciales de prueba) en todo el proyecto.</td>
+            </tr>
+            <tr>
+                <td>Agent Skills & Knowledge Skills</td>
+                <td>Antigravity Skills (<code>SKILL.md</code>) y Subagentes</td>
+                <td>La estructura de <code>SKILL.md</code> de Claude Code es compatible con la de Antigravity. Ahora el agente puede cargar progresivamente estos conocimientos sin saturar su contexto de memoria (evitando el "Context Bloat").</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Acciones Realizadas</h2>
+    <ul>
+        <li>Se migraron exitosamente las habilidades (Skills) desde <code>eventhub/.claude/skills</code> hacia la raíz del proyecto en <code>.agents/skills</code>.</li>
+        <li>Skills integradas: <code>create-scenarios</code>, <code>eventhub-domain</code>, <code>generate-tests</code>, <code>playwright-best-practices</code>, <code>review-tests</code>, <code>test-strategy</code>.</li>
+    </ul>
+
+</body>
+</html>
