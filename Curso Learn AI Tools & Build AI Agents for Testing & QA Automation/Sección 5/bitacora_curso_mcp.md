@@ -73,3 +73,25 @@ Este documento servirÃ¡ como bitÃ¡cora para registrar los aprendizajes, prÃ¡ctic
   - [x] Configuración del servidor MCP en '.agents/mcp_config.json'.
 
 - [x] Sincronización del repositorio (pull y push) previo al reinicio de la sesión de Antigravity para cargar las nuevas herramientas MCP.
+
+
+## MCP Completo: UI, SQL, API Test y Excel
+- Se obtuvo un registro de base de datos usando 'mysql_server' (Frank Miller).
+- Se navegó a https://rahulshettyacademy.com/client y se completó el registro en UI mediante el MCP de Playwright, utilizando un correo único (frank.miller.1790528454774@example.com) y corrigiendo el formato del teléfono.
+- Se verificó el contrato en Postman y se realizó una llamada de inicio de sesión (Login) con el MCP 'rest_api' (apitest), la cual fue exitosa (HTTP 200).
+- Se guardaron las nuevas credenciales de registro en el archivo 'newdata.xlsx' mediante el MCP 'excel'.
+
+
+## Mejoras en la Estabilidad de Pruebas (Validación Defensiva)
+- Se implementó la regla de validar elementos con clase '.invalid-feedback' o atributos 'is-invalid' antes de ejecutar la acción de Submit ('#login').
+- Esta buena práctica evita caer en bucles infinitos por Timeouts al esperar respuestas de red o navegación cuando el formulario está bloqueado por el frontend.
+- El script de registro ahora cuenta con pre-condiciones que capturan mensajes de error como '*only numbers is allowed' antes de avanzar.
+
+
+## Playwright con Patrón Page Object (POM)
+- Navegación manual realizada mediante el MCP de Playwright hacia 'https://rahulshettyacademy.com/loginpagePractise/'.
+- Se identificaron los localizadores reales del formulario: username ('#username'), password ('#password'), terms ('#terms'), y signInBtn ('#signInBtn').
+- NOTA: Se detectó un cambio en el backend de la página de prueba. La contraseña antigua 'learning' arroja un error ('Old password learning is no longer valid. Please use the new password Learning@830'). Para que la prueba pase y llegue al /shop, la contraseña actualizada fue implementada.
+- Se creó la estructura POM en TypeScript: rahulshettyacademy/pages/LoginPage.ts y rahulshettyacademy/pages/ShopPage.ts.
+- Se diseñó el test 'loginShop.spec.ts' usando Playwright Test (@playwright/test) en rahulshettyacademy/tests para asertar la visibilidad de 'iphone X'.
+
