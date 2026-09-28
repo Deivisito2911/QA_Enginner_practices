@@ -33,6 +33,7 @@ Este documento servirá como bitácora para registrar los aprendizajes, práctic
 
 ### 35. Understand Knowledge Skills & Agent Skills - When to use with demo example
 - **Notas:** Entendido el concepto. "Knowledge Skills" brindan contexto pasivo (documentación, directrices) y "Agent Skills" son capacidades activas (subagentes o procedimientos que ejecutan tareas). A lo largo del curso, crearemos distintos agentes para abordar diferentes capas (UI, API, etc.), implementándolos a través de KIRO IDE o usando los subagentes nativos de Antigravity.
+  - **Corrección de Configuración para KIRO IDE:** KIRO IDE requiere una estructura específica para mostrar los agentes en el chat. Los agentes deben definirse como archivos `.md` individuales dentro de `.kiro/agents/` (ej. `qa-planner.md`) conteniendo un Frontmatter YAML. Asimismo, los Skills deben alojarse en `.kiro/skills/<nombre>/SKILL.md` con su respectivo YAML. Hemos migrado la carpeta `.agents/` a `.kiro/` para cumplir con esta especificación y habilitar los agentes `@qa-planner`, `@qa-automation` y `@qa-reviewer` en la interfaz.
 
 ### 36. Create Skill docs for EventHub Application & Understand how they are designed
 - **Notas:** (Por completar)
