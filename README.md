@@ -13,6 +13,7 @@ El proyecto está diseñado como un monorepo donde cada directorio funciona como
 *   **`/Curso Learn AI Tools & Build AI Agents for Testing & QA Automation`**: Base de conocimiento sobre el uso de herramientas IA en QA. Incluye la comprensión de tokens, generación de *Test Plans*, *Test Cases* y *Test Strategy* apoyados por IA, y la construcción de Agentic AI usando Claude Code.
 *   **`/agente-qa-curso/qa-agent-geekqa`**: Resolución práctica de historias de usuario (ej. US-002, US-003, US-004) guiadas por IA. Contiene las entradas (criterios de aceptación, mockups) y las salidas generadas por los agentes.
 *   **`/poc-aidlc-robotica` & `/prueba`**: Entornos de prueba para la configuración del framework AI-DLC integrados con **Kiro IDE**. Contiene las políticas de los agentes, los *hooks* nativos del sistema y el conocimiento base para los perfiles de QA, Arquitectura y Producto.
+*   **`/guide_aidlc`**: Espacio designado para guías, manuales de uso y documentación detallada sobre la configuración y evolución del framework AI-DLC.
 
 ### ⚙️ Automatización E2E & Herramientas Avanzadas
 *   **`/playwright_Agents` & `/Antigravity`**: Implementaciones avanzadas de automatización usando **Playwright** integradas con agentes. Incluye flujos de prueba, *exploration tests*, captura de evidencias y la integración de herramientas mediante el protocolo MCP (Model Context Protocol).
