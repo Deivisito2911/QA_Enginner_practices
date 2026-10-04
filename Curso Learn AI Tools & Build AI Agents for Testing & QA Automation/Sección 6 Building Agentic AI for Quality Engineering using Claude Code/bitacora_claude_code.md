@@ -69,3 +69,10 @@ Este documento servirá como bitácora para registrar los aprendizajes, práctic
   - Se implementaron los Page Objects (`LoginPage.js` y `RegisterPage.js`) siguiendo las mejores prácticas y priorizando selectores semánticos y seguros.
   - Se implementaron los scripts de prueba (`login.spec.js` y `registration.spec.js`) con assertions visuales y asíncronas (`toBeVisible`, `toHaveURL`) descartando por completo el uso de `waitForTimeout`.
   - La tarea técnica solicitada quedó finalizada y lista para ejecución (a la espera de los procesos de CI/CD).
+
+### Tarea Pendiente: CI/CD Pipeline (Sección 8)
+- **Notas:** Se tomó el archivo `.github/workflows/playwright.yml` existente dentro de `eventhub` y se alineó con la estructura real del repositorio.
+  - Se movió/creó la carpeta `.github/workflows` en la raíz real del repositorio de Git (`D:/carconnec/`).
+  - Se configuró la variable de entorno `WORKDIR` para apuntar a la ruta profunda de `eventhub` (`Curso Learn AI Tools & Build AI Agents for Testing & QA Automation/Sección 6 Building Agentic AI for Quality Engineering using Claude Code/eventhub`).
+  - Se añadieron `defaults.run.working-directory` para que `npm ci` y `npx playwright test` se ejecuten en el directorio correcto.
+  - Se ajustó el path del `cache-dependency-path` y el upload artifact para que funcionen con esta ruta anidada.
