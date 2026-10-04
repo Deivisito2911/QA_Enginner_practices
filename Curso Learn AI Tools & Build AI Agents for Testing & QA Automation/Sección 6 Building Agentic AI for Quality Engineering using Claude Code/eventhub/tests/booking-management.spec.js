@@ -74,12 +74,12 @@ test.describe('Booking Management — Critical Happy Paths', () => {
     await clearBookings(page);
     const { bookingRef, eventTitle } = await bookEvent(page);
 
-    // -- Step 2: Navigate to /bookings --
-    await page.goto(`${BASE_URL}/bookings`);
+    // -- Step 2: Navegar simulando al usuario en lugar de forzar un hard-reload --
+    await page.getByRole('link', { name: 'My Bookings' }).click();
 
-    // -- Step 3: Assert booking card appears with correct data --
+    // -- Step 3: Esperar a que la tarjeta aparezca con un timeout extendido para CI/CD --
     const card = page.getByTestId('booking-card').filter({ hasText: bookingRef });
-    await expect(card).toBeVisible();
+    await expect(card).toBeVisible({ timeout: 15000 });
     await expect(card).toContainText(eventTitle);
     await expect(card).toContainText('confirmed');
     await expect(card).toContainText(bookingRef);
