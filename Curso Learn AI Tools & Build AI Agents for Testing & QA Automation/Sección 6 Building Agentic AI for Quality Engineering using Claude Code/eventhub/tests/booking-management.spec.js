@@ -75,7 +75,7 @@ test.describe('Booking Management — Critical Happy Paths', () => {
     const { bookingRef, eventTitle } = await bookEvent(page);
 
     // -- Step 2: Navegar simulando al usuario en lugar de forzar un hard-reload --
-    await page.getByRole('link', { name: 'My Bookings' }).click();
+    await page.getByRole('link', { name: 'My Bookings' }).first().click();
 
     // -- Step 3: Esperar a que la tarjeta aparezca con un timeout extendido para CI/CD --
     const card = page.getByTestId('booking-card').filter({ hasText: bookingRef });
