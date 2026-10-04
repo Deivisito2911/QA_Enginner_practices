@@ -112,3 +112,9 @@ Para lograr que cualquier desarrollador pueda ejecutar las pruebas sin instalar 
   - El workflow ahora solo hace checkout y ejecuta `docker compose up --build --abort-on-container-exit`.
   - Se modificó la imagen en el `Dockerfile` a `mcr.microsoft.com/playwright:v1.58.2-jammy` para asegurar explícitamente el uso de Node 20 (como especifica el requerimiento).
   - Los reportes HTML siguen siendo extraídos mediante el mapeo de volúmenes y subidos como artefactos en Actions.
+
+### Alineación Estratégica: Curso vs. Roadmap Corporativo (CarConnect)
+- **Análisis de Entorno Real:** Se realizó una auditoría de los requerimientos futuros del rol del usuario, basándose en la documentación interna (`guia-aidlc-deivith.html` y el framework de agentes Kiro en `D:\Trabajo`).
+- **Hallazgo Clave:** La arquitectura corporativa de CarConnect (basada en el framework AI-DLC) supera el enfoque de herramientas comerciales *low-code* (como n8n, ContextQA) enseñadas al final del curso. El rol del usuario no será crear scripts desde cero, sino actuar como **QA Gatekeeper** (Auditor de IA), validando Criterios de Aceptación (Etapa 2.4), Requisitos No Funcionales (Etapa 3.2) y Trazabilidad de Pruebas (Etapa 3.6) generados por modelos avanzados (ej. Claude Opus 4.8).
+- **Decisión sobre el Curso (Secciones 9 a 13):** Para cumplir con la exigencia formativa y maximizar el valor aportado a la empresa, el resto del curso se consumirá con un **enfoque consultivo e informativo**. 
+- **Objetivo Final:** Extraer conceptos sobre ingeniería de prompts, parseo de JSON en pruebas API y detección de "alucinaciones" en LLMs, para aplicar dichas estrategias a las reglas y directrices de los agentes locales de AI-DLC.
