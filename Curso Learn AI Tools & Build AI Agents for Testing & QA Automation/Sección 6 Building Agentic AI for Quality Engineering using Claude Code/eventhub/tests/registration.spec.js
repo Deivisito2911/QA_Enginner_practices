@@ -14,8 +14,9 @@ test.describe('Registration Tests (TC-001)', () => {
       password: 'TestPassword123!'
     });
     
-    // Assuming redirection to login or success message
-    await expect(page).toHaveURL(/.*login/);
+    // Después de un registro exitoso redirige a la raíz de la aplicación (y auto-loguea)
+    await expect(page).toHaveURL(/.*\/$/);
+    await expect(page.getByRole('button', { name: 'Logout' })).toBeVisible();
   });
 
   test('TC-001b: Falla de registro con correo duplicado', async ({ page }) => {

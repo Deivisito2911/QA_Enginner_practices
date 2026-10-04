@@ -9,10 +9,9 @@ test.describe('Login Tests (TC-002 / TC-301)', () => {
     // Credenciales autorizadas del curso
     await loginPage.login('testqa_claude_2026@example.com', 'TestPassword123!');
     
-    // Assertion robusto basado en navegacion/estado sin esperas fijas
-    // Kiro expected /dashboard, let's keep that assuming successful login redirects to dashboard
-    // or maybe /events. The other test uses "Browse Events" link. Let's use the URL for now or a visual element.
-    await expect(page).toHaveURL(/.*dashboard|.*events/);
+    // Assertion robusto: después de login exitoso redirige a la raíz
+    await expect(page).toHaveURL(/.*\/$/);
+    await expect(page.getByRole('button', { name: 'Logout' })).toBeVisible();
   });
 
   test('TC-301: Login fallido con credenciales invalidas', async ({ page }) => {
