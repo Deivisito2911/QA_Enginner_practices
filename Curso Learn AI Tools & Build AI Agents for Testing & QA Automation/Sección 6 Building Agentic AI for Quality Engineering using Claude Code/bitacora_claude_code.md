@@ -76,3 +76,9 @@ Este documento servirá como bitácora para registrar los aprendizajes, práctic
   - Se configuró la variable de entorno `WORKDIR` para apuntar a la ruta profunda de `eventhub` (`Curso Learn AI Tools & Build AI Agents for Testing & QA Automation/Sección 6 Building Agentic AI for Quality Engineering using Claude Code/eventhub`).
   - Se añadieron `defaults.run.working-directory` para que `npm ci` y `npx playwright test` se ejecuten en el directorio correcto.
   - Se ajustó el path del `cache-dependency-path` y el upload artifact para que funcionen con esta ruta anidada.
+
+### Corrección de Pruebas y Troubleshooting en CI
+- **Notas:** Durante la primera ejecución en GitHub Actions, los tests fallaron debido a aserciones (assertions) incorrectas.
+  - Se descubrió mediante Playwright MCP que, tras un login o registro exitoso, la aplicación redirige a la ruta raíz `/` (y no a `/dashboard` o `/login` como se esperaba) y loguea automáticamente al usuario.
+  - Se actualizaron los scripts `login.spec.js` y `registration.spec.js` para esperar la URL correcta (`/.*\/$/`) y validar la presencia del botón "Logout" (`page.getByRole('button', { name: 'Logout' })`).
+  - Se hizo push del parche y el pipeline de GitHub Actions (Playwright E2E Tests) se ejecutó exitosamente (verde).
