@@ -1,6 +1,6 @@
-# QA Engineer Practices & AI-Driven Automation Workspace 🚀
+# QA Engineer Practices & AI-Driven Automation Workspace 🤖⚙️
 
-> **🚧 Estado del Repositorio: Activo y Evolutivo (WIP)**
+> **🚀 Estado del Repositorio: Activo y Evolutivo (WIP)**
 > *Este repositorio es el espacio centralizado de mi evolución como QA Engineer hacia la adopción de Inteligencia Artificial. Documenta mis prácticas, configuraciones de entorno, automatización de pruebas y el proceso de aprendizaje continuo con frameworks como AI-DLC y herramientas agenticas.*
 
 Este monorepo centraliza todas las prácticas, cursos y configuraciones de entorno desarrolladas como parte de mi especialización técnica y plan de adopción de IA, incluyendo el framework **AI-DLC (v2.9.0)**, **Kiro IDE**, **Playwright**, y **Agentes IA**.
@@ -10,12 +10,12 @@ Este monorepo centraliza todas las prácticas, cursos y configuraciones de entor
 El proyecto está diseñado como un monorepo donde cada directorio funciona como un espacio de trabajo aislado, garantizando que configuraciones específicas y dependencias no generen conflictos.
 
 ### 🤖 Inteligencia Artificial & Agentes en QA
-*   **`/Curso Learn AI Tools & Build AI Agents for Testing & QA Automation`**: Base de conocimiento sobre el uso de herramientas IA en QA. Incluye la comprensión de tokens, generación de *Test Plans*, *Test Cases* y *Test Strategy* apoyados por IA, y la construcción de Agentic AI usando Claude Code.
+*   **`/Curso Learn AI Tools & Build AI Agents for Testing & QA Automation`**: Base de conocimiento y laboratorio práctico sobre el uso de herramientas IA en QA. Incluye implementaciones reales de **CI/CD con GitHub Actions**, contenerización con **Docker**, automatización E2E con Playwright y la construcción de Agentic AI usando Claude Code. Además, contiene una **Bitácora Estratégica** que documenta la transición conceptual hacia la arquitectura in-house **AI-DLC** de CarConnect.
 *   **`/agente-qa-curso/qa-agent-geekqa`**: Resolución práctica de historias de usuario (ej. US-002, US-003, US-004) guiadas por IA. Contiene las entradas (criterios de aceptación, mockups) y las salidas generadas por los agentes.
 *   **`/poc-aidlc-robotica` & `/prueba`**: Entornos de prueba para la configuración del framework AI-DLC integrados con **Kiro IDE**. Contiene las políticas de los agentes, los *hooks* nativos del sistema y el conocimiento base para los perfiles de QA, Arquitectura y Producto.
 *   **`/guide_aidlc`**: Espacio designado para guías, manuales de uso y documentación detallada sobre la configuración y evolución del framework AI-DLC.
 
-### ⚙️ Automatización E2E & Herramientas Avanzadas
+### 🧪 Automatización E2E & Herramientas Avanzadas
 *   **`/playwright_Agents` & `/Antigravity`**: Implementaciones avanzadas de automatización usando **Playwright** integradas con agentes. Incluye flujos de prueba, *exploration tests*, captura de evidencias y la integración de herramientas mediante el protocolo MCP (Model Context Protocol).
 *   **`/copilot curso`**: Prácticas de automatización y asistencia con GitHub Copilot. Contiene pruebas E2E configuradas con **Cypress**, reportes de accesibilidad (axe-core) y aplicaciones de prueba.
 *   **`/finanzas-app`**: Proyecto práctico de aplicación frontend integrando una suite completa de pruebas con Playwright y configuraciones de agentes.
@@ -41,12 +41,12 @@ Para mantener el monorepo limpio y evitar subir archivos generados automáticame
 *   **Modelos de Lenguaje:** GPT 5.6 Luna / GPT 5.6 Terra / Claude Opus.
 *   **Automatización de Pruebas UI/API:** Playwright, Cypress, Postman.
 *   **Calidad & Accesibilidad:** Axe-core, Lighthouse.
-*   **Integración Continua:** GitHub Actions (CI/CD workflows).
+*   **Integración Continua:** GitHub Actions (CI/CD workflows) y Docker.
 
-## 📌 Próximos Pasos & Roadmap
-*   Integración continua de los conceptos de Claude Code para orquestación de pruebas.
-*   Evolución del framework de pruebas en `finanzas-app` utilizando capacidades agenticas.
-*   Aplicación práctica de *Scopes*, revisión de *Gates* (puertas de aprobación) y lineamientos del Quality Agent.
+## 🚀 Próximos Pasos & Roadmap
+*   **Consolidación del Rol QA Gatekeeper:** Aplicación práctica de *Scopes*, revisión estricta de *Gates* (puertas de aprobación) y validación de criterios de aceptación para el Quality Agent dentro de la arquitectura corporativa **AI-DLC**.
+*   **Extracción de Valor de LLMs:** Aprovechar los conceptos teóricos de plataformas comerciales y generación de código para extraer tácticas de Prompt Engineering y aplicarlas a los agentes locales de Kiro.
+*   **Evolución del Framework Local:** Evolución del framework de pruebas en `finanzas-app` y proyectos productivos de la compañía utilizando las capacidades agénticas descubiertas.
 
 ---
 *Desarrollado y mantenido por Deivith Zanella | QA Engineer*
