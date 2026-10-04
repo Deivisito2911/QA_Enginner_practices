@@ -61,3 +61,11 @@ Este documento servirá como bitácora para registrar los aprendizajes, práctic
 
 ---
 **🏆 Estado Final de la Sección 6:** ¡Completada con éxito! El usuario ha finalizado todas las lecciones de la sección.
+
+### Tarea Pendiente: Automatización de Escenarios UI (Login y Registro) con POM
+- **Notas:** (Continuación tras agotamiento de créditos en Kiro IDE). El agente AI (Gemini Antigravity) asumió el rol de QA Engineer Senior. 
+  - Se movió correctamente la carpeta `tests/` dentro del directorio del proyecto `eventhub/` para utilizar la configuración nativa de Playwright existente en `playwright.config.ts`.
+  - Se utilizaron las herramientas MCP de `playwrightmcp` (`browser_navigate`, `browser_snapshot`, `browser_evaluate`, `browser_fill_form`, `browser_click`) para interactuar con la aplicación en vivo (`https://eventhub.rahulshettyacademy.com/login` y `/register`) y extraer los locators reales (usando `data-testid`, IDs estables y `getByPlaceholder`).
+  - Se implementaron los Page Objects (`LoginPage.js` y `RegisterPage.js`) siguiendo las mejores prácticas y priorizando selectores semánticos y seguros.
+  - Se implementaron los scripts de prueba (`login.spec.js` y `registration.spec.js`) con assertions visuales y asíncronas (`toBeVisible`, `toHaveURL`) descartando por completo el uso de `waitForTimeout`.
+  - La tarea técnica solicitada quedó finalizada y lista para ejecución (a la espera de los procesos de CI/CD).
