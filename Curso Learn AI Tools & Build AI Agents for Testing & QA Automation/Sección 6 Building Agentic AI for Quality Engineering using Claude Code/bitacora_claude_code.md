@@ -88,3 +88,20 @@ Este documento servirá como bitácora para registrar los aprendizajes, práctic
   - **Dockerfile**: Se usa la imagen oficial `mcr.microsoft.com/playwright:v1.58.2-noble`. Se ajustó el `CMD` final para que emita reportes tanto en consola (`line`) como en archivo (`html`).
   - **docker-compose.yml**: Se agregó la bandera `ipc: host` (crucial para evitar que Chromium haga "crash" por límites de memoria compartida en contenedores). Además, se configuran los volúmenes para extraer los reportes y capturas hacia el Host.
   - **Uso**: Ahora cualquier desarrollador puede descargar el proyecto y correr `docker compose up --build` dentro de `eventhub` para correr todas las pruebas y obtener su reporte HTML limpio.
+
+### ¿Cómo funciona la contenerización detrás de escena? (Explicación de Archivos Docker)
+Para lograr que cualquier desarrollador pueda ejecutar las pruebas sin instalar Node.js ni navegadores, se configuraron tres archivos clave que trabajan en conjunto:
+
+1. **`Dockerfile` (La Receta / El Molde)**
+   - Define el paso a paso para construir la "máquina" (imagen) que correrá las pruebas.
+   - Utiliza una imagen base oficial de Microsoft (`mcr.microsoft.com/playwright...`) que **ya tiene preinstalados** todos los navegadores y librerías del sistema operativo.
+   - Su trabajo es copiar nuestro código fuente (`package.json`, `tests/`, `playwright.config.ts`), instalar las dependencias con `npm ci` y establecer el comando de arranque que se ejecutará por defecto: `npx playwright test`.
+
+2. **`.dockerignore` (El Filtro de Limpieza)**
+   - Funciona exactamente igual que un `.gitignore`, pero le dice a Docker qué archivos de tu máquina local **no** debe copiar hacia el interior del contenedor.
+   - Ignoramos conscientemente la carpeta `node_modules` local. De esta forma, obligamos al contenedor a descargar las dependencias por sí mismo. Esto garantiza un entorno limpio e idéntico para todos los usuarios.
+
+3. **`docker-compose.yml` (El Director de Orquesta)**
+   - Automatiza la ejecución para que no tengas que memorizar comandos largos de Docker. Todo se resume a correr `docker compose up`.
+   - **Mapeo de Volúmenes (`volumes`):** Configura un "túnel" entre la carpeta del contenedor y tu máquina física. Así, cuando el test termina, los reportes (`playwright-report/`) y videos/capturas de errores se exportan automáticamente a tu computadora para que los revises, a pesar de que se generaron en un contenedor aislado.
+   - **`ipc: host`**: Permite al contenedor compartir el espacio de memoria principal de tu computadora. Los navegadores web consumen mucha memoria; sin esto, Playwright suele congelarse o fallar en Docker por límites de "memoria compartida" (shared memory).
