@@ -82,3 +82,9 @@ Este documento servirá como bitácora para registrar los aprendizajes, práctic
   - Se descubrió mediante Playwright MCP que, tras un login o registro exitoso, la aplicación redirige a la ruta raíz `/` (y no a `/dashboard` o `/login` como se esperaba) y loguea automáticamente al usuario.
   - Se actualizaron los scripts `login.spec.js` y `registration.spec.js` para esperar la URL correcta (`/.*\/$/`) y validar la presencia del botón "Logout" (`page.getByRole('button', { name: 'Logout' })`).
   - Se hizo push del parche y el pipeline de GitHub Actions (Playwright E2E Tests) se ejecutó exitosamente (verde).
+
+### Paso 49: Dockerización del Entorno de Pruebas
+- **Notas:** Se revisó y ajustó la configuración de contenedores para permitir ejecutar Playwright de forma aislada, sin necesidad de dependencias locales.
+  - **Dockerfile**: Se usa la imagen oficial `mcr.microsoft.com/playwright:v1.58.2-noble`. Se ajustó el `CMD` final para que emita reportes tanto en consola (`line`) como en archivo (`html`).
+  - **docker-compose.yml**: Se agregó la bandera `ipc: host` (crucial para evitar que Chromium haga "crash" por límites de memoria compartida en contenedores). Además, se configuran los volúmenes para extraer los reportes y capturas hacia el Host.
+  - **Uso**: Ahora cualquier desarrollador puede descargar el proyecto y correr `docker compose up --build` dentro de `eventhub` para correr todas las pruebas y obtener su reporte HTML limpio.
