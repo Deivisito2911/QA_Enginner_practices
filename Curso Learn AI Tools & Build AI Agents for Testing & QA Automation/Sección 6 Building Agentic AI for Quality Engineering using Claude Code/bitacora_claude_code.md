@@ -105,3 +105,10 @@ Para lograr que cualquier desarrollador pueda ejecutar las pruebas sin instalar 
    - Automatiza la ejecución para que no tengas que memorizar comandos largos de Docker. Todo se resume a correr `docker compose up`.
    - **Mapeo de Volúmenes (`volumes`):** Configura un "túnel" entre la carpeta del contenedor y tu máquina física. Así, cuando el test termina, los reportes (`playwright-report/`) y videos/capturas de errores se exportan automáticamente a tu computadora para que los revises, a pesar de que se generaron en un contenedor aislado.
    - **`ipc: host`**: Permite al contenedor compartir el espacio de memoria principal de tu computadora. Los navegadores web consumen mucha memoria; sin esto, Playwright suele congelarse o fallar en Docker por límites de "memoria compartida" (shared memory).
+
+### Paso 50: Integración de Docker con GitHub Actions
+- **Notas:** Para asegurar que el entorno de CI coincida 100% con el entorno local, se modificó el workflow de GitHub Actions (`playwright.yml`).
+  - En lugar de instalar Node.js, dependencias y Chromium directamente sobre la máquina Ubuntu de GitHub (lo cual podría causar incompatibilidad de versiones), delegamos todo a Docker.
+  - El workflow ahora solo hace checkout y ejecuta `docker compose up --build --abort-on-container-exit`.
+  - Se modificó la imagen en el `Dockerfile` a `mcr.microsoft.com/playwright:v1.58.2-jammy` para asegurar explícitamente el uso de Node 20 (como especifica el requerimiento).
+  - Los reportes HTML siguen siendo extraídos mediante el mapeo de volúmenes y subidos como artefactos en Actions.

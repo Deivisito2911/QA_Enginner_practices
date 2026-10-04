@@ -1,5 +1,5 @@
 # Use the official Playwright image — browsers pre-installed, no extra setup needed
-FROM mcr.microsoft.com/playwright:v1.58.2-noble
+FROM mcr.microsoft.com/playwright:v1.58.2-jammy
 
 WORKDIR /app
 

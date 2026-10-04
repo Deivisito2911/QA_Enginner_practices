@@ -29,21 +29,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Node.js ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: 'npm'
-          cache-dependency-path: '${{ env.WORKDIR }}/package-lock.json'
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Install Playwright browsers
-        run: npx playwright install chromium --with-deps
-
-      - name: Run Playwright tests
-        run: npx playwright test --reporter=html,line
+      - name: Run Playwright tests in Docker
+        run: docker compose up --build --abort-on-container-exit
 
       - name: Upload Playwright HTML report
         uses: actions/upload-artifact@v4
